@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+.navbar{
+			background-color: #01A5D5 !important;
+}
+
+#footer{
+	background-color: #01A5D5 !important;	
+}
+
+.navbar-brand{
+	font-size: 0.9rem !important;
+}
