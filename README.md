@@ -1,3 +1,3 @@
 # proves.cifo.local
 
-## en construcció
+## en construcci
