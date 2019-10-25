@@ -187,105 +187,111 @@ $(document).ready( function () {
     $('#libros').DataTable();
 } );
 
-//Mostra la taula sencera en carregar la pagina
-	window.onload=function() {
-var xhr;
-if (window.XMLHttpRequest) {
-	xhr = new XMLHttpRequest();
-} else {
-	xhr = new ActiveXObject("Microsoft.XMLHTTP");
-}
+//En carregar la pàgina, carrega els llibres, les seccions i les editorials
 
-xhr.onreadystatechange = function() {
-		if (xhr.readyState == 4 && xhr.status == 200) {
-			var arrLibros = JSON.parse(xhr.responseText);
-			console.log(arrLibros.records);
-			window.sessionStorage.setItem("seleccionactual",JSON.stringify(arrLibros.records));
-			for (var i = 0; i < arrLibros.records.length; i++) {
-				//console.log(arrLibros.records[i].nombre);
-				var cadena='<tr>'+
-				'<td>'+arrLibros.records[i].isbn+'</td>'+
-				'<td><img src="'+arrLibros.records[i].cubierta+'" height="100px"></td>'+
-			//	'<td>Aquí va la cubierta</td>'+
-				'<td>'+arrLibros.records[i].titulo+'</td>'+
-				'<td>'+arrLibros.records[i].editorial+'</td>'+
-				'<td>'+arrLibros.records[i].seccion+'</td>'+
-				'<td>'+arrLibros.records[i].tema+'</td>'+
-			//	'<td><a href="javascript:void(0)" onclick="getCurs('+arrCursos[i].id+')" data-toggle="modal" data-target=".bd-example-modal-sm">[+info...]</a></td>'+
-				'</tr>';
-				document.getElementById('tbllibros').innerHTML+=cadena;
+//Carrega els llibres
+
 	
-			}
-		}
-}
+
+	getLibros();
 	
-	xhr.open('GET', 'http://app.cifo.local/api/public/biblioteca/libros/?nocache='+Math.random(), true);
-	xhr.send(); 
-}	
 
-//Mostra el primer selector
-var xhr;
-if (window.XMLHttpRequest) {
-	xhr = new XMLHttpRequest();
-} else {
-	xhr = new ActiveXObject("Microsoft.XMLHTTP");
-}
-
+function getLibros(codigoseccion, codigotema, codigoeditorial) {
+	var xhr;
+	if (window.XMLHttpRequest) {
+		xhr = new XMLHttpRequest();
+	} else {
+		xhr = new ActiveXObject("Microsoft.XMLHTTP");
+	}
 	xhr.onreadystatechange = function() {
-		if (xhr.readyState == 4 && xhr.status == 200) {
-			var arrSecciones = JSON.parse(xhr.responseText);
-			console.log(arrSecciones.records);
-			for (var i = 0; i < arrSecciones.records.length; i++) {
-				console.log(arrSecciones.records[i].nombre);
-				document.getElementById("secciones").innerHTML += '<option id="'+ arrSecciones.records[i].id +'" value="' + arrSecciones.records[i].nombre + '">'+ arrSecciones.records[i].nombre +'</option>';
-	
-			}
-		}
-	}
-	xhr.open('GET', 'http://app.cifo.local/api/public/biblioteca/secciones/?nocache='+Math.random(), true);
-	xhr.send();
-
-	
-	
-	
-	//Mostra el segon selector quan seleccionem el primer 
-	document.getElementById("secciones").onchange = function() {
-		document.getElementById("temas").innerHTML = '<option value="0">-- Escoja un tema --</option>';
-			
-			
-		//	document.getElementById("tblMunicipios").innerHTML = '<option value="">-- Escull un municipi --</option>'
-			
-			var seccioseleccionada = document.getElementById("secciones").selectedIndex;
-			var codiseccio = document.getElementById("secciones").options[seccioseleccionada].id;
-			console.log(codiseccio);
-			
-			if (window.XMLHttpRequest) {
-				xhr = new XMLHttpRequest();
-			} else {
-				xhr = new ActiveXObject("Microsoft.XMLHTTP");
-			}
-			
-				xhr.onreadystatechange = function() {
-					if (xhr.readyState == 4 && xhr.status == 200) {
-						var arrTemas = JSON.parse(xhr.responseText);
-						console.log(arrTemas);
-						for (var i = 0; i < arrTemas.records.length; i++) {
-							console.log(arrTemas.records[i].nombre);
-							document.getElementById("temas").innerHTML += '<option id="'+ arrTemas.records[i].id +'" value="' + arrTemas.records[i].nombre + '">'+ arrTemas.records[i].nombre +'</option>';
-						}
-					}
+			if (xhr.readyState == 4 && xhr.status == 200) {
+				var arrLibros = JSON.parse(xhr.responseText);
+				console.log(arrLibros.records);
+				window.sessionStorage.setItem("seleccionactual",JSON.stringify(arrLibros.records));
+				for (var i = 0; i < arrLibros.records.length; i++) {
+					//console.log(arrLibros.records[i].nombre);
+					var cadena='<tr>'+
+					'<td>'+arrLibros.records[i].isbn+'</td>'+
+					'<td><img src="'+arrLibros.records[i].cubierta+'" height="100px"></td>'+
+				//	'<td>Aquí va la cubierta</td>'+
+					'<td>'+arrLibros.records[i].titulo+'</td>'+
+					'<td>'+arrLibros.records[i].editorial+'</td>'+
+					'<td>'+arrLibros.records[i].seccion+'</td>'+
+					'<td>'+arrLibros.records[i].tema+'</td>'+
+				//	'<td><a href="javascript:void(0)" onclick="getCurs('+arrCursos[i].id+')" data-toggle="modal" data-target=".bd-example-modal-sm">[+info...]</a></td>'+
+					'</tr>';
+					document.getElementById('tbllibros').innerHTML+=cadena;			
 				}
-				xhr.open('GET', 'http://app.cifo.local/api/public/biblioteca/temas/seccion/'+ codiseccio +'/&nocache=' +Math.random(), true);
-				xhr.send();
+				getSecciones();
+			}
 			
-			
-		
 			
 	}
+	if (codigoseccion != "") {
+		codigoseccion = codigoseccion + '/'
+	} 
+	if (codigotema != "") {
+		codigotema = codigotema + '/'
+	} 
+	if (codigoeditorial != "") {
+		codigoeditorial = codigoeditorial + '/'
+	} 
+	
+	xhr.open('GET', 'http://app.cifo.local/api/public/biblioteca/libros/seccion/'+codigoseccion+'tema/'+codigotema+'editorial/'+codigoeditorial+'?nocache='+Math.random(), true);
+	xhr.send();
+}
+
+function getSecciones(codigoseccion) {
+	
+	if (codigoseccion == undefined) {
+		codigoseccion = "";
+	} 
+	
+	if (codigoseccion != "") {
+		codigoseccion = codigoseccion + '/';
+	} 
 	
 	
-	//Mostra el selector editorials
-	window.onpageshow=function() {
+	
+	var xhr;
+	if (window.XMLHttpRequest) {
+		xhr = new XMLHttpRequest();
+	} else {
+		xhr = new ActiveXObject("Microsoft.XMLHTTP");
+	}
+
+		xhr.onreadystatechange = function() {
+			if (xhr.readyState == 4 && xhr.status == 200) {
+				var arrSecciones = JSON.parse(xhr.responseText);
+				console.log(arrSecciones.records);
+				for (var i = 0; i < arrSecciones.records.length; i++) {
+					console.log(arrSecciones.records[i].nombre);
+					document.getElementById("secciones").innerHTML += '<option id="'+ arrSecciones.records[i].id +'" value="' + arrSecciones.records[i].nombre + '">'+ arrSecciones.records[i].nombre +'</option>';
+		
+				}
+				getEditoriales();
+			}
+			
+			//getEditoriales();
+			
+		}
+		//getEditoriales();
+		var url = 'http://app.cifo.local/api/public/biblioteca/secciones/'+codigoseccion+'?nocache='+Math.random();
+		console.log(url);
+	
+	xhr.open('GET', 'http://app.cifo.local/api/public/biblioteca/secciones/'+codigoseccion+'?nocache='+Math.random(), true);
+	xhr.send();
+}
+
+
+function getEditoriales(codigoeditorial) {
+	 if (codigoeditorial == undefined) {
+		codigoeditorial = "";
+	
+	
+	if (codigoeditorial != "") {
+		codigoeditorial += '/';
+	}  
 		document.getElementById("editoriales").innerHTML = '<option value="0">-- Escoja un tema --</option>';
 	var xhr;
 if (window.XMLHttpRequest) {
@@ -297,6 +303,7 @@ if (window.XMLHttpRequest) {
 	xhr.onreadystatechange = function() {
 		if (xhr.readyState == 4 && xhr.status == 200) {
 			var arrEditoriales = JSON.parse(xhr.responseText);
+			console.log("console.log(arrEditoriales.records)");
 			console.log(arrEditoriales.records);
 			for (var i = 0; i < arrEditoriales.records.length; i++) {
 				console.log(arrEditoriales.records[i].nombre);
@@ -305,146 +312,316 @@ if (window.XMLHttpRequest) {
 			}
 		}
 	}
-	xhr.open('GET', 'http://app.cifo.local/api/public/biblioteca/editoriales/?nocache='+Math.random(), true);
+	xhr.open('GET', 'http://app.cifo.local/api/public/biblioteca/editoriales/'+codigoeditorial+'?nocache='+Math.random(), true);
 	xhr.send();
 	
-	}
-	
-	
-	var temasactivado = false;
-	var editorialesactivado = false;
-	
-	document.getElementById("temas").onfocus = function() {
-		temasactivado = true;
-		editorialesactivado = false;
-	}
-	
-	document.getElementById("editoriales").onfocus = function() {
-		editorialesactivado = true;
-		temasactivado = false;
-		
-	}
-	
-	
+}
+}
 
-	function filtrar() {
+//Mostra el segon selector quan seleccionem el primer 
+document.getElementById("secciones").onchange = function() {
+	document.getElementById("temas").innerHTML = '<option value="0">-- Escoja un tema --</option>';
 		
 		
-		if (temasactivado == true) {
-	
-	document.getElementById("tbllibros").innerHTML = "";
-	//var codiseccio = document.getElementById("secciones").selectedIndex;
-	var posicioseleccionada = document.getElementById("temas").selectedIndex;
-	console.log(posicioseleccionada);
-	var coditema
-	for (i=0; i<document.getElementById("temas").options.length; i++) {
-		if (i==posicioseleccionada) {
-			coditema = document.getElementById("temas").options[i].id;
-		console.log(coditema);	
-		}
-	}
-	 if (window.XMLHttpRequest) {
-		xhr = new XMLHttpRequest();
-	} else {
-		xhr = new ActiveXObject("Microsoft.XMLHTTP");
-	}
-
-		xhr.onreadystatechange = function() {
-			if (xhr.readyState == 4 && xhr.status == 200) {
-				var arrLibros = JSON.parse(xhr.responseText);
-				console.log(arrLibros);
-				window.sessionStorage.setItem("seleccionactual",JSON.stringify(arrLibros.records));
-				for (var i = 0; i < arrLibros.records.length; i++) {
-					console.log(arrLibros.records[i]);
-					//console.log(arrLibros.records[i].id);
-					//console.log(arrLibros.records[i].nombre);
-					//console.log(arrLibros.records[i].duracion);
-					//document.getElementById("tblAreas").innerHTML += '<option id="'+ arrAreas[i].id +'" value="' + arrAreas[i].nombre + '">'+ arrAreas[i].nombre +'</option>';
-					 //   <th>Isbn</th>
-   //   <th>Cubierta</th>
-    //  <th>Título</th> <!--  style="width: 30%" -->
-     // <th>Editorial</th>
-      //<th>Sección</th>
-       // <th>Tema</th> 
-					var cadena='<tr>'+
-					'<td>'+arrLibros.records[i].isbn+'</td>'+
-					'<td><img src="'+arrLibros.records[i].cubierta+'" height="100px"></td>'+
-				//	'<td>Aquí va la cubierta</td>'+
-					'<td>'+arrLibros.records[i].titulo+'</td>'+
-					'<td>'+arrLibros.records[i].editorial+'</td>'+
-					'<td>'+arrLibros.records[i].seccion+'</td>'+
-					'<td>'+arrLibros.records[i].tema+'</td>'+
-				//	'<td><a href="javascript:void(0)" onclick="getCurs('+arrCursos[i].id+')" data-toggle="modal" data-target=".bd-example-modal-sm">[+info...]</a></td>'+
-					'</tr>';
-					document.getElementById('tbllibros').innerHTML+=cadena;
-					
-					
-				}
-			}
-			
-			
-		}
-		xhr.open('GET', 'http://app.cifo.local/api/public/biblioteca/libros/tema/'+ coditema +'/&nocache=' +Math.random(), true);
-		xhr.send();  
+	//	document.getElementById("tblMunicipios").innerHTML = '<option value="">-- Escull un municipi --</option>'
 		
-	
-	}
+		var seccioseleccionada = document.getElementById("secciones").selectedIndex;
+		var codiseccio = document.getElementById("secciones").options[seccioseleccionada].id;
+		console.log(codiseccio);
 		
-	 else {
-		
-		
-		
-		document.getElementById("tbllibros").innerHTML = "";
-		
-		var posicioseleccionada = document.getElementById("editoriales").selectedIndex;
-		console.log(posicioseleccionada);
-		var codieditorial
-		for (i=0; i<document.getElementById("editoriales").options.length; i++) {
-			if (i==posicioseleccionada) {
-				codieditorial = document.getElementById("editoriales").options[i].id;
-			console.log(codieditorial);	
-			}
-		}
-		 if (window.XMLHttpRequest) {
+		if (window.XMLHttpRequest) {
 			xhr = new XMLHttpRequest();
 		} else {
 			xhr = new ActiveXObject("Microsoft.XMLHTTP");
 		}
-
+		
 			xhr.onreadystatechange = function() {
 				if (xhr.readyState == 4 && xhr.status == 200) {
-					var arrLibros = JSON.parse(xhr.responseText);
-					console.log("hola");
-					console.log(arrLibros);
-					window.sessionStorage.setItem("seleccionactual",JSON.stringify(arrLibros.records));
-					for (var i = 0; i < arrLibros.records.length; i++) {
-						console.log(arrLibros.records[i]);
-						var cadena='<tr>'+
-						'<td>'+arrLibros.records[i].isbn+'</td>'+
-						'<td><img src="'+arrLibros.records[i].cubierta+'" height="100px"></td>'+
-					//	'<td>Aquí va la cubierta</td>'+
-						'<td>'+arrLibros.records[i].titulo+'</td>'+
-						'<td>'+arrLibros.records[i].editorial+'</td>'+
-						'<td>'+arrLibros.records[i].seccion+'</td>'+
-						'<td>'+arrLibros.records[i].tema+'</td>'+
-					//	'<td><a href="javascript:void(0)" onclick="getCurs('+arrCursos[i].id+')" data-toggle="modal" data-target=".bd-example-modal-sm">[+info...]</a></td>'+
-						'</tr>';
-						document.getElementById('tbllibros').innerHTML+=cadena;
-						
-						
+					var arrTemas = JSON.parse(xhr.responseText);
+					console.log(arrTemas);
+					for (var i = 0; i < arrTemas.records.length; i++) {
+						console.log(arrTemas.records[i].nombre);
+						document.getElementById("temas").innerHTML += '<option id="'+ arrTemas.records[i].id +'" value="' + arrTemas.records[i].nombre + '">'+ arrTemas.records[i].nombre +'</option>';
 					}
 				}
-				
-				
 			}
-			xhr.open('GET', 'http://app.cifo.local/api/public/biblioteca/libros/editorial/'+ codieditorial +'/&nocache=' +Math.random(), true);
-			xhr.send();  
-		
-			
-	}
-		
-	}
+			xhr.open('GET', 'http://app.cifo.local/api/public/biblioteca/temas/seccion/'+ codiseccio +'/&nocache=' +Math.random(), true);
+			xhr.send();
 	
+}
+
+
+function filtrar() {
+	 <!--  codigoseccion, codigotema, codigoeditorial -->
+	 
+	
+	// codigoseccion = 
+	 var posicionseccion = document.getElementById("secciones").selectedIndex;
+	 var posiciontema = document.getElementById("temas").selectedIndex;
+	 var posicioneditorial = document.getElementById("editoriales").selectedIndex;
+	 for (i=0; i<document.getElementById("secciones").options.length; i++) {
+		 if (i==posicionseccion) {
+			 
+		 }
+	 }
+	 
+}
+	
+
+	/* //Mostra la taula sencera en carregar la pagina
+	 window.onload=function() {
+	 var xhr;
+	 if (window.XMLHttpRequest) {
+	 xhr = new XMLHttpRequest();
+	 } else {
+	 xhr = new ActiveXObject("Microsoft.XMLHTTP");
+	 }
+
+	 xhr.onreadystatechange = function() {
+	 if (xhr.readyState == 4 && xhr.status == 200) {
+	 var arrLibros = JSON.parse(xhr.responseText);
+	 console.log(arrLibros.records);
+	 window.sessionStorage.setItem("seleccionactual",JSON.stringify(arrLibros.records));
+	 for (var i = 0; i < arrLibros.records.length; i++) {
+	 //console.log(arrLibros.records[i].nombre);
+	 var cadena='<tr>'+
+	 '<td>'+arrLibros.records[i].isbn+'</td>'+
+	 '<td><img src="'+arrLibros.records[i].cubierta+'" height="100px"></td>'+
+	 //	'<td>Aquí va la cubierta</td>'+
+	 '<td>'+arrLibros.records[i].titulo+'</td>'+
+	 '<td>'+arrLibros.records[i].editorial+'</td>'+
+	 '<td>'+arrLibros.records[i].seccion+'</td>'+
+	 '<td>'+arrLibros.records[i].tema+'</td>'+
+	 //	'<td><a href="javascript:void(0)" onclick="getCurs('+arrCursos[i].id+')" data-toggle="modal" data-target=".bd-example-modal-sm">[+info...]</a></td>'+
+	 '</tr>';
+	 document.getElementById('tbllibros').innerHTML+=cadena;			
+	 }
+	 }
+	 }
+	
+	 xhr.open('GET', 'http://app.cifo.local/api/public/biblioteca/libros/?nocache='+Math.random(), true);
+	 xhr.send(); 
+	 }	
+
+	 //Mostra el primer selector
+	 var xhr;
+	 if (window.XMLHttpRequest) {
+	 xhr = new XMLHttpRequest();
+	 } else {
+	 xhr = new ActiveXObject("Microsoft.XMLHTTP");
+	 }
+
+	 xhr.onreadystatechange = function() {
+	 if (xhr.readyState == 4 && xhr.status == 200) {
+	 var arrSecciones = JSON.parse(xhr.responseText);
+	 console.log(arrSecciones.records);
+	 for (var i = 0; i < arrSecciones.records.length; i++) {
+	 console.log(arrSecciones.records[i].nombre);
+	 document.getElementById("secciones").innerHTML += '<option id="'+ arrSecciones.records[i].id +'" value="' + arrSecciones.records[i].nombre + '">'+ arrSecciones.records[i].nombre +'</option>';
+	
+	 }
+	 }
+	 }
+	 xhr.open('GET', 'http://app.cifo.local/api/public/biblioteca/secciones/?nocache='+Math.random(), true);
+	 xhr.send();
+
+	
+	
+	
+	 //Mostra el segon selector quan seleccionem el primer 
+	 document.getElementById("secciones").onchange = function() {
+	 document.getElementById("temas").innerHTML = '<option value="0">-- Escoja un tema --</option>';
+	
+	
+	 //	document.getElementById("tblMunicipios").innerHTML = '<option value="">-- Escull un municipi --</option>'
+	
+	 var seccioseleccionada = document.getElementById("secciones").selectedIndex;
+	 var codiseccio = document.getElementById("secciones").options[seccioseleccionada].id;
+	 console.log(codiseccio);
+	
+	 if (window.XMLHttpRequest) {
+	 xhr = new XMLHttpRequest();
+	 } else {
+	 xhr = new ActiveXObject("Microsoft.XMLHTTP");
+	 }
+	
+	 xhr.onreadystatechange = function() {
+	 if (xhr.readyState == 4 && xhr.status == 200) {
+	 var arrTemas = JSON.parse(xhr.responseText);
+	 console.log(arrTemas);
+	 for (var i = 0; i < arrTemas.records.length; i++) {
+	 console.log(arrTemas.records[i].nombre);
+	 document.getElementById("temas").innerHTML += '<option id="'+ arrTemas.records[i].id +'" value="' + arrTemas.records[i].nombre + '">'+ arrTemas.records[i].nombre +'</option>';
+	 }
+	 }
+	 }
+	 xhr.open('GET', 'http://app.cifo.local/api/public/biblioteca/temas/seccion/'+ codiseccio +'/&nocache=' +Math.random(), true);
+	 xhr.send();
+	
+	 }
+	
+	
+	 //Mostra el selector editorials
+	 window.onpageshow=function() {
+	 document.getElementById("editoriales").innerHTML = '<option value="0">-- Escoja un tema --</option>';
+	 var xhr;
+	 if (window.XMLHttpRequest) {
+	 xhr = new XMLHttpRequest();
+	 } else {
+	 xhr = new ActiveXObject("Microsoft.XMLHTTP");
+	 }
+
+	 xhr.onreadystatechange = function() {
+	 if (xhr.readyState == 4 && xhr.status == 200) {
+	 var arrEditoriales = JSON.parse(xhr.responseText);
+	 console.log(arrEditoriales.records);
+	 for (var i = 0; i < arrEditoriales.records.length; i++) {
+	 console.log(arrEditoriales.records[i].nombre);
+	 document.getElementById("editoriales").innerHTML += '<option id="'+ arrEditoriales.records[i].id +'" value="' + arrEditoriales.records[i].nombre + '">'+ arrEditoriales.records[i].nombre +'</option>';
+	
+	 }
+	 }
+	 }
+	 xhr.open('GET', 'http://app.cifo.local/api/public/biblioteca/editoriales/?nocache='+Math.random(), true);
+	 xhr.send();
+	
+	 }
+	
+	
+	 var temasactivado = false;
+	 var editorialesactivado = false;
+	
+	 document.getElementById("temas").onfocus = function() {
+	 temasactivado = true;
+	 editorialesactivado = false;
+	 }
+	
+	 document.getElementById("editoriales").onfocus = function() {
+	 editorialesactivado = true;
+	 temasactivado = false;
+	
+	 }
+	
+	
+
+	 function filtrar() {
+	
+	
+	 if (temasactivado == true) {
+	
+	 document.getElementById("tbllibros").innerHTML = "";
+	 //var codiseccio = document.getElementById("secciones").selectedIndex;
+	 var posicioseleccionada = document.getElementById("temas").selectedIndex;
+	 console.log(posicioseleccionada);
+	 var coditema
+	 for (i=0; i<document.getElementById("temas").options.length; i++) {
+	 if (i==posicioseleccionada) {
+	 coditema = document.getElementById("temas").options[i].id;
+	 console.log(coditema);	
+	 }
+	 }
+	 if (window.XMLHttpRequest) {
+	 xhr = new XMLHttpRequest();
+	 } else {
+	 xhr = new ActiveXObject("Microsoft.XMLHTTP");
+	 }
+
+	 xhr.onreadystatechange = function() {
+	 if (xhr.readyState == 4 && xhr.status == 200) {
+	 var arrLibros = JSON.parse(xhr.responseText);
+	 console.log(arrLibros);
+	 window.sessionStorage.setItem("seleccionactual",JSON.stringify(arrLibros.records));
+	 for (var i = 0; i < arrLibros.records.length; i++) {
+	 console.log(arrLibros.records[i]);
+	 //console.log(arrLibros.records[i].id);
+	 //console.log(arrLibros.records[i].nombre);
+	 //console.log(arrLibros.records[i].duracion);
+	 //document.getElementById("tblAreas").innerHTML += '<option id="'+ arrAreas[i].id +'" value="' + arrAreas[i].nombre + '">'+ arrAreas[i].nombre +'</option>';
+	 //   <th>Isbn</th>
+	 //   <th>Cubierta</th>
+	 //  <th>Título</th> <!--  style="width: 30%" -->
+	 // <th>Editorial</th>
+	 //<th>Sección</th>
+	 // <th>Tema</th> 
+	 var cadena='<tr>'+
+	 '<td>'+arrLibros.records[i].isbn+'</td>'+
+	 '<td><img src="'+arrLibros.records[i].cubierta+'" height="100px"></td>'+
+	 //	'<td>Aquí va la cubierta</td>'+
+	 '<td>'+arrLibros.records[i].titulo+'</td>'+
+	 '<td>'+arrLibros.records[i].editorial+'</td>'+
+	 '<td>'+arrLibros.records[i].seccion+'</td>'+
+	 '<td>'+arrLibros.records[i].tema+'</td>'+
+	 //	'<td><a href="javascript:void(0)" onclick="getCurs('+arrCursos[i].id+')" data-toggle="modal" data-target=".bd-example-modal-sm">[+info...]</a></td>'+
+	 '</tr>';
+	 document.getElementById('tbllibros').innerHTML+=cadena;
+	
+	
+	 }
+	 }
+	
+	
+	 }
+	 xhr.open('GET', 'http://app.cifo.local/api/public/biblioteca/libros/tema/'+ coditema +'/&nocache=' +Math.random(), true);
+	 xhr.send();  
+	
+	
+	 }
+	
+	 else {
+	
+	
+	
+	 document.getElementById("tbllibros").innerHTML = "";
+	
+	 var posicioseleccionada = document.getElementById("editoriales").selectedIndex;
+	 console.log(posicioseleccionada);
+	 var codieditorial
+	 for (i=0; i<document.getElementById("editoriales").options.length; i++) {
+	 if (i==posicioseleccionada) {
+	 codieditorial = document.getElementById("editoriales").options[i].id;
+	 console.log(codieditorial);	
+	 }
+	 }
+	 if (window.XMLHttpRequest) {
+	 xhr = new XMLHttpRequest();
+	 } else {
+	 xhr = new ActiveXObject("Microsoft.XMLHTTP");
+	 }
+
+	 xhr.onreadystatechange = function() {
+	 if (xhr.readyState == 4 && xhr.status == 200) {
+	 var arrLibros = JSON.parse(xhr.responseText);
+	 console.log("hola");
+	 console.log(arrLibros);
+	 window.sessionStorage.setItem("seleccionactual",JSON.stringify(arrLibros.records));
+	 for (var i = 0; i < arrLibros.records.length; i++) {
+	 console.log(arrLibros.records[i]);
+	 var cadena='<tr>'+
+	 '<td>'+arrLibros.records[i].isbn+'</td>'+
+	 '<td><img src="'+arrLibros.records[i].cubierta+'" height="100px"></td>'+
+	 //	'<td>Aquí va la cubierta</td>'+
+	 '<td>'+arrLibros.records[i].titulo+'</td>'+
+	 '<td>'+arrLibros.records[i].editorial+'</td>'+
+	 '<td>'+arrLibros.records[i].seccion+'</td>'+
+	 '<td>'+arrLibros.records[i].tema+'</td>'+
+	 //	'<td><a href="javascript:void(0)" onclick="getCurs('+arrCursos[i].id+')" data-toggle="modal" data-target=".bd-example-modal-sm">[+info...]</a></td>'+
+	 '</tr>';
+	 document.getElementById('tbllibros').innerHTML+=cadena;
+	
+	
+	 }
+	 }
+	
+	
+	 }
+	 xhr.open('GET', 'http://app.cifo.local/api/public/biblioteca/libros/editorial/'+ codieditorial +'/&nocache=' +Math.random(), true);
+	 xhr.send();  
+	
+	
+	 }
+	
+	 } */
+
 	/* function borrar(){
 		document.getElementById('tbllibros').innerHTML="";
 	} */
