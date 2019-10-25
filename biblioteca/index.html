@@ -102,7 +102,7 @@
       <option value="0">-- Escoja un tema --</option>
     </select>
     <div class="d-flex justify-content-center">
-    <button type="button" class="btn btn-danger" id="borrar" onclick="borrar()">Borrar</button>
+    <button type="button" class="btn btn-danger" id="borrar" onclick="location.reload()">Borrar</button>
     <button type="button" class="btn btn-info" id="filtrar" onclick="filtrar()">Filtrar</button>
     </div>
   </div>
@@ -200,6 +200,7 @@ xhr.onreadystatechange = function() {
 		if (xhr.readyState == 4 && xhr.status == 200) {
 			var arrLibros = JSON.parse(xhr.responseText);
 			console.log(arrLibros.records);
+			window.sessionStorage.setItem("seleccionactual",JSON.stringify(arrLibros.records));
 			for (var i = 0; i < arrLibros.records.length; i++) {
 				//console.log(arrLibros.records[i].nombre);
 				var cadena='<tr>'+
@@ -325,7 +326,9 @@ if (window.XMLHttpRequest) {
 	}
 	
 	
+
 	function filtrar() {
+		
 		
 		if (temasactivado == true) {
 	
@@ -350,6 +353,7 @@ if (window.XMLHttpRequest) {
 			if (xhr.readyState == 4 && xhr.status == 200) {
 				var arrLibros = JSON.parse(xhr.responseText);
 				console.log(arrLibros);
+				window.sessionStorage.setItem("seleccionactual",JSON.stringify(arrLibros.records));
 				for (var i = 0; i < arrLibros.records.length; i++) {
 					console.log(arrLibros.records[i]);
 					//console.log(arrLibros.records[i].id);
@@ -382,6 +386,8 @@ if (window.XMLHttpRequest) {
 		}
 		xhr.open('GET', 'http://app.cifo.local/api/public/biblioteca/libros/tema/'+ coditema +'/&nocache=' +Math.random(), true);
 		xhr.send();  
+		
+	
 	}
 		
 	 else {
@@ -410,6 +416,7 @@ if (window.XMLHttpRequest) {
 					var arrLibros = JSON.parse(xhr.responseText);
 					console.log("hola");
 					console.log(arrLibros);
+					window.sessionStorage.setItem("seleccionactual",JSON.stringify(arrLibros.records));
 					for (var i = 0; i < arrLibros.records.length; i++) {
 						console.log(arrLibros.records[i]);
 						var cadena='<tr>'+
@@ -433,8 +440,14 @@ if (window.XMLHttpRequest) {
 			xhr.open('GET', 'http://app.cifo.local/api/public/biblioteca/libros/editorial/'+ codieditorial +'/&nocache=' +Math.random(), true);
 			xhr.send();  
 		
+			
 	}
+		
 	}
+	
+	/* function borrar(){
+		document.getElementById('tbllibros').innerHTML="";
+	} */
 </script>
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
