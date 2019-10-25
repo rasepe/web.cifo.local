@@ -222,7 +222,7 @@ function getLibros(codigoseccion, codigotema, codigoeditorial) {
 					'</tr>';
 					document.getElementById('tbllibros').innerHTML+=cadena;			
 				}
-				getSecciones();
+				//getSecciones();
 			}
 			
 			
@@ -241,15 +241,15 @@ function getLibros(codigoseccion, codigotema, codigoeditorial) {
 	xhr.send();
 }
 
-function getSecciones(codigoseccion) {
+window.onpageshow=function()  {
 	
-	if (codigoseccion == undefined) {
+/* 	if (codigoseccion == undefined) {
 		codigoseccion = "";
 	} 
 	
 	if (codigoseccion != "") {
 		codigoseccion = codigoseccion + '/';
-	} 
+	}  */
 	
 	
 	
@@ -276,11 +276,14 @@ function getSecciones(codigoseccion) {
 			
 		}
 		//getEditoriales();
-		var url = 'http://app.cifo.local/api/public/biblioteca/secciones/'+codigoseccion+'?nocache='+Math.random();
+	/* 	var url = 'http://app.cifo.local/api/public/biblioteca/secciones/'+codigoseccion+'?nocache='+Math.random();
 		console.log(url);
 	
 	xhr.open('GET', 'http://app.cifo.local/api/public/biblioteca/secciones/'+codigoseccion+'?nocache='+Math.random(), true);
-	xhr.send();
+	xhr.send(); */
+	
+		xhr.open('GET', 'http://app.cifo.local/api/public/biblioteca/secciones/?nocache='+Math.random(), true);
+		xhr.send(); 
 }
 
 
@@ -359,12 +362,27 @@ function filtrar() {
 	 var posicionseccion = document.getElementById("secciones").selectedIndex;
 	 var posiciontema = document.getElementById("temas").selectedIndex;
 	 var posicioneditorial = document.getElementById("editoriales").selectedIndex;
+	 var codigoseccion; 
+	 var codigotema; 
+	 var codigoeditorial;
 	 for (i=0; i<document.getElementById("secciones").options.length; i++) {
 		 if (i==posicionseccion) {
-			 
+			 codigoseccion = document.getElementById("secciones").options[i].id;
+		 }
+	 }
+	 for (i=0; i<document.getElementById("temas").options.length; i++) {
+		 if (i==posiciontema) {
+			 codigotema = document.getElementById("temas").options[i].id;
+		 }
+	 }
+	 for (i=0; i<document.getElementById("editoriales").options.length; i++) {
+		 if (i==posicioneditorial) {
+			 codigoeditorial = document.getElementById("editoriales").options[i].id;
 		 }
 	 }
 	 
+	 getLibros(codigoseccion, codigotema, codigoeditorial);
+	 console.log("getLibros("+codigoseccion+","+codigotema+","+codigoeditorial+")");
 }
 	
 
