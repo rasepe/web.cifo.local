@@ -207,7 +207,7 @@ function getLibros(codigoseccion, codigotema, codigoeditorial) {
 			if (xhr.readyState == 4 && xhr.status == 200) {
 				var arrLibros = JSON.parse(xhr.responseText);
 				console.log(arrLibros.records);
-				window.sessionStorage.setItem("seleccionactual",JSON.stringify(arrLibros.records));
+				//window.sessionStorage.setItem("seleccionactual",JSON.stringify(arrLibros.records));
 				for (var i = 0; i < arrLibros.records.length; i++) {
 					//console.log(arrLibros.records[i].nombre);
 					var cadena='<tr>'+
@@ -236,9 +236,11 @@ function getLibros(codigoseccion, codigotema, codigoeditorial) {
 	if (codigoeditorial != "") {
 		codigoeditorial = codigoeditorial + '/'
 	} 
-	
+	var url = 'http://app.cifo.local/api/public/biblioteca/libros/seccion/'+codigoseccion+'tema/'+codigotema+'editorial/'+codigoeditorial+'?nocache='+Math.random() ;
+	console.log(url);
 	xhr.open('GET', 'http://app.cifo.local/api/public/biblioteca/libros/seccion/'+codigoseccion+'tema/'+codigotema+'editorial/'+codigoeditorial+'?nocache='+Math.random(), true);
 	xhr.send();
+	return url;
 }
 
 window.onpageshow=function()  {
@@ -381,8 +383,50 @@ function filtrar() {
 		 }
 	 }
 	 
-	 getLibros(codigoseccion, codigotema, codigoeditorial);
+	 var urldemanada = getLibros(codigoseccion, codigotema, codigoeditorial);
 	 console.log("getLibros("+codigoseccion+","+codigotema+","+codigoeditorial+")");
+	 console.log(urldemanada);
+	 
+	 //neteja primer la tabla
+	 document.getElementById('tbllibros').innerHTML = '';
+	 
+	 var xhr;
+		if (window.XMLHttpRequest) {
+			xhr = new XMLHttpRequest();
+		} else {
+			xhr = new ActiveXObject("Microsoft.XMLHTTP");
+		}
+		xhr.onreadystatechange = function() {
+				if (xhr.readyState == 4 && xhr.status == 200) {
+					var arrLibros = JSON.parse(xhr.responseText);
+					console.log(arrLibros.records);
+					//window.sessionStorage.setItem("seleccionactual",JSON.stringify(arrLibros.records));
+					for (var i = 0; i < arrLibros.records.length; i++) {
+						//console.log(arrLibros.records[i].nombre);
+						var cadena='<tr>'+
+						'<td>'+arrLibros.records[i].isbn+'</td>'+
+						'<td><img src="'+arrLibros.records[i].cubierta+'" height="100px"></td>'+
+					//	'<td>Aquí va la cubierta</td>'+
+						'<td>'+arrLibros.records[i].titulo+'</td>'+
+						'<td>'+arrLibros.records[i].editorial+'</td>'+
+						'<td>'+arrLibros.records[i].seccion+'</td>'+
+						'<td>'+arrLibros.records[i].tema+'</td>'+
+					//	'<td><a href="javascript:void(0)" onclick="getCurs('+arrCursos[i].id+')" data-toggle="modal" data-target=".bd-example-modal-sm">[+info...]</a></td>'+
+						'</tr>';
+						document.getElementById('tbllibros').innerHTML+=cadena;			
+					}
+					//getSecciones();
+				}
+				
+				
+		}
+		
+		
+		xhr.open('GET', url, true);
+		xhr.send();
+	
+	 
+	 
 }
 	
 
