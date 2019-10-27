@@ -11,10 +11,14 @@
  	<link href="/your-path-to-fontawesome/css/brands.css" rel="stylesheet">
  	<link href="/your-path-to-fontawesome/css/solid.css" rel="stylesheet">  -->
  	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
- 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
- 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
-  
-<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+ 		<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.20/datatables.min.css"/>
+ 
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.20/datatables.min.js"></script>
+
  	
 	<title>Biblioteca</title>
 	<link rel="stylesheet" href="/css/style.css">
@@ -64,7 +68,7 @@
 	 			<ol class="breadcrumb m-0 mt-3 bg-transparent p-0">
 	 		 		<li><i class="fa fa-home text-info"></i></li>
 	 		 		<li class="breadcrumb-item text-info pl-2"><a href="/index.html">Inicio</a></li>
-	    			<li class="breadcrumb-item active " aria-current="page">Centros</li>
+	    			<li class="breadcrumb-item active " aria-current="page">Biblioteca</li>
 	  		 	</ol>
 			</nav>
 		</div>
@@ -90,15 +94,15 @@
 		
 		  <div id="selectores" class="col-3">
     <p>Secciones</p>
-    <select id="secciones">
+    <select id="secciones" class="form-control">
       <option value="0">-- Escoja una sección --</option>
     </select>
      <p>Temas</p>
-    <select id="temas">
+    <select id="temas" class="form-control">
       <option value="0">-- Escoja un tema --</option>
     </select>
         <p>Editoriales</p>
-    <select id="editoriales">
+    <select id="editoriales" class="form-control">
       <option value="0">-- Escoja una editorial --</option>
     </select>
     <div class="d-flex justify-content-center">
@@ -107,7 +111,9 @@
     </div>
   </div>
   <div class="col-8">
-    <table class="display" id="libros">
+ 
+    <table id="libros" class="display">
+    
       <thead>
         <tr>
           <th>Isbn</th>
@@ -125,6 +131,27 @@
 	
 		</div><!-- row -->
 	</div>	<!-- container -->
+	
+	<!-- modal -->
+	
+	 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="myModalTitle"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" >
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+       <!--  <button type="button" class="btn btn-primary">Save changes</button> -->
+      </div>
+    </div>
+  </div>
+</div> 
 	
 <!-- Creación del footer ---------------------------------------------------------------------->	
 			<!-- ---------------redes sociales----------------------------------- -->
@@ -183,9 +210,67 @@
 		<div class="d-flex justify-content-center class text-center py-3 ">Copyright © Cifo 2018 </div>
      </footer>
 <script>
-$(document).ready( function () {
-    $('#libros').DataTable();
+
+
+$(document).ready(function() {
+	  $('#libros').dataTable( {
+		//  "lengthMenu": [ 5, 25, 50, 75, 100 ],
+		   "language": {
+		    "sProcessing":     "Procesando...",
+		                "sLengthMenu":     "Mostrar _MENU_ registros",
+		                "sZeroRecords":    "No se encontraron resultados",
+		                "sEmptyTable":     "Ningún dato disponible en esta tabla =(",
+		                "sInfo":           "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+		                "sInfoEmpty":      "Mostrando registros del 0 al 0 de un total de 0 registros",
+		                "sInfoFiltered":   "(filtrado de un total de _MAX_ registros)",
+		                "sInfoPostFix":    "",
+		                "sSearch":         "Buscar:",
+		                "sUrl":            "",
+		                "sInfoThousands":  ",",
+		                "sLoadingRecords": "Cargando...",
+		                "oPaginate": {
+		                    "sFirst":    "Primero",
+		                    "sLast":     "Último",
+		                    "sNext":     "Siguiente",
+		                    "sPrevious": "Anterior"
+		                },
+		                "oAria": {
+		                    "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
+		                    "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+		                },
+		                "buttons": {
+		                    "copy": "Copiar",
+		                    "colvis": "Visibilidad"
+		                }
+		}
+
+		} );
+
 } );
+
+
+
+/* $(document).ready(function() {
+    $('#libros').DataTable( 
+ /*    		{
+        "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+    "language": {
+        "lengthMenu": "Mostrar _MENU_ registros",
+    "search":         "Buscar:",
+       "info": "Mostrando _START_ a _END_ de un total de _TOTAL_ entradas",
+     "paginate": {
+           "first":      "Primero",
+           "last":       "Último",
+           "next":       "Siguiente",
+           "previous":   "Anterior"
+       },
+   "infoPostFix": "Lista de Libros"
+     }   
+    }  */
+/*     		);
+} ); */ 
+
+
 
 //En carregar la pàgina, carrega els llibres, les seccions i les editorials
 
@@ -211,14 +296,14 @@ function getLibros(codigoseccion, codigotema, codigoeditorial) {
 				for (var i = 0; i < arrLibros.records.length; i++) {
 					//console.log(arrLibros.records[i].nombre);
 					var cadena='<tr>'+
-					'<td>'+arrLibros.records[i].isbn+'</td>'+
+					'<td><a href="javascript:void(0)" onclick="getLibro('+arrLibros.records[i].id+')" data-toggle="modal" data-target=".bd-example-modal-sm">'+arrLibros.records[i].isbn+'</a></td>'+
 					'<td><img src="'+arrLibros.records[i].cubierta+'" height="100px"></td>'+
 				//	'<td>Aquí va la cubierta</td>'+
 					'<td>'+arrLibros.records[i].titulo+'</td>'+
 					'<td>'+arrLibros.records[i].editorial+'</td>'+
 					'<td>'+arrLibros.records[i].seccion+'</td>'+
 					'<td>'+arrLibros.records[i].tema+'</td>'+
-				//	'<td><a href="javascript:void(0)" onclick="getCurs('+arrCursos[i].id+')" data-toggle="modal" data-target=".bd-example-modal-sm">[+info...]</a></td>'+
+				//	'<td><a href="javascript:void(0)" onclick="getCurs('+arrLibros.records[i].id+')" data-toggle="modal" data-target=".bd-example-modal-sm">[+info...]</a></td>'+
 					'</tr>';
 					document.getElementById('tbllibros').innerHTML+=cadena;			
 				}
@@ -297,7 +382,7 @@ function getEditoriales(codigoeditorial) {
 	if (codigoeditorial != "") {
 		codigoeditorial += '/';
 	}  
-		document.getElementById("editoriales").innerHTML = '<option value="0">-- Escoja un tema --</option>';
+		//document.getElementById("editoriales").innerHTML = '<option value="0">-- Escoja una editorial --</option>';
 	var xhr;
 if (window.XMLHttpRequest) {
 	xhr = new XMLHttpRequest();
@@ -383,10 +468,11 @@ function filtrar() {
 		 }
 	 }
 	 
-	 var urldemanada = getLibros(codigoseccion, codigotema, codigoeditorial);
-	 console.log("getLibros("+codigoseccion+","+codigotema+","+codigoeditorial+")");
-	 console.log(urldemanada);
-	 
+	var urldemanada = getLibros(codigoseccion, codigotema, codigoeditorial); // var urldemanada = 
+	// console.log("getLibros("+codigoseccion+","+codigotema+","+codigoeditorial+")");
+	// console.log("urldemanada");
+	// console.log(urldemanada);
+	
 	 //neteja primer la tabla
 	 document.getElementById('tbllibros').innerHTML = '';
 	 
@@ -404,14 +490,15 @@ function filtrar() {
 					for (var i = 0; i < arrLibros.records.length; i++) {
 						//console.log(arrLibros.records[i].nombre);
 						var cadena='<tr>'+
-						'<td>'+arrLibros.records[i].isbn+'</td>'+
+						//'<td>'+arrLibros.records[i].isbn+'</td>'+
+						'<td><a href="javascript:void(0)" onclick="getLibro('+arrLibros.records[i].id+')" data-toggle="modal" data-target=".bd-example-modal-sm">'+arrLibros.records[i].isbn+'</a></td>'+
 						'<td><img src="'+arrLibros.records[i].cubierta+'" height="100px"></td>'+
 					//	'<td>Aquí va la cubierta</td>'+
 						'<td>'+arrLibros.records[i].titulo+'</td>'+
 						'<td>'+arrLibros.records[i].editorial+'</td>'+
 						'<td>'+arrLibros.records[i].seccion+'</td>'+
 						'<td>'+arrLibros.records[i].tema+'</td>'+
-					//	'<td><a href="javascript:void(0)" onclick="getCurs('+arrCursos[i].id+')" data-toggle="modal" data-target=".bd-example-modal-sm">[+info...]</a></td>'+
+					//	'<td><a href="javascript:void(0)" onclick="getCurs('+arrLibros.records[i].id+')" data-toggle="modal" data-target=".bd-example-modal-sm">[+info...]</a></td>'+
 						'</tr>';
 						document.getElementById('tbllibros').innerHTML+=cadena;			
 					}
@@ -422,14 +509,72 @@ function filtrar() {
 		}
 		
 		
-		xhr.open('GET', url, true);
-		xhr.send();
+		xhr.open('GET', url, true); //url
+		xhr.send(); 
 	
 	 
 	 
 }
-	
 
+function getLibro(id){
+	var xhr;
+	window.sessionStorage.setItem("id_libro",id);
+//	var id_areas = document.getElementById("tblAreas").value;
+	if (window.XMLHttpRequest) {
+			xhr = new XMLHttpRequest();
+		} else {
+			xhr = new ActiveXObject("Microsoft.XMLHTTP");
+		}
+	xhr.onreadystatechange = function() {
+		var id_libro = window.sessionStorage.getItem("id_libro");
+		if (xhr.readyState == 4 && xhr.status == 200) {
+			var arrLibro = JSON.parse(xhr.responseText);
+		//	console.log(arrCursos);
+		
+				
+					
+					var titolmodal = "Libro";
+					document.getElementById("myModalTitle").innerHTML = titolmodal;
+					var cadena1='<ul><li><strong>Isbn:</strong> '+arrLibro.record.isbn+'</li>'
+					+'<li><strong>Título:</strong> '+arrLibro.record.titulo+'</li>'
+					+'<li><strong>Subtitulo:</strong> '+arrLibro.record.subtitulo+'</li>'
+					+'<li><strong>Número de páginas:</strong> '+arrLibro.record.numero_paginas+'</li>'
+					+'<li><strong>Editorial:</strong> '+arrLibro.record.editorial.nombre+'</li>'
+					+'<li><strong>Año de publicación:</strong> '+arrLibro.record.anio_publicacion+'</li>'
+					+'<li><strong>Tema:</strong> '+arrLibro.record.tema.nombre+'</li>'
+					+'<li><strong>Sección:</strong> '+arrLibro.record.seccion.nombre+'</li>'
+					+'<li><strong>Nivel:</strong> '+arrLibro.record.nivel+'</li>'
+					+'<img src="'+arrLibro.record.cubierta+'" height="100px"></img>'
+					+'<li><strong>Descripción:</strong> '+arrLibro.record.descripcion+'</li></ul>';
+					
+					var cadena2='';
+					for (var j=0; j<arrLibro.record.autores.length; j++) {
+						
+						cadena2 += '<img src="'+arrLibro.record.autores[j].foto+'" height="100px"></img>'+
+						'<h5>'+arrLibro.record.autores[j].nombre+'&nbsp;'+arrLibro.record.autores[j].apellidos+'</h5>'+
+						'<p>'+arrLibro.record.autores[j].biografia+'</p>';
+					
+						
+					}
+					
+					
+					
+					var cadena = cadena1+cadena2;
+					document.querySelector("#myModal .modal-body").innerHTML = cadena;
+					$('#myModal').modal('show');
+				
+			
+		}
+	}
+	
+	var id_libro = window.sessionStorage.getItem("id_libro");
+	xhr.open('GET', 'http://app.cifo.local/api/public/biblioteca/libros/'+id_libro+'?nocache='+Math.random(), true);
+	//http://app.cifo.local/api/public/biblioteca/libros/2/
+	xhr.send();
+	//$('#myModal').modal();
+	//console.log(curs);
+
+}
 	/* //Mostra la taula sencera en carregar la pagina
 	 window.onload=function() {
 	 var xhr;
@@ -454,7 +599,7 @@ function filtrar() {
 	 '<td>'+arrLibros.records[i].editorial+'</td>'+
 	 '<td>'+arrLibros.records[i].seccion+'</td>'+
 	 '<td>'+arrLibros.records[i].tema+'</td>'+
-	 //	'<td><a href="javascript:void(0)" onclick="getCurs('+arrCursos[i].id+')" data-toggle="modal" data-target=".bd-example-modal-sm">[+info...]</a></td>'+
+	 //	'<td><a href="javascript:void(0)" onclick="getCurs('+arrLibros.records[i].id+')" data-toggle="modal" data-target=".bd-example-modal-sm">[+info...]</a></td>'+
 	 '</tr>';
 	 document.getElementById('tbllibros').innerHTML+=cadena;			
 	 }
@@ -613,7 +758,7 @@ function filtrar() {
 	 '<td>'+arrLibros.records[i].editorial+'</td>'+
 	 '<td>'+arrLibros.records[i].seccion+'</td>'+
 	 '<td>'+arrLibros.records[i].tema+'</td>'+
-	 //	'<td><a href="javascript:void(0)" onclick="getCurs('+arrCursos[i].id+')" data-toggle="modal" data-target=".bd-example-modal-sm">[+info...]</a></td>'+
+	 //	'<td><a href="javascript:void(0)" onclick="getCurs('+arrLibros.records[i].id+')" data-toggle="modal" data-target=".bd-example-modal-sm">[+info...]</a></td>'+
 	 '</tr>';
 	 document.getElementById('tbllibros').innerHTML+=cadena;
 	
@@ -666,7 +811,7 @@ function filtrar() {
 	 '<td>'+arrLibros.records[i].editorial+'</td>'+
 	 '<td>'+arrLibros.records[i].seccion+'</td>'+
 	 '<td>'+arrLibros.records[i].tema+'</td>'+
-	 //	'<td><a href="javascript:void(0)" onclick="getCurs('+arrCursos[i].id+')" data-toggle="modal" data-target=".bd-example-modal-sm">[+info...]</a></td>'+
+	 //	'<td><a href="javascript:void(0)" onclick="getCurs('+arrLibros.records[i].id+')" data-toggle="modal" data-target=".bd-example-modal-sm">[+info...]</a></td>'+
 	 '</tr>';
 	 document.getElementById('tbllibros').innerHTML+=cadena;
 	
