@@ -33,6 +33,10 @@
 	background-color: #01A5D5 !important;
 	color: white;
 	}
+	#imagencelda {
+  display: block;
+	}
+
 	</style>
 </head>
 <body>
@@ -617,7 +621,7 @@ function getLibro(id){
 					var titolmodal = "Libro";
 					document.getElementById("myModalTitle").innerHTML = titolmodal;
 					var cadena1='<table class="table d-inline-block w-100"><tbody>'
-					+'<tr><th>Isbn:</th><td>'+arrLibro.record.isbn+'</td><td rowspan="9"><img style="vertical-align: bottom !important;" width="100%" height="100%" src="'+arrLibro.record.cubierta+'" /></td></tr>'
+					+'<tr><th>Isbn:</th><td>'+arrLibro.record.isbn+'</td><td rowspan="9"><img id="imagencelda" src="'+arrLibro.record.cubierta+'"></td></tr>' // <td ... style="background-image: url("'+arrLibro.record.cubierta+'");">
 					+'<tr><th>Título:</th><td>'+arrLibro.record.titulo+'</td></tr>'
 					+'<tr><th>Subítulo:</th><td>'+arrLibro.record.subtitulo+'</td></tr>'
 					+'<tr><th>Número de páginas:</th><td>'+arrLibro.record.numero_paginas+'</td></tr>'
