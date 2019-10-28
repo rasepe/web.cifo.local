@@ -11,6 +11,7 @@
  	<link href="/your-path-to-fontawesome/css/brands.css" rel="stylesheet">
  	<link href="/your-path-to-fontawesome/css/solid.css" rel="stylesheet">  -->
  	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+ <!--	<script src="https://kit.fontawesome.com/93b925733d.js" crossorigin="anonymous"></script>-->
  		<script
   src="https://code.jquery.com/jquery-3.4.1.js"
   integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
@@ -22,6 +23,17 @@
  	
 	<title>Biblioteca</title>
 	<link rel="stylesheet" href="/css/style.css">
+	<style>
+	.col-3 {
+	padding-right:0;
+	padding-left:0;
+	height: fit-content;
+	}
+	.card-header {
+	background-color: #01A5D5 !important;
+	color: white;
+	}
+	</style>
 </head>
 <body>
 	
@@ -91,25 +103,54 @@
 	
 	<div class="container">
 		<div class="row m-0 pb-3 "> <!--  d-flex -->
+	
+	<div class="col-3">
+	
+	<div class="card bg-light mb-3">
+  <div class="card-header w-100"><i class="fa fa-search"></i>&nbsp;&nbsp;Buscar</div>
+  </div>
+  
 		
-		  <div id="selectores" class="col-3">
-    <p>Secciones</p>
+<div class="card bg-light mb-3">
+  <div class="card-header w-100"><i class="fa fa-filter"></i>&nbsp;&nbsp;Filtrar</div>
+  <div class="card-body">
+  <!-- <h5 class="card-title">Light card title</h5> -->
+  <!--   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+
+<!-- formulario -->
+		
+		 <div class="form-group" id="selectores">
+		  
+   <label for="exampleFormControlSelect1">Secciones</label>
     <select id="secciones" class="form-control">
       <option value="0">-- Escoja una sección --</option>
     </select>
-     <p>Temas</p>
+     <small class="form-text text-muted"><em>Lista de secciones de la biblioteca</em></small>
+    </div>
+     <div class="form-group">
+     <label for="exampleFormControlSelect1">Temas</label>
     <select id="temas" class="form-control">
       <option value="0">-- Escoja un tema --</option>
     </select>
-        <p>Editoriales</p>
+     <small class="form-text text-muted"><em>Lista de temas de la biblioteca</em></small>
+    </div>
+     <div class="form-group">
+       <label for="exampleFormControlSelect1">Editoriales</label>
     <select id="editoriales" class="form-control">
       <option value="0">-- Escoja una editorial --</option>
     </select>
-    <div class="d-flex justify-content-center">
-    <button type="button" class="btn btn-danger" id="borrar" onclick="location.reload()">Borrar</button>
-    <button type="button" class="btn btn-info" id="filtrar" onclick="filtrar()">Filtrar</button>
+     <small class="form-text text-muted"><em>Lista de editoriales</em></small>
     </div>
+    <div class="d-flex justify-content-center">
+    <button type="button" class="btn btn-danger mr-1" id="borrar" onclick="location.reload()">Borrar</button>
+    <button type="button" class="btn btn-info ml-1" id="filtrar" onclick="filtrar()">Filtrar</button>
+    </div>
+ 
+    </div>
+ 
+</div>
   </div>
+  
   <div class="col-8">
  
     <table id="libros" class="display">
@@ -134,8 +175,12 @@
 	
 	<!-- modal -->
 	
-	 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalTitle" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+
+
+	
+	
+	 <div class="modal fade bd-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalTitle" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="myModalTitle"></h5>
@@ -144,6 +189,37 @@
         </button>
       </div>
       <div class="modal-body" >
+<div class="accordion" id="accordionExample">
+<div class="parrafo1">parrafo1</div>
+  <div class="card">
+    <div class="card-header" id="headingTwo">
+      <h2 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Descripción
+        </button>
+      </h2>
+    </div>
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+      <div class="card-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingThree">
+      <h2 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          Autores
+        </button>
+      </h2>
+    </div>
+    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+      <div class="card-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+  </div>
+</div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
@@ -280,7 +356,7 @@ $(document).ready(function() {
 
 	getLibros();
 	
-
+var url;
 function getLibros(codigoseccion, codigotema, codigoeditorial) {
 	var xhr;
 	if (window.XMLHttpRequest) {
@@ -321,7 +397,7 @@ function getLibros(codigoseccion, codigotema, codigoeditorial) {
 	if (codigoeditorial != "") {
 		codigoeditorial = codigoeditorial + '/'
 	} 
-	var url = 'http://app.cifo.local/api/public/biblioteca/libros/seccion/'+codigoseccion+'tema/'+codigotema+'editorial/'+codigoeditorial+'?nocache='+Math.random() ;
+	url = 'http://app.cifo.local/api/public/biblioteca/libros/seccion/'+codigoseccion+'tema/'+codigotema+'editorial/'+codigoeditorial+'?nocache='+Math.random() ;
 	console.log(url);
 	xhr.open('GET', 'http://app.cifo.local/api/public/biblioteca/libros/seccion/'+codigoseccion+'tema/'+codigotema+'editorial/'+codigoeditorial+'?nocache='+Math.random(), true);
 	xhr.send();
@@ -467,16 +543,16 @@ function filtrar() {
 			 codigoeditorial = document.getElementById("editoriales").options[i].id;
 		 }
 	 }
-	 
-	var urldemanada = getLibros(codigoseccion, codigotema, codigoeditorial); // var urldemanada = 
+	 document.getElementById('tbllibros').innerHTML = '';
+	getLibros(codigoseccion, codigotema, codigoeditorial); // var urldemanada = 
 	// console.log("getLibros("+codigoseccion+","+codigotema+","+codigoeditorial+")");
 	// console.log("urldemanada");
 	// console.log(urldemanada);
 	
 	 //neteja primer la tabla
-	 document.getElementById('tbllibros').innerHTML = '';
+	// document.getElementById('tbllibros').innerHTML = '';
 	 
-	 var xhr;
+	/*  var xhr;
 		if (window.XMLHttpRequest) {
 			xhr = new XMLHttpRequest();
 		} else {
@@ -487,8 +563,11 @@ function filtrar() {
 					var arrLibros = JSON.parse(xhr.responseText);
 					console.log(arrLibros.records);
 					//window.sessionStorage.setItem("seleccionactual",JSON.stringify(arrLibros.records));
+					 //neteja primer la tabla
+	 //document.getElementById('tbllibros').innerHTML = '';
 					for (var i = 0; i < arrLibros.records.length; i++) {
 						//console.log(arrLibros.records[i].nombre);
+						console.log("bucle del filtrar(): "+ i);
 						var cadena='<tr>'+
 						//'<td>'+arrLibros.records[i].isbn+'</td>'+
 						'<td><a href="javascript:void(0)" onclick="getLibro('+arrLibros.records[i].id+')" data-toggle="modal" data-target=".bd-example-modal-sm">'+arrLibros.records[i].isbn+'</a></td>'+
@@ -508,10 +587,12 @@ function filtrar() {
 				
 		}
 		
-		
-		xhr.open('GET', url, true); //url
+		 //neteja primer la tabla
+		// document.getElementById('tbllibros').innerHTML = '';
+		xhr.open('GET', urldemanada, true); //url
 		xhr.send(); 
-	
+		 //neteja primer la tabla
+		 document.getElementById('tbllibros').innerHTML = ''; */
 	 
 	 
 }
@@ -535,7 +616,19 @@ function getLibro(id){
 					
 					var titolmodal = "Libro";
 					document.getElementById("myModalTitle").innerHTML = titolmodal;
-					var cadena1='<ul><li><strong>Isbn:</strong> '+arrLibro.record.isbn+'</li>'
+					var cadena1='<table class="table d-inline-block w-100"><tbody>'
+					+'<tr><th>Isbn:</th><td>'+arrLibro.record.isbn+'</td><td rowspan="9"><img style="vertical-align: bottom !important;" width="100%" height="100%" src="'+arrLibro.record.cubierta+'" /></td></tr>'
+					+'<tr><th>Título:</th><td>'+arrLibro.record.titulo+'</td></tr>'
+					+'<tr><th>Subítulo:</th><td>'+arrLibro.record.subtitulo+'</td></tr>'
+					+'<tr><th>Número de páginas:</th><td>'+arrLibro.record.numero_paginas+'</td></tr>'
+					+'<tr><th>Editorial:</th><td>'+arrLibro.record.editorial.nombre+'</td></tr>'
+					+'<tr><th>Año de publicación:</th><td>'+arrLibro.record.anio_publicacion+'</td></tr>'
+					+'<tr><th>Tema:</th><td>'+arrLibro.record.tema.nombre+'</td></tr>'
+					+'<tr><th>Sección:</th><td>'+arrLibro.record.seccion.nombre+'</td></tr>'
+					+'<tr><th>Nivel:</th><td>'+arrLibro.record.nivel+'</td></tr>'
+					+'</tbody></table>'
+				//	+'<img src="'+arrLibro.record.cubierta+'" class="d-inline-block w-25 mh-100 align-middle"></img>'
+				/* 	<ul><li><strong>Isbn:</strong> '+arrLibro.record.isbn+'</li>'
 					+'<li><strong>Título:</strong> '+arrLibro.record.titulo+'</li>'
 					+'<li><strong>Subtitulo:</strong> '+arrLibro.record.subtitulo+'</li>'
 					+'<li><strong>Número de páginas:</strong> '+arrLibro.record.numero_paginas+'</li>'
@@ -544,13 +637,17 @@ function getLibro(id){
 					+'<li><strong>Tema:</strong> '+arrLibro.record.tema.nombre+'</li>'
 					+'<li><strong>Sección:</strong> '+arrLibro.record.seccion.nombre+'</li>'
 					+'<li><strong>Nivel:</strong> '+arrLibro.record.nivel+'</li>'
-					+'<img src="'+arrLibro.record.cubierta+'" height="100px"></img>'
-					+'<li><strong>Descripción:</strong> '+arrLibro.record.descripcion+'</li></ul>';
+					+'<img src="'+arrLibro.record.cubierta+'" height="100px"></img>' */
 					
-					var cadena2='';
+					
+					
+					
+					var cadena2='<p>'+arrLibro.record.descripcion+'</p>';
+					
+					var cadena3='';
 					for (var j=0; j<arrLibro.record.autores.length; j++) {
 						
-						cadena2 += '<img src="'+arrLibro.record.autores[j].foto+'" height="100px"></img>'+
+						cadena3 += '<img src="'+arrLibro.record.autores[j].foto+'" height="100px"></img>'+
 						'<h5>'+arrLibro.record.autores[j].nombre+'&nbsp;'+arrLibro.record.autores[j].apellidos+'</h5>'+
 						'<p>'+arrLibro.record.autores[j].biografia+'</p>';
 					
@@ -559,8 +656,12 @@ function getLibro(id){
 					
 					
 					
-					var cadena = cadena1+cadena2;
-					document.querySelector("#myModal .modal-body").innerHTML = cadena;
+					
+					//var cadena = cadena1+cadena2+cadena3;
+					document.querySelector("#myModal .parrafo1").innerHTML = cadena1;
+					document.querySelector("#collapseTwo .card-body").innerHTML = cadena2;
+					document.querySelector("#collapseThree .card-body").innerHTML = cadena3;
+				
 					$('#myModal').modal('show');
 				
 			
