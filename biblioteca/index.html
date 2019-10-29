@@ -10,7 +10,11 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" >
 	<!-- Datatable CSS -->
 	<!-- <link rel="stylesheet"  href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css"/> -->
-	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css"/>
+<!--	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css"/> -->
+ 
+ <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap4.css"/>
+ 
  
 	<!-- Font Awsome -->
 	<link rel="stylesheet"  href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -141,10 +145,10 @@ color:white;
 		</div>
 	</div>
 	
-	<div class="container">
+	<div class="container-fluid">
 		<div class="row m-0 pb-3 "> <!--  d-flex -->
 	
-	<div class="col-3">
+	<div class="col-md-4 col-lg-3">
 	
 	<div class="card bg-light mb-3">
   <div class="card-header w-100"><i class="fa fa-search"></i>&nbsp;&nbsp;Buscar</div>
@@ -191,7 +195,7 @@ color:white;
 </div>
   </div>
   
-  <div class="col-8">
+  <div class="col-8 col-sm-11 col-md-7 col-lg-9">
  
     <table id="libros" class="table">
     
@@ -339,12 +343,23 @@ color:white;
 <!-- Bootstrap -->
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" ></script>
 <!-- Datatable -->
-<script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+<!-- <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script> -->
+<!-- <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script> -->
 <!-- <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script> -->
+
+
+
+
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.js"></script>
+
 <script>
 
 var tabla=$('#libros').DataTable({
+
+    //responsive: true,
+     responsive: true,
 	language: {
         url: '/spanish.datatable.json'
     },
@@ -357,8 +372,6 @@ var tabla=$('#libros').DataTable({
             { "data": "Tema"	,	"targets": 5 }
 
           ]
-
-      
     
 	
 });
