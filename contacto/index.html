@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/v4-shims.css">
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+ 	
+<title>web.cifo.local.contacto</title>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+	
+	<!--Creación del Navegador ---------------------------------------------------------------------->
+	
+	<nav class="navbar navbar-expand-md fixed-top p-0 pr-2 navbar-dark bg-info">
+		<div >
+		    <img src="/img/soc.jpg"  height="55px" alt="Logo SOC">
+			<a class="navbar-brand p-0 m-0 d-inline-block text-wrap" style="line-height: 1em; " href="#">Servei d'Ocupació<br> de Catalunya</a>
+		</div>
+		<button class="navbar-toggler " type="button" data-toggle="collapse"
+			data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+			aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button> 
+		<div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+			<ul class="navbar-nav ">
+				<li class="nav-item"><a class="nav-link" href="/centros/index.html">Centros</a></li>
+				<li class="nav-item"><a class="nav-link" href="#">Oferta formativa</a></li>
+				<li class="nav-item"><a class="nav-link" href="#">Biblioteca</a></li>
+				<li class="nav-item active"><a class="nav-link" href="#">Contacto</a></li>
+				<li class="nav-item"><a class="nav-link d-block d-md-none d-lg-block" href="/campus/index.html">Campus virtual</a></li>
+				<li class="nav-item"><a class="nav-link  d-block d-md-none d-lg-block" href="#">Entrar</a></li>
+				<li class="nav-item"><a class="nav-link d-block d-md-none d-lg-block" href="#">Regístrate</a></li>
+				<li class="nav-item dropdown d-none d-md-inline d-lg-none">
+					<a class="nav-link dropdown-toggle" href="#"
+					id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+					aria-haspopup="true" aria-expanded="false"> eCampus </a>
+					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+						<a class="dropdown-item" href="/campus/index.html">Campus Virtual</a> 
+						<a class="dropdown-item" href="#">Entrar</a>
+						<a class="dropdown-item" href="#">Regístrate</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	
+	<!-- Creación del breadcrumb y redes sociales---------------------------------------------------------------------->
+	
+	<div class="row mx-2 border-bottom border-secondary" style="margin-top:55px">
+		<div class="col p-0 ">
+	 		<nav aria-label="breadcrumb"> 
+	 			<ol class="breadcrumb m-0 mt-3 bg-transparent p-0">
+	 		 		<li><i class="fa fa-home text-info"></i></li>
+	 		 		<li class="breadcrumb-item text-info pl-2"><a href="/index.html">Inicio</a></li>
+	    			<li class="breadcrumb-item active " aria-current="page">Contacto</li>
+	  		 	</ol>
+			</nav>
+		</div>
+		<div class="col d-flex py-2 justify-content-end align-items-center">
+	    	<a class="mr-1 p-1 py-1 d-inline-block rounded-circle text-white" style="background-color:#1B1FBA" href="#"><i class="fa fa-facebook fa-fw "></i></a>
+	      	<a class="mr-1 p-1 py-1 d-inline-block rounded-circle text-white" style="background-color:#00acee" href="#"><i class="fa fa-twitter fa-fw"></i></a>
+	      	<a class="mr-1 p-1 py-1 d-inline-block rounded-circle text-white" style="background-color:#CC4115" href="#"><i class="fa fa-google-plus fa-fw"></i></a>
+	      	<a class="mr-1 p-1 py-1 d-inline-block rounded-circle bg-dark text-white" href="#"><i class="fa fa-instagram fa-fw"></i></a>
+	      	<a class="mr-1 p-1 py-1 d-inline-block rounded-circle bg-danger text-white" href="#"><i class="fa fa-pinterest fa-fw"></i></a>
+		</div>
+	</div>
+ <script src='https://www.google.com/recaptcha/api.js'></script>
+ <!-- Creación del contenido ---------------------------------------------------------------------->
+ 	
+	<div class="row m-0 mb-2">
+		<div class="col-12 pt-3">
+			<h3>Contacto</h3>
+		</div>
+	</div>
+	
+	<div class="container-fluid">
+		<div class="row  m-2 d-flex">
+			
+<!-- Creación del formulario ---------------------------------------------------------------------->
+  				<div class="col-md-8 border mt-1 mb-1">
+  					<form action="servidor.php" method="post" id="contacto" onsubmit="return submitUserForm();">
+      <fieldset class="border p-2 rounded position-relative">
+        <div class="form-row">
+          <div class="col-lg-12 col-md-6 mb-4 position-relative">
+            <label for="contacto_nombre">NOMBRE COMPLETO <i class="fas fa-asterisk fa-xs" style="color:red"></i></label>
+            <input type="text" name="nombre" id="contacto_nombre" class="form-control  ">
+            <span class="invalid-feedback position-absolute ml-auto">
+              Campo obligatorio
+            </span>
+          </div>
+          <div class="col-lg-12 col-md-6 mb-4 position-relative">
+            <label for="contacto_telefono">NÚMERO DE TELEFONO <i class="fas fa-asterisk fa-xs" style="color:red"></i></label>
+            <input type="text" name="telefono" id="contacto_telefono" class="form-control">
+            <div class="invalid-feedback position-absolute">
+              Campo obligatorio
+            </div>
+          </div>
+
+
+          <div class="col-lg-12 col-md-6 mb-4 position-relative">
+            <label for="contacto_email">DIRECCIÓN DE CORREO <i class="fas fa-asterisk fa-xs" style="color:red"></i></label>
+            <input type="text" name="email" id="contacto_email" class="form-control">
+            <div class="invalid-feedback position-absolute">
+              Campo obligatorio
+            </div>
+          </div>
+
+          <div class="col-lg-12 col-md-12 mb-4 position-relative">
+            <label for="contacto_mensaje">MENSAJE <i class="fas fa-asterisk fa-xs" style="color:red"></i></label>
+            <textarea name="mensaje" id="contacto_mensaje" rows="10" class="form-control"></textarea>
+            <div class="invalid-feedback position-absolute">
+              Campo obligatorio
+            </div>
+          </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-12 d-flex justify-content-center g-recaptcha mb-2" name="captcha" data-sitekey="6LeIsb8UAAAAAAHM8MkMVO-JPOgaKjyvEQ0xo8us"></div>
+    		<div class="col-12 d-flex justify-content-center mt-2">
+    		<button type="submit" class="btn btn-primary" style="background-color: #01A5D5;" id="btnSubmit">Enviar mensaje</button>
+	            <div class="invalid-feedback" id="g-recaptcha-error">
+	              Se requiere aceptar las condiciones del servicio.
+	            </div>
+	         </div>
+          </div>
+      </fieldset>
+    </form>
+ </div>
+ 
+<!-- Creación del mapa Centros con API de Google Maps ---------------------------->
+  				<div class="col-md-4 mt-1 mb-1 border p-2">
+  					
+
+	
+								<div class="row h-100">
+								<div class="col-12 w-100 h-100">
+									<div class="pt-2 pb-2" style="background-color: rgb(211, 211, 211);padding-left: 15px;">
+									<i class="fas fa-map fa-xs" style="color:black"></i> 
+									Mapa de <a href="../centros/index.html">centros</a>
+									</div>
+										<!-- INSERCIÓ GOOGLE MAPS -->
+									<div id="mapa" style="width: 100%; min-height: 720px;"> </div>
+									
+								</div> 
+								</div> 
+							
+  				 	
+  				</div>
+  			</div>
+  		</div>
+  
+
+	
+<!-- Creación del footer ---------------------------------------------------------------------->	
+			<!-- ---------------redes sociales----------------------------------- -->
+	<footer id="footer" class="container-fluid text-light">
+		<div class="row d-flex justify-content-center align-items-center">
+	      <a class="mr-1 p-1 py-2 d-inline-block  bg-transparent text-light" href="#"><i class="fa fa-twitter fa-2x fa-fw "></i></a>
+	      <a class="mr-1 p-1 py-2 d-inline-block bg-transparent text-light" href="#"><i class="fa fa-facebook fa-2x fa-fw"></i></a>
+	      <a class="mr-1 p-1 py-2 d-inline-block bg-transparent text-light" href="#"><i class="fa fa-google-plus fa-2x fa-fw"></i></a>
+	      <a class="mr-1 p-1 py-2 d-inline-block bg-transparent text-light" href="#"><i class="fa fa-instagram fa-2x fa-fw"></i></a>
+	      <a class="mr-1 p-1 py-2 d-inline-block bg-transparent text-light" href="#"><i class="fa fa-pinterest fa-2x fa-fw"></i></a>
+		</div>
+		   <!-- ---------------directo a----------------------------------- -->
+		<div class="row mt-4">
+			<div class="col-12 col-md-3 d-flex justify-content-center text-center">
+				<ul type="none" class="p-0 mb-5 mb-md-2">
+					<li class="text-white"><h6>DIRECTO A</h6></li>
+					<li><a class="text-light" href="/centros/index.html">Centros</a></li>
+					<li><a class="text-light" href="#">Oferta formativa</a></li>
+					<li><a class="text-light" href="#">Biblioteca</a></li>
+					<li><a class="text-light active" href="#">Contacto</a></li>
+					<li><a class="text-light" href="/campus/index.html">Campus virtual</a></li>
+					<li><a class="text-light" href="#">Entrar</a></li>
+					<li><a class="text-light" href="#">Registrarse</a></li>
+				</ul>
+			</div>
+			 <!-- ---------------ayuda----------------------------------- -->
+			<div class="col-12 col-md-3 d-flex justify-content-center text-center">
+				<ul type="none" class="p-0 mb-5 mb-md-2">
+					<li class="text-white"><h6>AYUDA</h6></li>
+					<li><a class="text-light" href="#">Sobre gencat</a></li>
+					<li><a class="text-light" href="#">Accessibilitat</a></li>
+					<li><a class="text-light" href="#">Mapa web</a></li>
+					<li><a class="text-light" href="#legal">Aviso Legal</a></li>
+				</ul>
+			</div>
+			 <!-- ---------------aviso legal--------------------------------- -->
+			<div class="col-12 col-md-6">
+				<div class="text-center d-flex justify-content-center">
+					<h6 class="text-white" id="legal">SERVEI D'OCUPACIÓ DE CATALUNYA</h6>
+				</div>
+				<p class="col-12 d-flex justify-content-center class text-center mb-5 mb-md-2">
+				 Aviso legal : De acuerdo con el artículo 17.1 de la Ley 19/2014, la © Generalidad de Cataluña permite la reutilización de los contenidos y de los datos siempre que
+	se cite la fuente y la fecha de actualización y que no se desnaturalice la información (artículo 8 de la Ley 37/2007) y también que no se contradiga con una licencia específica.
+				</p>
+				
+				<div class="row">
+					<div class="col-6">
+						<img src="/img/sepelogotip.jpg" title="logotipo sepe" alt="logotipo sepe" class="img-fluid">
+					</div>
+					<div class="col-6">
+						<img src="/img/logotip_Iniciativaocupaciojuvenil_bn.jpg" title="logotipo sepe" alt="logotipo sepe" class="img-fluid">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="d-flex justify-content-center class text-center py-3 ">Copyright © Cifo 2018 </div>
+<!-- COOKIES--------------------->
+	<div class="mt-4 mb-4 justify-content-center class text-center alert alert-dark fixed-bottom" id="boxRGPD"><p>Hacemos uso de cookies propias y de terceros para proporcionar una mejor experiencia de usuario. Al seguir navegando entendemos que acepta nuestra <a href="#">Política de Cookies</a>.</p>
+    <div class="btn btn-warning" id="btnRGPD">Aceptar</div>
+    </div>
+     </footer>
+
+<!-------------------------------------------------------------- SCRIPTS ------------------------------------------------------------->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" ></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" ></script>
+<!-- Scripts de validaciones de los campos del formulario -->
+	<script type="text/javascript">
+		   // VALIDACIONES
+		  
+ 	  document.getElementById("btnSubmit").onclick = function(evt) {
+      // CAPTURAR EVENTO Y PARARLO
+      evt.preventDefault();
+      // var totOk CONTROL DE ENVIO
+      var totOk = true;
+      // ---- LIMPIAR CLASSES 'is-invalid' y 'is-valid' ----
+      this.form.querySelectorAll("*").forEach(function(item) {
+        item.className = item.className.replace(/(is-valid|is-invalid)/g, '');
+      });
+      // ------------------------ NOMBRE COMPLETO --------------------
+      this.form.nombre.value = this.form.nombre.value.trim();
+      var string = this.form.nombre.value;
+      var pattern = /\d/g;
+      if (pattern.test(string) || string == "") {
+        this.form.nombre.className += ' is-invalid';
+        totOk = false;
+      } else {
+        this.form.nombre.className += ' is-valid';
+      }
+      // ------------------------ NUMERO DE TELEFONO --------------------
+      this.form.telefono.value = this.form.telefono.value.trim();
+      var telefonoString = this.form.telefono.value;
+      var telefonoPattern = /^(\+34|0034|34)?[\s|\-|\.]?[6|7|8|9][\s|\-|\.]?([0-9][\s|\-|\.]?){8}$/;
+      if (pattern.test(string) || string == "") {
+        this.form.telefono.className += ' is-invalid';
+        totOk = false;
+      } else {
+        this.form.telefono.className += ' is-valid';
+      }
+      // ------------------------- DIRECCION DE CORREO -----------------------------------
+      this.form.email.value = this.form.email.value.trim();
+      var emailString = this.form.email.value;
+      var emailPattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/; // Format @
+      if (!emailPattern.test(emailString) || emailString == "") {
+        this.form.email.className += " is-invalid ";
+        totOk = false;
+      } else {
+        this.form.email.className += " is-valid ";
+      }
+
+      // ------------------------ MENSAJE ---------------------------------
+      if (this.form.mensaje.value == "" || this.form.mensaje.value.length > 300) {
+        this.form.mensaje.className += " is-invalid ";
+        totOk = false;
+      } else {
+        this.form.mensaje.className += " is-valid ";
+      }
+      // ------------------------- Captcha --------------------------------
+
+	
+      var response = grecaptcha.getResponse();
+
+      if(response.length == 0){
+        alert("Captcha no verificado");
+        totOk = false;
+   
+   	  } else {
+      	alert("Captcha verificado");
+        
+   	  }
+ 	  
+      
+      
+      if (totOk == true) {
+          this.form.submit(); // Disparar l'event submit del form d'aques button
+          // o be enviar les dades via AJAX
+        }
+   }
+
+	
+	
+</script>
+	
+	
+	
+	
+<!-- Script para integración de google maps mediante su api -->	
+	<script>
+	
+	// Creamos un objeto llamado map con los parametros deseados
+	     
+	
+	/*var map;
+	      function initMap() {
+	        map = new google.maps.Map(document.getElementById('mapa'), {
+	        	center: {lat: 41.402675, lng: 2.181181}, 
+				scrollwheel: false,
+				zoom: 8,
+				zoomControl: true,
+				rotateControl : true,
+				mapTypeControl: true,
+				streetViewControl: false,
+				navigationControl: true,
+				draggable: true,
+	        });
+	      }; */
+	var map;
+	      function initMap(){
+	          map = new google.maps.Map(document.getElementById('mapa'), {
+	           center: {lat: 41.402675, lng: 2.181181}, 
+	           zoom: 8,
+	           
+	         });
+	   	};
+	      
+	    	var xhr;
+	      	if (window.XMLHttpRequest) {
+	      		xhr = new XMLHttpRequest();
+	      		}else {
+	      		xhr = new ActiveXObject("Microsoft.XMLHTTP");
+	      		}
+	      		
+	
+	      xhr.onreadystatechange = function() {
+	          if (xhr.readyState == 4 && xhr.status == 200) {
+	            var arrCentres = JSON.parse(xhr.responseText);
+	            for (var i = 0; i < arrCentres.length; i++) {
+	              var coordenada = {
+	                lat: parseFloat(arrCentres[i].lat),
+	                lng: parseFloat(arrCentres[i].lng)
+	              };
+	              var marker = new google.maps.Marker({
+	                position: coordenada,
+	                map: map,
+	                title: arrCentres[i].nombre,
+	                label: String.fromCharCode(65 + i)
+	              });
+	            }
+	          }
+	      	}
+	      	xhr.open('GET', 'http://app.cifo.local/api/public/formacion/centros/'+'?nocache='+Math.random(), true);
+	  		xhr.send(null);
+	  		
+	      
+	      
+	      
+	          
+	         
+	  	
+	      	
+			
+			
+	</script>
+	 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMAUUG6X2nJy8DHsJlmyMv0aS-JDCIDZE&callback=initMap"   type="text/javascript"></script>
+	<script src="/cookies.js"></script>
+	<script type="text/javascript">
+  
+  if(detectCookie("okRGPD")){
+	  if(getCookie("okRGPD")=="ok"){
+		  var objBoxRGPD=document.getElementById("boxRGPD");
+		  objBoxRGPD.parentNode.removeChild(objBoxRGPD);
+	  }
+  }else{
+	  document.getElementById("btnRGPD").onclick=function(){
+		  setCookie("okRGPD","ok",365);
+		  var objBoxRGPD=document.getElementById("boxRGPD");
+		  objBoxRGPD.parentNode.removeChild(objBoxRGPD);
+	  }
+  }
+  
+  
+  
+</script>
+   
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+
+</body>
+</html>
