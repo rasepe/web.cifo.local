@@ -311,7 +311,7 @@
 	            if (xhr.readyState == 4 && xhr.status == 200) {
 	              var arrCentros = JSON.parse(xhr.responseText);
 	              for (var i = 0; i < arrCentros.records.length; i++) {
-	            //	  imprimecentro(arrCentros.records[i]);
+	          
 	                var coordenada = {
 	                  lat: parseFloat(arrCentros.records[i].lat),
 	                  lng: parseFloat(arrCentros.records[i].lng)
@@ -350,50 +350,6 @@
 			
 </script>
 
- <script>
-//    var contentString= '<div class="col-12 col-md-6 col-lg-4 p-3  d-flex">' +'lalala'+
-/*	+'<div class="card h-100">'
-    	+'<img src="'+objcentro.media+'" class="card-img-top w-100" style="object-fit:cover; max-height:150px" alt="'+objcentro.nombre+'">'
-    	+'<div class="card-body pb-0">'
-      		+'<h5 class="card-title text-info">'+objcentro.nombre+'</h5>'
-      		+'<div class="border border-light border-right-0 border-left-0 pt-3">'
-	      		+'<p><i class="fa fa-phone fa-fw text-muted"></i> '+objcentro.telefono+'</p>'
-	      		+'<p><i class="fa fa-envelope fa-fw text-muted"></i>'
-	      		+'<a href="mailto:'+objcentro.buzon+'"> '+objcentro.buzon+'</a></p>'
-	      		+'<p><i class="fa fa-calendar fa-fw text-muted"></i> '+objcentro.horario+'</p>'
-	      		+'<p><i class="fa fa-map-marker fa-fw text-muted"></i> '+objcentro.direccion+'</p>'
-	      	+'</div>'
-	      	+'<div class="pt-3">'
-	      		+'<h5 class="text-secondary"><i class="fa fa-road fa-fw text-muted"></i> Acceso</h5>'
-	      		+objcentro.acceso
-	      	+'</div>'      	
- 		+'</div>'
- 		+'<div class="card-footer bg-transparent border-0">'
-			+'<p class="d-flex justify-content-center mt-3 align-text-bottom"><a href="#" class="btn btn-primary">Más información...</a></p>'
- 		+'</div>'
- 	+'</div>'
- +'</div>';
- 
- 
- 
-var infoCentros = new google.maps.InfoWindow({
-		content: contentString,
-    });
-  	
-  	
-
-  	
-  	
-  marker.addListener('click', function() {
-	infoCentros.open(map,marker);	    			
-	});   
-  
-	marker.addListener('click', function() {
-       InfoWindow({content: contentString,});
-	});
-	*/
-
-</script> 
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMAUUG6X2nJy8DHsJlmyMv0aS-JDCIDZE&callback=initMap"   type="text/javascript"></script>
 <script src="/cookies.js"></script>
 <script type="text/javascript">
