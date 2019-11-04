@@ -1,14 +1,14 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/v4-shims.css">
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+ <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css">
+ <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/v4-shims.css">
+ <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
  	
 <title>web.cifo.local.contacto</title>
@@ -31,9 +31,9 @@
 		<div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
 			<ul class="navbar-nav ">
 				<li class="nav-item"><a class="nav-link" href="/centros/index.html">Centros</a></li>
-				<li class="nav-item"><a class="nav-link" href="#">Oferta formativa</a></li>
-				<li class="nav-item"><a class="nav-link" href="#">Biblioteca</a></li>
-				<li class="nav-item active"><a class="nav-link" href="#">Contacto</a></li>
+				<li class="nav-item"><a class="nav-link" href="/ofertaformativa/index.html">Oferta formativa</a></li>
+				<li class="nav-item"><a class="nav-link" href="/biblioteca/index.html">Biblioteca</a></li>
+				<li class="nav-item active"><a class="nav-link" href="/contacto/index.html">Contacto</a></li>
 				<li class="nav-item"><a class="nav-link d-block d-md-none d-lg-block" href="/campus/index.html">Campus virtual</a></li>
 				<li class="nav-item"><a class="nav-link  d-block d-md-none d-lg-block" href="#">Entrar</a></li>
 				<li class="nav-item"><a class="nav-link d-block d-md-none d-lg-block" href="#">Regístrate</a></li>
@@ -72,85 +72,75 @@
 		</div>
 	</div>
  <script src='https://www.google.com/recaptcha/api.js'></script>
- <!-- Creación del contenido ---------------------------------------------------------------------->
- 	
+ <!-- Creación del contenido ---------------------------------------------------------------------->	
 	<div class="row m-0 mb-2">
 		<div class="col-12 pt-3">
 			<h3>Contacto</h3>
 		</div>
-	</div>
-	
+	</div>	
 	<div class="container-fluid">
-		<div class="row  m-2 d-flex">
-			
-<!-- Creación del formulario ---------------------------------------------------------------------->
+		<div class="row  m-2 d-flex">			
+<!-- CREACIÓN DEL FORMULARIO ---------------------------------------------------------------------->
   				<div class="col-md-8 border mt-1 mb-1">
   					<form action="servidor.php" method="post" id="contacto" onsubmit="return submitUserForm();">
-      <fieldset class="border p-2 rounded position-relative">
-        <div class="form-row">
-          <div class="col-lg-12 col-md-6 mb-4 position-relative">
-            <label for="contacto_nombre">NOMBRE COMPLETO <i class="fas fa-asterisk fa-xs" style="color:red"></i></label>
-            <input type="text" name="nombre" id="contacto_nombre" class="form-control  ">
-            <span class="invalid-feedback position-absolute ml-auto">
-              Campo obligatorio
-            </span>
-          </div>
-          <div class="col-lg-12 col-md-6 mb-4 position-relative">
-            <label for="contacto_telefono">NÚMERO DE TELEFONO <i class="fas fa-asterisk fa-xs" style="color:red"></i></label>
-            <input type="text" name="telefono" id="contacto_telefono" class="form-control">
-            <div class="invalid-feedback position-absolute">
-              Campo obligatorio
-            </div>
-          </div>
-
-
-          <div class="col-lg-12 col-md-6 mb-4 position-relative">
-            <label for="contacto_email">DIRECCIÓN DE CORREO <i class="fas fa-asterisk fa-xs" style="color:red"></i></label>
-            <input type="text" name="email" id="contacto_email" class="form-control">
-            <div class="invalid-feedback position-absolute">
-              Campo obligatorio
-            </div>
-          </div>
-
-          <div class="col-lg-12 col-md-12 mb-4 position-relative">
-            <label for="contacto_mensaje">MENSAJE <i class="fas fa-asterisk fa-xs" style="color:red"></i></label>
-            <textarea name="mensaje" id="contacto_mensaje" rows="10" class="form-control"></textarea>
-            <div class="invalid-feedback position-absolute">
-              Campo obligatorio
-            </div>
-          </div>
-        </div>
-        <div class="row form-group">
-            <div class="col-12 d-flex justify-content-center g-recaptcha mb-2" name="captcha" data-sitekey="6LeIsb8UAAAAAAHM8MkMVO-JPOgaKjyvEQ0xo8us"></div>
-    		<div class="col-12 d-flex justify-content-center mt-2">
-    		<button type="submit" class="btn btn-primary" style="background-color: #01A5D5;" id="btnSubmit">Enviar mensaje</button>
-	            <div class="invalid-feedback" id="g-recaptcha-error">
-	              Se requiere aceptar las condiciones del servicio.
-	            </div>
-	         </div>
-          </div>
-      </fieldset>
-    </form>
- </div>
- 
+				      <fieldset class="border p-2 rounded position-relative">
+				        <div class="form-row">
+				          <div class="col-lg-12 col-md-6 mb-4 position-relative">
+				            <label for="contacto_nombre">NOMBRE COMPLETO <i class="fas fa-asterisk fa-xs" style="color:red"></i></label>
+				            <input type="text" name="nombre" id="contacto_nombre" class="form-control  ">
+				            <span class="invalid-feedback position-absolute ml-auto">
+				              Campo obligatorio
+				            </span>            
+				          </div>
+				          <div class="col-lg-12 col-md-6 mb-4 position-relative">
+				            <label for="contacto_numero">NÚMERO DE TELEFONO <i class="fas fa-asterisk fa-xs" style="color:red"></i></label>
+				            <input type="text" name="numero" id="contacto_numero" class="form-control">
+				            <div class="invalid-feedback position-absolute">
+				              Campo obligatorio
+				            </div>
+				          </div>
+<!-- DIRECCION DE CORREO -->
+				          <div class="col-lg-12 col-md-6 mb-4 position-relative">
+				            <label for="contacto_email">DIRECCIÓN DE CORREO <i class="fas fa-asterisk fa-xs" style="color:red"></i></label>
+				            <input type="text" name="email" id="contacto_email" class="form-control">
+				            <div class="invalid-feedback position-absolute">
+				              Campo obligatorio
+				            </div>
+				          </div>
+<!-- MENSAJE -->
+				          <div class="col-lg-12 col-md-12 mb-4 position-relative">
+				            <label for="contacto_mensaje">MENSAJE <i class="fas fa-asterisk fa-xs" style="color:red"></i></label>
+				            <textarea name="mensaje" id="contacto_mensaje" rows="10" class="form-control"></textarea>
+				            <div class="invalid-feedback position-absolute">
+				              Campo obligatorio
+				            </div>
+				          </div>
+				        </div>
+ <!-- CAPTCHA -->
+				        <div class="row form-group">
+				            <div class="col-12 d-flex justify-content-center g-recaptcha mb-2" name="captcha" data-sitekey="6LeIsb8UAAAAAAHM8MkMVO-JPOgaKjyvEQ0xo8us"></div>
+				    		<div class="col-12 d-flex justify-content-center mt-2">
+				    		<div class="align-content-center justify-content-center alert alert-danger invalid-feedback"  style="width: 304px; height: 78px; display: none;" id="g-recaptcha-error">Se requiere aceptar las condiciones del servicio.</div>
+				    		</div>
+				    		<div class="col-12 d-flex justify-content-center mt-2">	            
+					            <button type="submit" class="btn btn-primary" style="background-color: #01A5D5;" id="btnSubmit">Enviar mensaje</button>	            
+					         </div>
+				          </div>
+				      </fieldset>
+				    </form>
+				 </div> 
 <!-- Creación del mapa Centros con API de Google Maps ---------------------------->
   				<div class="col-md-4 mt-1 mb-1 border p-2">
-  					
-
-	
-								<div class="row h-100">
-								<div class="col-12 w-100 h-100">
-									<div class="pt-2 pb-2" style="background-color: rgb(211, 211, 211);padding-left: 15px;">
-									<i class="fas fa-map fa-xs" style="color:black"></i> 
-									Mapa de <a href="../centros/index.html">centros</a>
-									</div>
-										<!-- INSERCIÓ GOOGLE MAPS -->
-									<div id="mapa" style="width: 100%; min-height: 720px;"> </div>
-									
-								</div> 
-								</div> 
-							
-  				 	
+					<div class="row h-100">
+						<div class="col-12 w-100 h-100">
+							<div class="pt-2 pb-2" style="background-color: rgb(211, 211, 211);padding-left: 15px;">
+							  <i class="fas fa-map fa-xs" style="color:black"></i> 
+								Mapa de <a href="/centros/index.html">centros</a>
+							</div>
+<!-- DIV que contiene el mapa ---------------------------------------------->
+							<div id="mapa" style="width: 100%; min-height: 720px;"></div>								
+						</div> 
+					</div> 											 	
   				</div>
   			</div>
   		</div>
@@ -173,9 +163,9 @@
 				<ul type="none" class="p-0 mb-5 mb-md-2">
 					<li class="text-white"><h6>DIRECTO A</h6></li>
 					<li><a class="text-light" href="/centros/index.html">Centros</a></li>
-					<li><a class="text-light" href="#">Oferta formativa</a></li>
-					<li><a class="text-light" href="#">Biblioteca</a></li>
-					<li><a class="text-light active" href="#">Contacto</a></li>
+					<li><a class="text-light" href="/ofertaformativa/index.html">Oferta formativa</a></li>
+					<li><a class="text-light" href="/biblioteca/index.html">Biblioteca</a></li>
+					<li><a class="text-light active" href="/contacto/index.html">Contacto</a></li>
 					<li><a class="text-light" href="/campus/index.html">Campus virtual</a></li>
 					<li><a class="text-light" href="#">Entrar</a></li>
 					<li><a class="text-light" href="#">Registrarse</a></li>
@@ -212,187 +202,215 @@
 			</div>
 		</div>
 		<div class="d-flex justify-content-center class text-center py-3 ">Copyright © Cifo 2018 </div>
+		</footer>
 <!-- COOKIES--------------------->
-	<div class="mt-4 mb-4 justify-content-center class text-center alert alert-dark fixed-bottom" id="boxRGPD"><p>Hacemos uso de cookies propias y de terceros para proporcionar una mejor experiencia de usuario. Al seguir navegando entendemos que acepta nuestra <a href="#">Política de Cookies</a>.</p>
-    <div class="btn btn-warning" id="btnRGPD">Aceptar</div>
+     <div class="cookiealert-container text-center fixed-bottom" id="boxCookies" style="margin-bottom: 0em; background-color: #4a4c4a; color: white; padding: 2vh;"><p>Aviso informativo: este sitio web puede utilizar cookies para mejorar su navegación. Si quieres ver el contenido de este sitio web tendrás que aceptar las cookies según la legislación vigente en nuestro país. Si no aceptas, no podrás continuar navegando por este sitio web. Clique
+     <button type="submit" class="btn btn-warning" id="btnCookies" class="btn btn-primary btn-sm acceptcookies" style="border-color: #78992f; background-color: #78992f; color: white;"> aquí </button> para aceptar las cookies.</p>
     </div>
-     </footer>
 
 <!-------------------------------------------------------------- SCRIPTS ------------------------------------------------------------->
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" ></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" ></script>
-<!-- Scripts de validaciones de los campos del formulario -->
-	<script type="text/javascript">
-		   // VALIDACIONES
-		  
+
+
+<!-- Script de validaciones del formulario -->
+<script type="text/javascript">
+	//------------------------ VALIDACIONES FORMULARIO -------------------------------------
+	  // Llamamos al boton del elemento del DOM cuando hacemos click sobre el 	  
  	  document.getElementById("btnSubmit").onclick = function(evt) {
-      // CAPTURAR EVENTO Y PARARLO
+      // Capturamos el evento de hacer submit sobre el formulario y lo paramos
       evt.preventDefault();
-      // var totOk CONTROL DE ENVIO
-      var totOk = true;
-      // ---- LIMPIAR CLASSES 'is-invalid' y 'is-valid' ----
-      this.form.querySelectorAll("*").forEach(function(item) {
-        item.className = item.className.replace(/(is-valid|is-invalid)/g, '');
+      // Creamos la variable allOk que es la que nos hará de control de envio, si se cumple se envia, si en algún campo no se cumple, no se envia
+      var allOk = true;
+      // ---- Limpiamos las classes 'is-invalid' y 'is-valid' ----
+      this.form.querySelectorAll("*").forEach(function(item) {  //aplicamos la funcion para cada elemento, seleccionados todos los elementos del formulario
+        item.className = item.className.replace(/(is-valid|is-invalid)/g, '');  //indicamos que reemplace la classe is-valid por is-invalid, y la is-invalid por is-invalid
       });
       // ------------------------ NOMBRE COMPLETO --------------------
-      this.form.nombre.value = this.form.nombre.value.trim();
-      var string = this.form.nombre.value;
-      var pattern = /\d/g;
-      if (pattern.test(string) || string == "") {
-        this.form.nombre.className += ' is-invalid';
-        totOk = false;
+      this.form.nombre.value = this.form.nombre.value.trim();  
+      var nombreString = this.form.nombre.value;
+      var nombrePattern = /\D/g; 
+      if (!nombrePattern.test(nombreString) || nombreString == "") {
+        this.form.nombre.className += ' is-invalid';        
+        allOk = false;
       } else {
         this.form.nombre.className += ' is-valid';
       }
       // ------------------------ NUMERO DE TELEFONO --------------------
-      this.form.telefono.value = this.form.telefono.value.trim();
-      var telefonoString = this.form.telefono.value;
-      var telefonoPattern = /^(\+34|0034|34)?[\s|\-|\.]?[6|7|8|9][\s|\-|\.]?([0-9][\s|\-|\.]?){8}$/;
-      if (pattern.test(string) || string == "") {
-        this.form.telefono.className += ' is-invalid';
-        totOk = false;
+      this.form.numero.value = this.form.numero.value.trim();
+      var numeroString = this.form.numero.value;
+      var numeroPattern = /^(\+34|0034|34)?[\s|\-|\.]?[6|7|8|9][\s|\-|\.]?([0-9][\s|\-|\.]?){8}$/; //admite numeros españoles, prefijo +34, 0034 o 34, admite separadores de espacio, guion, o punto. Maximo 9 numeros aparte del prefijo (solo pueden empezar por 6,7,8 o 9)
+      if (!numeroPattern.test(numeroString) || numeroString == "") {
+        this.form.numero.className += ' is-invalid';
+        allOk = false;
       } else {
-        this.form.telefono.className += ' is-valid';
+        this.form.numero.className += ' is-valid';
       }
       // ------------------------- DIRECCION DE CORREO -----------------------------------
       this.form.email.value = this.form.email.value.trim();
       var emailString = this.form.email.value;
-      var emailPattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/; // Format @
+      var emailPattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/; // Formato mail, con un simbolo de arroba obligatorio, el punto obligatorio, y despues 2 o 3 caracteres despues del punto
       if (!emailPattern.test(emailString) || emailString == "") {
         this.form.email.className += " is-invalid ";
-        totOk = false;
+        allOk = false;
       } else {
         this.form.email.className += " is-valid ";
       }
-
       // ------------------------ MENSAJE ---------------------------------
       if (this.form.mensaje.value == "" || this.form.mensaje.value.length > 300) {
         this.form.mensaje.className += " is-invalid ";
-        totOk = false;
+        allOk = false;
       } else {
         this.form.mensaje.className += " is-valid ";
       }
-      // ------------------------- Captcha --------------------------------
-
-	
+      // ------------------------- RECAPTCHA V2 --------------------------------	
       var response = grecaptcha.getResponse();
-
-      if(response.length == 0){
-        alert("Captcha no verificado");
-        totOk = false;
-   
-   	  } else {
-      	alert("Captcha verificado");
-        
-   	  }
- 	  
-      
-      
-      if (totOk == true) {
-          this.form.submit(); // Disparar l'event submit del form d'aques button
-          // o be enviar les dades via AJAX
-        }
-   }
-
-	
-	
+      //Creamos la condición para que muestre un aviso (en un div oculto) de que el captcha no esta verificado 
+      if (response.length == 0) {
+        document.getElementById("g-recaptcha-error").style.display = "block";
+        allOk = false;
+     	}
+      //Creamos la condición final de si se cumple todo, se envia el formulario al hacer click en el button
+      if (allOk == true) {
+         this.form.submit(); //Disparamos el evento de enviar el formulario validado
+      }
+   }	
 </script>
-	
-	
-	
-	
+		
 <!-- Script para integración de google maps mediante su api -->	
-	<script>
-	
-	// Creamos un objeto llamado map con los parametros deseados
-	     
-	
-	/*var map;
-	      function initMap() {
-	        map = new google.maps.Map(document.getElementById('mapa'), {
-	        	center: {lat: 41.402675, lng: 2.181181}, 
-				scrollwheel: false,
-				zoom: 8,
+<script>	
+	// Creamos un objeto llamado map	
+	var map;
+	// Creamos la función para insertar el mapa	
+	      function initMap(){
+		// Asignamos en un div llamado "mapa" el mapa de google maps con los parametros deseados
+	          map = new google.maps.Map(document.getElementById('mapa'), {
+	            center: {lat: 41.402675, lng: 2.181181}, 
+	            scrollwheel: false,
+				zoom: 7,
 				zoomControl: true,
 				rotateControl : true,
 				mapTypeControl: true,
 				streetViewControl: false,
 				navigationControl: true,
 				draggable: true,
-	        });
-	      }; */
-	var map;
-	      function initMap(){
-	          map = new google.maps.Map(document.getElementById('mapa'), {
-	           center: {lat: 41.402675, lng: 2.181181}, 
-	           zoom: 8,
-	           
-	         });
-	   	};
+	          });       
+	   		}
 	      
-	    	var xhr;
-	      	if (window.XMLHttpRequest) {
-	      		xhr = new XMLHttpRequest();
-	      		}else {
-	      		xhr = new ActiveXObject("Microsoft.XMLHTTP");
-	      		}
-	      		
-	
-	      xhr.onreadystatechange = function() {
-	          if (xhr.readyState == 4 && xhr.status == 200) {
-	            var arrCentres = JSON.parse(xhr.responseText);
-	            for (var i = 0; i < arrCentres.length; i++) {
-	              var coordenada = {
-	                lat: parseFloat(arrCentres[i].lat),
-	                lng: parseFloat(arrCentres[i].lng)
-	              };
-	              var marker = new google.maps.Marker({
-	                position: coordenada,
-	                map: map,
-	                title: arrCentres[i].nombre,
-	                label: String.fromCharCode(65 + i)
-	              });
-	            }
-	          }
-	      	}
-	      	xhr.open('GET', 'http://app.cifo.local/api/public/formacion/centros/'+'?nocache='+Math.random(), true);
-	  		xhr.send(null);
+	     
+	   	
+	   	var xhr;
+	   	if (window.XMLHttpRequest) {
+	   	xhr = new XMLHttpRequest();
+	   	}else {
+	   	xhr = new ActiveXObject("Microsoft.XMLHTTP");
+	   	}
 	  		
-	      
-	      
-	      
-	          
-	         
-	  	
-	      	
+	        xhr.onreadystatechange = function() {
+	            if (xhr.readyState == 4 && xhr.status == 200) {
+	              var arrCentros = JSON.parse(xhr.responseText);
+	              for (var i = 0; i < arrCentros.records.length; i++) {
+	            //	  imprimecentro(arrCentros.records[i]);
+	                var coordenada = {
+	                  lat: parseFloat(arrCentros.records[i].lat),
+	                  lng: parseFloat(arrCentros.records[i].lng)
+	                };
+	                
+	        		
+	                var infoCentros = new google.maps.InfoWindow({
+	            		content: 'contentString'
+	                });
+	        		//var infoCentrosActivo;
+	                var marker = new google.maps.Marker({
+		                position: coordenada,
+		                map: map,
+		                title: arrCentros.records[i].nombre,
+		               // label: String.fromCharCode(65 + i)
+	                });     
+	                
+	                marker.addListener('click', function() {
+	                	infoCentros.open(map,marker,position);	    			
+	                	});  
+	    	    	  
+			     
+	    		
+	                   
+	                
+	              }
+	            }
+	        	}
+				
+	        	xhr.open('GET', 'http://app.cifo.local/api/public/formacion/centros/'+'?nocache='+Math.random(), true);
+	    		xhr.send(null);
+	    	
+	    	  
+	    		
+	    	
 			
-			
-	</script>
-	 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMAUUG6X2nJy8DHsJlmyMv0aS-JDCIDZE&callback=initMap"   type="text/javascript"></script>
-	<script src="/cookies.js"></script>
-	<script type="text/javascript">
+</script>
+
+ <script>
+//    var contentString= '<div class="col-12 col-md-6 col-lg-4 p-3  d-flex">' +'lalala'+
+/*	+'<div class="card h-100">'
+    	+'<img src="'+objcentro.media+'" class="card-img-top w-100" style="object-fit:cover; max-height:150px" alt="'+objcentro.nombre+'">'
+    	+'<div class="card-body pb-0">'
+      		+'<h5 class="card-title text-info">'+objcentro.nombre+'</h5>'
+      		+'<div class="border border-light border-right-0 border-left-0 pt-3">'
+	      		+'<p><i class="fa fa-phone fa-fw text-muted"></i> '+objcentro.telefono+'</p>'
+	      		+'<p><i class="fa fa-envelope fa-fw text-muted"></i>'
+	      		+'<a href="mailto:'+objcentro.buzon+'"> '+objcentro.buzon+'</a></p>'
+	      		+'<p><i class="fa fa-calendar fa-fw text-muted"></i> '+objcentro.horario+'</p>'
+	      		+'<p><i class="fa fa-map-marker fa-fw text-muted"></i> '+objcentro.direccion+'</p>'
+	      	+'</div>'
+	      	+'<div class="pt-3">'
+	      		+'<h5 class="text-secondary"><i class="fa fa-road fa-fw text-muted"></i> Acceso</h5>'
+	      		+objcentro.acceso
+	      	+'</div>'      	
+ 		+'</div>'
+ 		+'<div class="card-footer bg-transparent border-0">'
+			+'<p class="d-flex justify-content-center mt-3 align-text-bottom"><a href="#" class="btn btn-primary">Más información...</a></p>'
+ 		+'</div>'
+ 	+'</div>'
+ +'</div>';
+ 
+ 
+ 
+var infoCentros = new google.maps.InfoWindow({
+		content: contentString,
+    });
+  	
+  	
+
+  	
+  	
+  marker.addListener('click', function() {
+	infoCentros.open(map,marker);	    			
+	});   
   
-  if(detectCookie("okRGPD")){
-	  if(getCookie("okRGPD")=="ok"){
-		  var objBoxRGPD=document.getElementById("boxRGPD");
+	marker.addListener('click', function() {
+       InfoWindow({content: contentString,});
+	});
+	*/
+
+</script> 
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMAUUG6X2nJy8DHsJlmyMv0aS-JDCIDZE&callback=initMap"   type="text/javascript"></script>
+<script src="/cookies.js"></script>
+<script type="text/javascript">
+  //Si detecta que la cookie esta ok, detecta que esta ok porque ya esta aceptada, elimina el hijo del elemento boxCookies, (por lo tanto no se muestra la maquetación html)
+  if (detectCookie("okCookie")) {
+	  if(getCookie("okCookie")=="ok") {
+		  var objBoxRGPD=document.getElementById("boxCookies");
 		  objBoxRGPD.parentNode.removeChild(objBoxRGPD);
 	  }
-  }else{
-	  document.getElementById("btnRGPD").onclick=function(){
-		  setCookie("okRGPD","ok",365);
-		  var objBoxRGPD=document.getElementById("boxRGPD");
-		  objBoxRGPD.parentNode.removeChild(objBoxRGPD);
+  } else {
+	  //elimina el hijo del elemento boxCookies cuando ha sido aceptada por el boton con el id"btnRGPD" (por lo tanto no se muestra la maquetación html)
+	  document.getElementById("btnCookies").onclick=function(){
+		  setCookie("okCookie","ok",365);
+		  var objBoxCookies=document.getElementById("boxCookies");
+		  objBoxCookies.parentNode.removeChild(objBoxCookies);
 	  }
   }
-  
-  
-  
 </script>
-   
-	<!-- Optional JavaScript -->
-	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-
-
 </body>
 </html>

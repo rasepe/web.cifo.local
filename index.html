@@ -234,11 +234,12 @@
 			</div>
 		</div>
 		<div class="d-flex justify-content-center class text-center py-3 ">Copyright © Cifo 2018 </div>
-<!-- COOKIES--------------------->
-	<div class="mt-4 mb-4 justify-content-center class text-center alert alert-dark fixed-bottom" id="boxRGPD"><p>Hacemos uso de cookies propias y de terceros para proporcionar una mejor experiencia de usuario. Al seguir navegando entendemos que acepta nuestra <a href="#">Política de Cookies</a>.</p>
-    <div class="btn btn-warning" id="btnRGPD">Aceptar</div>
-    </div>
      </footer>
+<!-- COOKIES--------------------->
+     <div class="cookiealert-container text-center fixed-bottom" id="boxCookies" style="margin-bottom: 0em; background-color: #4a4c4a; color: white; padding: 2vh;"><p>Aviso informativo: este sitio web puede utilizar cookies para mejorar su navegación. Si quieres ver el contenido de este sitio web tendrás que aceptar las cookies según la legislación vigente en nuestro país. Si no aceptas, no podrás continuar navegando por este sitio web. Clique
+     <button type="submit" class="btn btn-warning" id="btnCookies" class="btn btn-primary btn-sm acceptcookies" style="border-color: #78992f; background-color: #78992f; color: white;"> aquí </button> para aceptar las cookies.</p>
+    </div>
+
 
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -247,23 +248,20 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <script src="/cookies.js"></script>
 <script type="text/javascript">
-  
-  if(detectCookie("okRGPD")){
-	  if(getCookie("okRGPD")=="ok"){
-		  var objBoxRGPD=document.getElementById("boxRGPD");
+  //Si detecta que la cookie esta ok, detecta que esta ok porque ya esta aceptada, elimina el hijo del elemento boxCookies, (por lo tanto no se muestra la maquetación html)
+  if (detectCookie("okCookie")) {
+	  if(getCookie("okCookie")=="ok") {
+		  var objBoxRGPD=document.getElementById("boxCookies");
 		  objBoxRGPD.parentNode.removeChild(objBoxRGPD);
 	  }
-  }else{
-	  document.getElementById("btnRGPD").onclick=function(){
-		  setCookie("okRGPD","ok",365);
-		  var objBoxRGPD=document.getElementById("boxRGPD");
-		  objBoxRGPD.parentNode.removeChild(objBoxRGPD);
+  } else {
+	  //elimina el hijo del elemento boxCookies cuando ha sido aceptada por el boton con el id"btnRGPD" (por lo tanto no se muestra la maquetación html)
+	  document.getElementById("btnCookies").onclick=function(){
+		  setCookie("okCookie","ok",365);
+		  var objBoxCookies=document.getElementById("boxCookies");
+		  objBoxCookies.parentNode.removeChild(objBoxCookies);
 	  }
   }
-  
-  
-  
 </script>
-
 </body>
 </html>

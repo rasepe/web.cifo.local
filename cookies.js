@@ -1,9 +1,7 @@
-// - crear cookies, modificar cookie
+// crear cookies, modificar cookie
     //función que crea una cookie y asigna información y fecha de caducidad.
-        //función copiada de https://www.w3schools.com/js/js_cookies.asp
-        function setCookie(cname, cvalue, exdays) {
+           function setCookie(cname, cvalue, exdays) {
                     var d = new Date();
-
                     d.setTime(d.getTime() + (exdays*24*60*60*1000));
                     var expires = "expires="+ d.toUTCString();
 
@@ -20,7 +18,6 @@
 // - leer cookies
     //función que dado el nombre de una cookie (cname) devuelve su contenido.
 
-        //función copiada de https://www.w3schools.com/js/js_cookies.asp
         function getCookie(cname) {
             var name = cname + "=";
             var decodedCookie = decodeURIComponent(document.cookie);
