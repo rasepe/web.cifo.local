@@ -32,9 +32,9 @@
 		<div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
 			<ul class="navbar-nav ">
 				<li class="nav-item"><a class="nav-link" href="/centros/index.html">Centros</a></li>
-				<li class="nav-item"><a class="nav-link" href="#">Oferta formativa</a></li>
-				<li class="nav-item"><a class="nav-link" href="#">Biblioteca</a></li>
-				<li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+				<li class="nav-item"><a class="nav-link" href="/oferta_formativa/index.html">Oferta formativa</a></li>
+				<li class="nav-item"><a class="nav-link" href="/biblioteca/index.html">Biblioteca</a></li>
+				<li class="nav-item"><a class="nav-link" href="/contacto/index.html">Contacto</a></li>
 				<li class="nav-item"><a class="nav-link d-block d-md-none d-lg-block" href="/campus/index.html">Campus virtual</a></li>
 				<li class="nav-item"><a class="nav-link  d-block d-md-none d-lg-block" href="#">Entrar</a></li>
 				<li class="nav-item"><a class="nav-link d-block d-md-none d-lg-block" href="#">Regístrate</a></li>
@@ -195,9 +195,9 @@
 				<ul type="none" class="p-0 mb-5 mb-md-2">
 					<li class="text-white"><h6>DIRECTO A</h6></li>
 					<li><a class="text-light" href="/centros/index.html">Centros</a></li>
-					<li><a class="text-light" href="#">Oferta formativa</a></li>
-					<li><a class="text-light" href="#">Biblioteca</a></li>
-					<li><a class="text-light" href="#">Contacto</a></li>
+					<li><a class="text-light" href="/oferta_formativa/index.html">Oferta formativa</a></li>
+					<li><a class="text-light" href="/biblioteca/index.html">Biblioteca</a></li>
+					<li><a class="text-light" href="/contacto/index.html">Contacto</a></li>
 					<li><a class="text-light" href="/campus/index.html">Campus virtual</a></li>
 					<li><a class="text-light" href="#">Entrar</a></li>
 					<li><a class="text-light" href="#">Registrarse</a></li>
@@ -248,20 +248,21 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <script src="/cookies.js"></script>
 <script type="text/javascript">
-  //Si detecta que la cookie esta ok, detecta que esta ok porque ya esta aceptada, elimina el hijo del elemento boxCookies, (por lo tanto no se muestra la maquetación html)
-  if (detectCookie("okCookie")) {
+//Si detecta que la cookie esta ok, detecta que esta ok porque ya esta aceptada, elimina el hijo del elemento boxCookies, (por lo tanto no se muestra la maquetación html)
+if (detectCookie("okCookie")) {
 	  if(getCookie("okCookie")=="ok") {
 		  var objBoxRGPD=document.getElementById("boxCookies");
 		  objBoxRGPD.parentNode.removeChild(objBoxRGPD);
 	  }
-  } else {
+} else {
 	  //elimina el hijo del elemento boxCookies cuando ha sido aceptada por el boton con el id"btnRGPD" (por lo tanto no se muestra la maquetación html)
 	  document.getElementById("btnCookies").onclick=function(){
 		  setCookie("okCookie","ok",365);
 		  var objBoxCookies=document.getElementById("boxCookies");
 		  objBoxCookies.parentNode.removeChild(objBoxCookies);
 	  }
-  }
+}
+
 </script>
 </body>
 </html>
