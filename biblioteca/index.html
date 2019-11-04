@@ -1,313 +1,317 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 
 <!-- Bootstrap CSS -->
-	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" >
-	<!-- Datatable CSS -->
-	<!-- <link rel="stylesheet"  href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css"/> -->
-<!--	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css"/> -->
- 
- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.css"/>
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap4.css"/>
- 
- 
-	<!-- Font Awsome -->
-	<link rel="stylesheet"  href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<!-- Datatable CSS -->
+<link rel="stylesheet" type="text/css"
+	href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.css" />
+<link rel="stylesheet" type="text/css"
+	href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap4.css" />
 
 
-<!-- Bootstrap CSS hola -->
-	<!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> -->
+<!-- Font Awsome -->
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<!-- 	<link href="/your-path-to-fontawesome/css/fontawesome.css" rel="stylesheet">
- 	<link href="/your-path-to-fontawesome/css/brands.css" rel="stylesheet">
- 	<link href="/your-path-to-fontawesome/css/solid.css" rel="stylesheet">  -->
-<!--  	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
- <!--	<script src="https://kit.fontawesome.com/93b925733d.js" crossorigin="anonymous"></script>-->
- 	 <!--	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css"/>-->
-  <!--
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>-->
-
-
- 	
-	<title>Biblioteca</title>
-	<link rel="stylesheet" href="/css/style.css">
-	<style>
-	.col-3 {
-	padding-right:0;
-	padding-left:0;
+<title>Biblioteca</title>
+<link rel="stylesheet" href="/css/style.css">
+<style>
+.col-3 {
+	padding-right: 0;
+	padding-left: 0;
 	height: fit-content;
-	}
-	.card-header {
+}
+
+.card-header {
 	background-color: #01A5D5 !important;
 	color: white;
-	}
-
-	#taulamodal {
-	
-	 
-	}
-	#imagentabla{
-/*max-width:300px;*/
-
 }
 
-#parrafo1-1 {
-/*width:60%;*/
-
-}
-#parrafo1-2 {
-
-}
 
 #headingTwo, #headingThree {
-background-color:grey!important;
+	background-color: grey !important;
 }
 
 .btn-link, .btn-link:hover {
-color:white;
+	color: white;
 }
-	
-	
-	
-
-	</style>
+</style>
 </head>
 <body>
-	
+
 	<!--Creación del Navegador ---------------------------------------------------------------------->
-	
-	<nav class="navbar navbar-expand-md fixed-top p-0 pr-2 navbar-dark bg-info">
-		<div >
-		    <img src="/img/soc.jpg"  height="55px" alt="Logo SOC">
-			<a class="navbar-brand p-0 m-0 d-inline-block text-wrap" style="line-height: 1em; " href="#">Servei d'Ocupació<br> de Catalunya</a>
+
+	<nav
+		class="navbar navbar-expand-md fixed-top p-0 pr-2 navbar-dark bg-info">
+		<div>
+			<img src="/img/soc.jpg" height="55px" alt="Logo SOC"> <a
+				class="navbar-brand p-0 m-0 d-inline-block text-wrap"
+				style="line-height: 1em;" href="#">Servei d'Ocupació<br> de
+				Catalunya
+			</a>
 		</div>
 		<button class="navbar-toggler " type="button" data-toggle="collapse"
 			data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
 			aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
-		</button> 
-		<div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+		</button>
+		<div class="collapse navbar-collapse justify-content-end"
+			id="navbarNavDropdown">
 			<ul class="navbar-nav ">
 				<li class="nav-item"><a class="nav-link" href="#">Centros</a></li>
-				<li class="nav-item"><a class="nav-link" href="#">Oferta formativa</a></li>
+				<li class="nav-item"><a class="nav-link" href="#">Oferta
+						formativa</a></li>
 				<li class="nav-item active"><a class="nav-link" href="#">Biblioteca</a></li>
 				<li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
-				<li class="nav-item"><a class="nav-link d-block d-md-none d-lg-block" href="/campus/index.html">Campus virtual</a></li>
-				<li class="nav-item"><a class="nav-link  d-block d-md-none d-lg-block" href="#">Entrar</a></li>
-				<li class="nav-item"><a class="nav-link d-block d-md-none d-lg-block" href="#">Regístrate</a></li>
-				<li class="nav-item dropdown d-none d-md-inline d-lg-none">
-					<a class="nav-link dropdown-toggle" href="#"
+				<li class="nav-item"><a
+					class="nav-link d-block d-md-none d-lg-block"
+					href="/campus/index.html">Campus virtual</a></li>
+				<li class="nav-item"><a
+					class="nav-link  d-block d-md-none d-lg-block" href="#">Entrar</a></li>
+				<li class="nav-item"><a
+					class="nav-link d-block d-md-none d-lg-block" href="#">Regístrate</a></li>
+				<li class="nav-item dropdown d-none d-md-inline d-lg-none"><a
+					class="nav-link dropdown-toggle" href="#"
 					id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
 					aria-haspopup="true" aria-expanded="false"> eCampus </a>
-					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-						<a class="dropdown-item" href="/campus/index.html">Campus Virtual</a> 
-						<a class="dropdown-item" href="#">Entrar</a>
-						<a class="dropdown-item" href="#">Regístrate</a>
-					</div>
-				</li>
+					<div class="dropdown-menu dropdown-menu-right"
+						aria-labelledby="navbarDropdownMenuLink">
+						<a class="dropdown-item" href="/campus/index.html">Campus
+							Virtual</a> <a class="dropdown-item" href="#">Entrar</a> <a
+							class="dropdown-item" href="#">Regístrate</a>
+					</div></li>
 			</ul>
 		</div>
 	</nav>
-	
+
 	<!-- Creación del breadcrumb y redes sociales---------------------------------------------------------------------->
-	
-	<div class="row mx-2 border-bottom border-secondary" style="margin-top:55px">
+
+	<div class="row mx-2 border-bottom border-secondary"
+		style="margin-top: 55px">
 		<div class="col p-0 ">
-	 		<nav aria-label="breadcrumb"> 
-	 			<ol class="breadcrumb m-0 mt-3 bg-transparent p-0">
-	 		 		<li><i class="fa fa-home text-info"></i></li>
-	 		 		<li class="breadcrumb-item text-info pl-2"><a href="/index.html">Inicio</a></li>
-	    			<li class="breadcrumb-item active " aria-current="page">Biblioteca</li>
-	  		 	</ol>
+			<nav aria-label="breadcrumb">
+				<ol class="breadcrumb m-0 mt-3 bg-transparent p-0">
+					<li><i class="fa fa-home text-info"></i></li>
+					<li class="breadcrumb-item text-info pl-2"><a
+						href="/index.html">Inicio</a></li>
+					<li class="breadcrumb-item active " aria-current="page">Biblioteca</li>
+				</ol>
 			</nav>
 		</div>
 		<div class="col d-flex py-2 justify-content-end align-items-center">
-	    	<a class="mr-1 p-1 py-1 d-inline-block rounded-circle text-white" style="background-color:#1B1FBA" href="#"><i class="fa fa-facebook fa-fw "></i></a>
-	      	<a class="mr-1 p-1 py-1 d-inline-block rounded-circle text-white" style="background-color:#00acee" href="#"><i class="fa fa-twitter fa-fw"></i></a>
-	      	<a class="mr-1 p-1 py-1 d-inline-block rounded-circle text-white" style="background-color:#CC4115" href="#"><i class="fa fa-google-plus fa-fw"></i></a>
-	      	<a class="mr-1 p-1 py-1 d-inline-block rounded-circle bg-dark text-white" href="#"><i class="fa fa-instagram fa-fw"></i></a>
-	      	<a class="mr-1 p-1 py-1 d-inline-block rounded-circle bg-danger text-white" href="#"><i class="fa fa-pinterest fa-fw"></i></a>
+			<a class="mr-1 p-1 py-1 d-inline-block rounded-circle text-white"
+				style="background-color: #1B1FBA" href="#"><i
+				class="fa fa-facebook fa-fw "></i></a> <a
+				class="mr-1 p-1 py-1 d-inline-block rounded-circle text-white"
+				style="background-color: #00acee" href="#"><i
+				class="fa fa-twitter fa-fw"></i></a> <a
+				class="mr-1 p-1 py-1 d-inline-block rounded-circle text-white"
+				style="background-color: #CC4115" href="#"><i
+				class="fa fa-google-plus fa-fw"></i></a> <a
+				class="mr-1 p-1 py-1 d-inline-block rounded-circle bg-dark text-white"
+				href="#"><i class="fa fa-instagram fa-fw"></i></a> <a
+				class="mr-1 p-1 py-1 d-inline-block rounded-circle bg-danger text-white"
+				href="#"><i class="fa fa-pinterest fa-fw"></i></a>
 		</div>
 	</div>
- 
- <!-- Creación del contenido ---------------------------------------------------------------------->
- 	
+
+	<!-- Creación del contenido ---------------------------------------------------------------------->
+
 	<div class="row m-0 mb-2">
 		<div class="col-12 pt-3">
 			<h3>Biblioteca</h3>
 		</div>
 	</div>
-	
+
 	<div class="container-fluid">
-		<div class="row m-0 pb-3 "> <!--  d-flex -->
-	
-	<div class="col-md-4 col-lg-3">
-	
-	<div class="card bg-light mb-3">
-  <div class="card-header w-100"><i class="fa fa-search"></i>&nbsp;&nbsp;Buscar</div>
-  </div>
-  
-		
-<div class="card bg-light mb-3">
-  <div class="card-header w-100"><i class="fa fa-filter"></i>&nbsp;&nbsp;Filtrar</div>
-  <div class="card-body">
-  <!-- <h5 class="card-title">Light card title</h5> -->
-  <!--   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+		<div class="row m-0 pb-3 ">
+			<!--  d-flex -->
 
-<!-- formulario -->
-		
-		 <div class="form-group" id="selectores">
-		  
-   <label for="exampleFormControlSelect1">Secciones</label>
-    <select id="secciones" class="form-control">
-      <option value="0">-- Escoja una sección --</option>
-    </select>
-     <small class="form-text text-muted"><em>Lista de secciones de la biblioteca</em></small>
-    </div>
-     <div class="form-group">
-     <label for="exampleFormControlSelect1">Temas</label>
-    <select id="temas" class="form-control">
-      <option value="0">-- Escoja un tema --</option>
-    </select>
-     <small class="form-text text-muted"><em>Lista de temas de la biblioteca</em></small>
-    </div>
-     <div class="form-group">
-       <label for="exampleFormControlSelect1">Editoriales</label>
-    <select id="editoriales" class="form-control">
-      <option value="0">-- Escoja una editorial --</option>
-    </select>
-     <small class="form-text text-muted"><em>Lista de editoriales</em></small>
-    </div>
-    <div class="d-flex justify-content-center">
-    <button type="button" class="btn btn-danger mr-1" id="borrar" onclick="location.reload()">Borrar</button>
-    <button type="button" class="btn btn-info ml-1" id="filtrar" onclick="filtrar()">Filtrar</button>
-    </div>
- 
-    </div>
- 
-</div>
-  </div>
-  
-  <div class="col-8 col-sm-11 col-md-7 col-lg-9">
- 
-    <table id="libros" class="table table-striped table-bordered">
-    
-      <thead>
-        <tr>
-          <th>Isbn</th>
-          <th>Cubierta</th>
-          <th>Título</th> <!--  style="width: 30%" -->
-          <th>Editorial</th>
-          <th>Sección</th>
-            <th>Tema</th>
-        </tr>
-      </thead>
-      <tbody id="tbllibros"></tbody>
-    </table>
-  </div>
-		
-	
-		</div><!-- row -->
-	</div>	<!-- container -->
-	
+			<div class="col-md-4 col-lg-3">
+
+				<div class="card bg-light mb-3">
+					<div class="card-header w-100">
+						<i class="fa fa-search"></i>&nbsp;&nbsp;Buscar
+					</div>
+				</div>
+
+
+				<div class="card bg-light mb-3">
+					<div class="card-header w-100">
+						<i class="fa fa-filter"></i>&nbsp;&nbsp;Filtrar
+					</div>
+					<div class="card-body">
+			
+						<!-- formulario -->
+
+						<div class="form-group" id="selectores">
+
+							<label for="exampleFormControlSelect1">Secciones</label> <select
+								id="secciones" class="form-control">
+								<option value="0">-- Escoja una sección --</option>
+							</select> <small class="form-text text-muted"><em>Lista de
+									secciones de la biblioteca</em></small>
+						</div>
+						<div class="form-group">
+							<label for="exampleFormControlSelect1">Temas</label> <select
+								id="temas" class="form-control">
+								<option value="0">-- Escoja un tema --</option>
+							</select> <small class="form-text text-muted"><em>Lista de
+									temas de la biblioteca</em></small>
+						</div>
+						<div class="form-group">
+							<label for="exampleFormControlSelect1">Editoriales</label> <select
+								id="editoriales" class="form-control">
+								<option value="0">-- Escoja una editorial --</option>
+							</select> <small class="form-text text-muted"><em>Lista de
+									editoriales</em></small>
+						</div>
+						<div class="d-flex justify-content-center">
+							<button type="button" class="btn btn-danger mr-1" id="borrar"
+								onclick="location.reload()">Borrar</button>
+							<button type="button" class="btn btn-info ml-1" id="filtrar"
+								onclick="filtrar()">Filtrar</button>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+
+			<div class="col-8 col-sm-11 col-md-7 col-lg-9">
+
+				<table id="libros" class="table table-striped table-bordered">
+
+					<thead>
+						<tr>
+							<th>Isbn</th>
+							<th>Cubierta</th>
+							<th>Título</th>
+							<!--  style="width: 30%" -->
+							<th>Editorial</th>
+							<th>Sección</th>
+							<th>Tema</th>
+						</tr>
+					</thead>
+					<tbody id="tbllibros"></tbody>
+				</table>
+			</div>
+
+
+		</div>
+		<!-- row -->
+	</div>
+
 	<!-- modal -->
-	
 
+	<div class="modal fade bd-example-modal-lg" id="myModal" tabindex="-1"
+		role="dialog" aria-labelledby="myModalTitle" aria-hidden="true">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="myModalTitle"></h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="container-fluid">
+						<div class="accordion" id="accordionExample">
 
-	
-	
-	 <div class="modal fade bd-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalTitle" aria-hidden="true">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="myModalTitle"></h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body" >
-      <div class="container-fluid">
-<div class="accordion" id="accordionExample">
+							<div class="d-flex justify-content-between">
+								<!--  -between  -->
+								<div id="parrafo1-1" class="p-2 flex-grow-1 w-75">
+									<!-- flex-fill -->
+									<!-- flex-grow-1 -->
+								</div>
+								<div id="parrafo1-2"
+									class="p-2 flex-shrink-1 d-flex align-items-stretch mw-25">
+									<!-- d-flex align-items-stretch -->
+								</div>
+							</div>
 
-<div class="d-flex justify-content-between"> <!--  -between  -->
-<div id="parrafo1-1" class="p-2 flex-grow-1 w-75">  <!-- flex-fill --> <!-- flex-grow-1 -->
-</div>
-<div id="parrafo1-2" class="p-2 flex-shrink-1 d-flex align-items-stretch mw-25"> <!-- d-flex align-items-stretch -->
-</div>
-</div> 
+							<div class="card">
+								<div class="card-header" id="headingTwo">
+									<h2 class="mb-0">
+										<button class="btn btn-link collapsed" type="button"
+											data-toggle="collapse" data-target="#collapseTwo"
+											aria-expanded="false" aria-controls="collapseTwo">
+											Descripción</button>
+									</h2>
+								</div>
+								<div id="collapseTwo" class="collapse"
+									aria-labelledby="headingTwo" data-parent="#accordionExample">
+									<div class="card-body"></div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card-header" id="headingThree">
+									<h2 class="mb-0">
+										<button class="btn btn-link collapsed" type="button"
+											data-toggle="collapse" data-target="#collapseThree"
+											aria-expanded="false" aria-controls="collapseThree">
+											Autores</button>
+									</h2>
+								</div>
+								<div id="collapseThree" class="collapse"
+									aria-labelledby="headingThree" data-parent="#accordionExample">
+									<div class="card-body"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary"
+						data-dismiss="modal">Cerrar</button>
+					<!--  <button type="button" class="btn btn-primary">Save changes</button> -->
+				</div>
+			</div>
+		</div>
+	</div>
 
-  <div class="card">
-    <div class="card-header" id="headingTwo">
-      <h2 class="mb-0">
-        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-          Descripción
-        </button>
-      </h2>
-    </div>
-    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-      <div class="card-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-      </div>
-    </div>
-  </div>
-  <div class="card">
-    <div class="card-header" id="headingThree">
-      <h2 class="mb-0">
-        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-          Autores
-        </button>
-      </h2>
-    </div>
-    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-      <div class="card-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-       <!--  <button type="button" class="btn btn-primary">Save changes</button> -->
-      </div>
-    </div>
-  </div>
-</div> 
-	
-<!-- Creación del footer ---------------------------------------------------------------------->	
-			<!-- ---------------redes sociales----------------------------------- -->
+	<!-- Creación del footer ---------------------------------------------------------------------->
+	<!-- ---------------redes sociales----------------------------------- -->
 	<footer id="footer" class="container-fluid text-light">
 		<div class="row d-flex justify-content-center align-items-center">
-	      <a class="mr-1 p-1 py-2 d-inline-block  bg-transparent text-light" href="#"><i class="fa fa-twitter fa-2x fa-fw "></i></a>
-	      <a class="mr-1 p-1 py-2 d-inline-block bg-transparent text-light" href="#"><i class="fa fa-facebook fa-2x fa-fw"></i></a>
-	      <a class="mr-1 p-1 py-2 d-inline-block bg-transparent text-light" href="#"><i class="fa fa-google-plus fa-2x fa-fw"></i></a>
-	      <a class="mr-1 p-1 py-2 d-inline-block bg-transparent text-light" href="#"><i class="fa fa-instagram fa-2x fa-fw"></i></a>
-	      <a class="mr-1 p-1 py-2 d-inline-block bg-transparent text-light" href="#"><i class="fa fa-pinterest fa-2x fa-fw"></i></a>
+			<a class="mr-1 p-1 py-2 d-inline-block  bg-transparent text-light"
+				href="#"><i class="fa fa-twitter fa-2x fa-fw "></i></a> <a
+				class="mr-1 p-1 py-2 d-inline-block bg-transparent text-light"
+				href="#"><i class="fa fa-facebook fa-2x fa-fw"></i></a> <a
+				class="mr-1 p-1 py-2 d-inline-block bg-transparent text-light"
+				href="#"><i class="fa fa-google-plus fa-2x fa-fw"></i></a> <a
+				class="mr-1 p-1 py-2 d-inline-block bg-transparent text-light"
+				href="#"><i class="fa fa-instagram fa-2x fa-fw"></i></a> <a
+				class="mr-1 p-1 py-2 d-inline-block bg-transparent text-light"
+				href="#"><i class="fa fa-pinterest fa-2x fa-fw"></i></a>
 		</div>
-		   <!-- ---------------directo a----------------------------------- -->
+		<!-- ---------------directo a----------------------------------- -->
 		<div class="row mt-4">
-			<div class="col-12 col-md-3 d-flex justify-content-center text-center">
+			<div
+				class="col-12 col-md-3 d-flex justify-content-center text-center">
 				<ul type="none" class="p-0 mb-5 mb-md-2">
 					<li class="text-white"><h6>DIRECTO A</h6></li>
 					<li><a class="text-light" href="/centros/index.html">Centros</a></li>
 					<li><a class="text-light" href="#">Oferta formativa</a></li>
 					<li><a class="text-light" href="#">Biblioteca</a></li>
 					<li><a class="text-light" href="#">Contacto</a></li>
-					<li><a class="text-light" href="/campus/index.html">Campus virtual</a></li>
+					<li><a class="text-light" href="/campus/index.html">Campus
+							virtual</a></li>
 					<li><a class="text-light" href="#">Entrar</a></li>
 					<li><a class="text-light" href="#">Registrarse</a></li>
 				</ul>
 			</div>
-			 <!-- ---------------ayuda----------------------------------- -->
-			<div class="col-12 col-md-3 d-flex justify-content-center text-center">
+			<!-- ---------------ayuda----------------------------------- -->
+			<div
+				class="col-12 col-md-3 d-flex justify-content-center text-center">
 				<ul type="none" class="p-0 mb-5 mb-md-2">
 					<li class="text-white"><h6>AYUDA</h6></li>
 					<li><a class="text-light" href="#">Sobre gencat</a></li>
@@ -316,51 +320,56 @@ color:white;
 					<li><a class="text-light" href="#legal">Aviso Legal</a></li>
 				</ul>
 			</div>
-			 <!-- ---------------aviso legal--------------------------------- -->
+			<!-- ---------------aviso legal--------------------------------- -->
 			<div class="col-12 col-md-6">
 				<div class="text-center d-flex justify-content-center">
-					<h6 class="text-white" id="legal">SERVEI D'OCUPACIÓ DE CATALUNYA</h6>
+					<h6 class="text-white" id="legal">SERVEI D'OCUPACIÓ DE
+						CATALUNYA</h6>
 				</div>
-				<p class="col-12 d-flex justify-content-center class text-center mb-5 mb-md-2">
-				 Aviso legal : De acuerdo con el artículo 17.1 de la Ley 19/2014, la © Generalidad de Cataluña permite la reutilización de los contenidos y de los datos siempre que
-	se cite la fuente y la fecha de actualización y que no se desnaturalice la información (artículo 8 de la Ley 37/2007) y también que no se contradiga con una licencia específica.
-				</p>
-				
+				<p
+					class="col-12 d-flex justify-content-center class text-center mb-5 mb-md-2">
+					Aviso legal : De acuerdo con el artículo 17.1 de la Ley 19/2014, la
+					© Generalidad de Cataluña permite la reutilización de los
+					contenidos y de los datos siempre que se cite la fuente y la fecha
+					de actualización y que no se desnaturalice la información (artículo
+					8 de la Ley 37/2007) y también que no se contradiga con una
+					licencia específica.</p>
+
 				<div class="row">
 					<div class="col-6">
-						<img src="/img/sepelogotip.jpg" title="logotipo sepe" alt="logotipo sepe" class="img-fluid">
+						<img src="/img/sepelogotip.jpg" title="logotipo sepe"
+							alt="logotipo sepe" class="img-fluid">
 					</div>
 					<div class="col-6">
-						<img src="/img/logotip_Iniciativaocupaciojuvenil_bn.jpg" title="logotipo sepe" alt="logotipo sepe" class="img-fluid">
+						<img src="/img/logotip_Iniciativaocupaciojuvenil_bn.jpg"
+							title="logotipo sepe" alt="logotipo sepe" class="img-fluid">
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="d-flex justify-content-center class text-center py-3 ">Copyright © Cifo 2018 </div>
-     </footer>
-<!-- JQuery -->
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<!-- Popper -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"  ></script>
-<!-- Bootstrap -->
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" ></script>
-<!-- Datatable -->
-<!-- <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script> -->
-<!-- <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script> -->
-<!-- <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script> -->
-
-
-
-
-<script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.js"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.js"></script>
-
-<script>
+		<div class="d-flex justify-content-center class text-center py-3 ">Copyright
+			© Cifo 2018</div>
+	</footer>
+	<!-- JQuery -->
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<!-- Popper -->
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<!-- Bootstrap -->
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<!-- Datatable -->
+	<script type="text/javascript"
+		src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+	<script type="text/javascript"
+		src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.js"></script>
+	<script type="text/javascript"
+		src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.js"></script>
+	<script>
 
 var tabla=$('#libros').DataTable({
 
-    //responsive: true,
+	 "lengthMenu": [ 5, 10, 25, 50, 75, 100 ],
      responsive: true,
 	language: {
         url: '/spanish.datatable.json'
@@ -375,44 +384,13 @@ var tabla=$('#libros').DataTable({
 
           ]
     
-	
 });
 
 
 
 
-
-/* $(document).ready(function() {
-    $('#libros').DataTable( 
- /*    		{
-        "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
-    "language": {
-        "lengthMenu": "Mostrar _MENU_ registros",
-    "search":         "Buscar:",
-       "info": "Mostrando _START_ a _END_ de un total de _TOTAL_ entradas",
-     "paginate": {
-           "first":      "Primero",
-           "last":       "Último",
-           "next":       "Siguiente",
-           "previous":   "Anterior"
-       },
-   "infoPostFix": "Lista de Libros"
-     }   
-    }  */
-/*     		);
-} ); */ 
-
-
-
-//En carregar la pàgina, carrega els llibres, les seccions i les editorials
-
-//Carrega els llibres
-
-	
-
 	getLibros();
 	
-var url;
 function getLibros(codigoseccion, codigotema, codigoeditorial) {
 	var xhr;
 	if (window.XMLHttpRequest) {
@@ -423,10 +401,9 @@ function getLibros(codigoseccion, codigotema, codigoeditorial) {
 	xhr.onreadystatechange = function() {
 			if (xhr.readyState == 4 && xhr.status == 200) {
 				var arrLibros = JSON.parse(xhr.responseText);
-				console.log(arrLibros.records);
-				//window.sessionStorage.setItem("seleccionactual",JSON.stringify(arrLibros.records));
+
 				for (var i = 0; i < arrLibros.records.length; i++) {
-					//console.log(arrLibros.records[i].nombre);
+
 					tabla.row.add({
 						"Isbn"		: '<a href="javascript:void(0)" onclick="getLibro('+arrLibros.records[i].id+')" data-toggle="modal" data-target=".bd-example-modal-sm">'+arrLibros.records[i].isbn+'</a>',
 						"Cubierta"		: '<img src="'+arrLibros.records[i].cubierta+'" height="100px">',
@@ -436,21 +413,11 @@ function getLibros(codigoseccion, codigotema, codigoeditorial) {
 						"Tema"		: arrLibros.records[i].tema
 					});
 					
-					/* var cadena='<tr>'+
-					'<td><a href="javascript:void(0)" onclick="getLibro('+arrLibros.records[i].id+')" data-toggle="modal" data-target=".bd-example-modal-sm">'+arrLibros.records[i].isbn+'</a></td>'+
-					'<td><img src="'+arrLibros.records[i].cubierta+'" height="100px"></td>'+
-				//	'<td>Aquí va la cubierta</td>'+
-					'<td>'+arrLibros.records[i].titulo+'</td>'+
-					'<td>'+arrLibros.records[i].editorial+'</td>'+
-					'<td>'+arrLibros.records[i].seccion+'</td>'+
-					'<td>'+arrLibros.records[i].tema+'</td>'+
-				//	'<td><a href="javascript:void(0)" onclick="getCurs('+arrLibros.records[i].id+')" data-toggle="modal" data-target=".bd-example-modal-sm">[+info...]</a></td>'+
-					'</tr>';
-					document.getElementById('tbllibros').innerHTML+=cadena;	 */		
+
 				}
 				
 				tabla.draw();
-				//getSecciones();
+
 			}
 			
 			
@@ -464,24 +431,13 @@ function getLibros(codigoseccion, codigotema, codigoeditorial) {
 	if (codigoeditorial != "") {
 		codigoeditorial = codigoeditorial + '/'
 	} 
-	url = 'http://app.cifo.local/api/public/biblioteca/libros/seccion/'+codigoseccion+'tema/'+codigotema+'editorial/'+codigoeditorial+'?nocache='+Math.random() ;
-	console.log(url);
+
 	xhr.open('GET', 'http://app.cifo.local/api/public/biblioteca/libros/seccion/'+codigoseccion+'tema/'+codigotema+'editorial/'+codigoeditorial+'?nocache='+Math.random(), true);
 	xhr.send();
-	return url;
+
 }
 
 window.onpageshow=function()  {
-	
-/* 	if (codigoseccion == undefined) {
-		codigoseccion = "";
-	} 
-	
-	if (codigoseccion != "") {
-		codigoseccion = codigoseccion + '/';
-	}  */
-	
-	
 	
 	var xhr;
 	if (window.XMLHttpRequest) {
@@ -493,24 +449,16 @@ window.onpageshow=function()  {
 		xhr.onreadystatechange = function() {
 			if (xhr.readyState == 4 && xhr.status == 200) {
 				var arrSecciones = JSON.parse(xhr.responseText);
-				console.log(arrSecciones.records);
 				for (var i = 0; i < arrSecciones.records.length; i++) {
-					console.log(arrSecciones.records[i].nombre);
 					document.getElementById("secciones").innerHTML += '<option id="'+ arrSecciones.records[i].id +'" value="' + arrSecciones.records[i].nombre + '">'+ arrSecciones.records[i].nombre +'</option>';
 		
 				}
 				getEditoriales();
 			}
 			
-			//getEditoriales();
 			
 		}
-		//getEditoriales();
-	/* 	var url = 'http://app.cifo.local/api/public/biblioteca/secciones/'+codigoseccion+'?nocache='+Math.random();
-		console.log(url);
-	
-	xhr.open('GET', 'http://app.cifo.local/api/public/biblioteca/secciones/'+codigoseccion+'?nocache='+Math.random(), true);
-	xhr.send(); */
+
 	
 		xhr.open('GET', 'http://app.cifo.local/api/public/biblioteca/secciones/?nocache='+Math.random(), true);
 		xhr.send(); 
@@ -525,7 +473,7 @@ function getEditoriales(codigoeditorial) {
 	if (codigoeditorial != "") {
 		codigoeditorial += '/';
 	}  
-		//document.getElementById("editoriales").innerHTML = '<option value="0">-- Escoja una editorial --</option>';
+		
 	var xhr;
 if (window.XMLHttpRequest) {
 	xhr = new XMLHttpRequest();
@@ -536,10 +484,7 @@ if (window.XMLHttpRequest) {
 	xhr.onreadystatechange = function() {
 		if (xhr.readyState == 4 && xhr.status == 200) {
 			var arrEditoriales = JSON.parse(xhr.responseText);
-			console.log("console.log(arrEditoriales.records)");
-			console.log(arrEditoriales.records);
 			for (var i = 0; i < arrEditoriales.records.length; i++) {
-				console.log(arrEditoriales.records[i].nombre);
 				document.getElementById("editoriales").innerHTML += '<option id="'+ arrEditoriales.records[i].id +'" value="' + arrEditoriales.records[i].nombre + '">'+ arrEditoriales.records[i].nombre +'</option>';
 	
 			}
@@ -556,11 +501,8 @@ document.getElementById("secciones").onchange = function() {
 	document.getElementById("temas").innerHTML = '<option value="0">-- Escoja un tema --</option>';
 		
 		
-	//	document.getElementById("tblMunicipios").innerHTML = '<option value="">-- Escull un municipi --</option>'
-		
 		var seccioseleccionada = document.getElementById("secciones").selectedIndex;
 		var codiseccio = document.getElementById("secciones").options[seccioseleccionada].id;
-		console.log(codiseccio);
 		
 		if (window.XMLHttpRequest) {
 			xhr = new XMLHttpRequest();
@@ -571,9 +513,7 @@ document.getElementById("secciones").onchange = function() {
 			xhr.onreadystatechange = function() {
 				if (xhr.readyState == 4 && xhr.status == 200) {
 					var arrTemas = JSON.parse(xhr.responseText);
-					console.log(arrTemas);
 					for (var i = 0; i < arrTemas.records.length; i++) {
-						console.log(arrTemas.records[i].nombre);
 						document.getElementById("temas").innerHTML += '<option id="'+ arrTemas.records[i].id +'" value="' + arrTemas.records[i].nombre + '">'+ arrTemas.records[i].nombre +'</option>';
 					}
 				}
@@ -589,7 +529,6 @@ function filtrar() {
 	 //esborrem taula
 	 tabla.clear().draw();
 	
-	// codigoseccion = 
 	 var posicionseccion = document.getElementById("secciones").selectedIndex;
 	 var posiciontema = document.getElementById("temas").selectedIndex;
 	 var posicioneditorial = document.getElementById("editoriales").selectedIndex;
@@ -611,56 +550,8 @@ function filtrar() {
 			 codigoeditorial = document.getElementById("editoriales").options[i].id;
 		 }
 	 }
-	 document.getElementById('tbllibros').innerHTML = '';
-	getLibros(codigoseccion, codigotema, codigoeditorial); // var urldemanada = 
-	// console.log("getLibros("+codigoseccion+","+codigotema+","+codigoeditorial+")");
-	// console.log("urldemanada");
-	// console.log(urldemanada);
 	
-	 //neteja primer la tabla
-	// document.getElementById('tbllibros').innerHTML = '';
-	 
-	/*  var xhr;
-		if (window.XMLHttpRequest) {
-			xhr = new XMLHttpRequest();
-		} else {
-			xhr = new ActiveXObject("Microsoft.XMLHTTP");
-		}
-		xhr.onreadystatechange = function() {
-				if (xhr.readyState == 4 && xhr.status == 200) {
-					var arrLibros = JSON.parse(xhr.responseText);
-					console.log(arrLibros.records);
-					//window.sessionStorage.setItem("seleccionactual",JSON.stringify(arrLibros.records));
-					 //neteja primer la tabla
-	 //document.getElementById('tbllibros').innerHTML = '';
-					for (var i = 0; i < arrLibros.records.length; i++) {
-						//console.log(arrLibros.records[i].nombre);
-						console.log("bucle del filtrar(): "+ i);
-						var cadena='<tr>'+
-						//'<td>'+arrLibros.records[i].isbn+'</td>'+
-						'<td><a href="javascript:void(0)" onclick="getLibro('+arrLibros.records[i].id+')" data-toggle="modal" data-target=".bd-example-modal-sm">'+arrLibros.records[i].isbn+'</a></td>'+
-						'<td><img src="'+arrLibros.records[i].cubierta+'" height="100px"></td>'+
-					//	'<td>Aquí va la cubierta</td>'+
-						'<td>'+arrLibros.records[i].titulo+'</td>'+
-						'<td>'+arrLibros.records[i].editorial+'</td>'+
-						'<td>'+arrLibros.records[i].seccion+'</td>'+
-						'<td>'+arrLibros.records[i].tema+'</td>'+
-					//	'<td><a href="javascript:void(0)" onclick="getCurs('+arrLibros.records[i].id+')" data-toggle="modal" data-target=".bd-example-modal-sm">[+info...]</a></td>'+
-						'</tr>';
-						document.getElementById('tbllibros').innerHTML+=cadena;			
-					}
-					//getSecciones();
-				}
-				
-				
-		}
-		
-		 //neteja primer la tabla
-		// document.getElementById('tbllibros').innerHTML = '';
-		xhr.open('GET', urldemanada, true); //url
-		xhr.send(); 
-		 //neteja primer la tabla
-		 document.getElementById('tbllibros').innerHTML = ''; */
+	getLibros(codigoseccion, codigotema, codigoeditorial); 
 	 
 	 
 }
@@ -668,7 +559,6 @@ function filtrar() {
 function getLibro(id){
 	var xhr;
 	window.sessionStorage.setItem("id_libro",id);
-//	var id_areas = document.getElementById("tblAreas").value;
 	if (window.XMLHttpRequest) {
 			xhr = new XMLHttpRequest();
 		} else {
@@ -677,10 +567,7 @@ function getLibro(id){
 	xhr.onreadystatechange = function() {
 		var id_libro = window.sessionStorage.getItem("id_libro");
 		if (xhr.readyState == 4 && xhr.status == 200) {
-			var arrLibro = JSON.parse(xhr.responseText);
-		//	console.log(arrCursos);
-		
-				
+			var arrLibro = JSON.parse(xhr.responseText);				
 					
 					var titolmodal = "Libro";
 					document.getElementById("myModalTitle").innerHTML = titolmodal;
@@ -695,20 +582,6 @@ function getLibro(id){
 					+'<tr><th>Sección:</th><td>'+arrLibro.record.seccion.nombre+'</td></tr>'
 					+'<tr><th>Nivel:</th><td>'+arrLibro.record.nivel+'</td></tr>'
 					+'</tbody></table>';
-					
-				//	+'<img src="'+arrLibro.record.cubierta+'" class="d-inline-block w-25 mh-100 align-middle"></img>'
-				/* 	<ul><li><strong>Isbn:</strong> '+arrLibro.record.isbn+'</li>'
-					+'<li><strong>Título:</strong> '+arrLibro.record.titulo+'</li>'
-					+'<li><strong>Subtitulo:</strong> '+arrLibro.record.subtitulo+'</li>'
-					+'<li><strong>Número de páginas:</strong> '+arrLibro.record.numero_paginas+'</li>'
-					+'<li><strong>Editorial:</strong> '+arrLibro.record.editorial.nombre+'</li>'
-					+'<li><strong>Año de publicación:</strong> '+arrLibro.record.anio_publicacion+'</li>'
-					+'<li><strong>Tema:</strong> '+arrLibro.record.tema.nombre+'</li>'
-					+'<li><strong>Sección:</strong> '+arrLibro.record.seccion.nombre+'</li>'
-					+'<li><strong>Nivel:</strong> '+arrLibro.record.nivel+'</li>'
-					+'<img src="'+arrLibro.record.cubierta+'" height="100px"></img>' */
-					
-					
 					
 					
 					var cadena2='<p>'+arrLibro.record.descripcion+'</p>';
@@ -726,294 +599,26 @@ function getLibro(id){
 					
 					var imatgemodal = '<img id="imagentabla" src="'+arrLibro.record.cubierta+'" class="align-self-stretch border rounded" >'; //class="align-self-stretch" //d-inline-block
 					
-					//var cadena = cadena1+cadena2+cadena3;
 					document.querySelector("#myModal #parrafo1-1").innerHTML = cadena1;
 					document.querySelector("#myModal #parrafo1-2").innerHTML = imatgemodal;
 					document.querySelector("#collapseTwo .card-body").innerHTML = cadena2;
 					document.querySelector("#collapseThree .card-body").innerHTML = cadena3;
-					//console.log(document.querySelector("#myModal .parrafo1 tbody").offsetHeight);
-				//	document.getElementById("imagencelda").style.height = document.querySelector("#myModal .parrafo1 tbody").offsetHeight;
-					$('#myModal').modal('show');
-					console.log(document.querySelector("#myModal tbody").offsetHeight);
-					
-					//console.log(document.querySelector("#myModal .parrafo1 tbody").offsetHeight);
+
+					$('#myModal').modal('show');				
 			
 		}
-		//console.log(document.querySelector("#myModal .parrafo1 tbody").offsetHeight);
+
 	}
 	
 	var id_libro = window.sessionStorage.getItem("id_libro");
 	xhr.open('GET', 'http://app.cifo.local/api/public/biblioteca/libros/'+id_libro+'?nocache='+Math.random(), true);
-	//http://app.cifo.local/api/public/biblioteca/libros/2/
+
 	xhr.send();
-	//$('#myModal').modal();
-	//console.log(curs);
 
 }
 
-	/* //Mostra la taula sencera en carregar la pagina
-	 window.onload=function() {
-	 var xhr;
-	 if (window.XMLHttpRequest) {
-	 xhr = new XMLHttpRequest();
-	 } else {
-	 xhr = new ActiveXObject("Microsoft.XMLHTTP");
-	 }
 
-	 xhr.onreadystatechange = function() {
-	 if (xhr.readyState == 4 && xhr.status == 200) {
-	 var arrLibros = JSON.parse(xhr.responseText);
-	 console.log(arrLibros.records);
-	 window.sessionStorage.setItem("seleccionactual",JSON.stringify(arrLibros.records));
-	 for (var i = 0; i < arrLibros.records.length; i++) {
-	 //console.log(arrLibros.records[i].nombre);
-	 var cadena='<tr>'+
-	 '<td>'+arrLibros.records[i].isbn+'</td>'+
-	 '<td><img src="'+arrLibros.records[i].cubierta+'" height="100px"></td>'+
-	 //	'<td>Aquí va la cubierta</td>'+
-	 '<td>'+arrLibros.records[i].titulo+'</td>'+
-	 '<td>'+arrLibros.records[i].editorial+'</td>'+
-	 '<td>'+arrLibros.records[i].seccion+'</td>'+
-	 '<td>'+arrLibros.records[i].tema+'</td>'+
-	 //	'<td><a href="javascript:void(0)" onclick="getCurs('+arrLibros.records[i].id+')" data-toggle="modal" data-target=".bd-example-modal-sm">[+info...]</a></td>'+
-	 '</tr>';
-	 document.getElementById('tbllibros').innerHTML+=cadena;			
-	 }
-	 }
-	 }
-	
-	 xhr.open('GET', 'http://app.cifo.local/api/public/biblioteca/libros/?nocache='+Math.random(), true);
-	 xhr.send(); 
-	 }	
-
-	 //Mostra el primer selector
-	 var xhr;
-	 if (window.XMLHttpRequest) {
-	 xhr = new XMLHttpRequest();
-	 } else {
-	 xhr = new ActiveXObject("Microsoft.XMLHTTP");
-	 }
-
-	 xhr.onreadystatechange = function() {
-	 if (xhr.readyState == 4 && xhr.status == 200) {
-	 var arrSecciones = JSON.parse(xhr.responseText);
-	 console.log(arrSecciones.records);
-	 for (var i = 0; i < arrSecciones.records.length; i++) {
-	 console.log(arrSecciones.records[i].nombre);
-	 document.getElementById("secciones").innerHTML += '<option id="'+ arrSecciones.records[i].id +'" value="' + arrSecciones.records[i].nombre + '">'+ arrSecciones.records[i].nombre +'</option>';
-	
-	 }
-	 }
-	 }
-	 xhr.open('GET', 'http://app.cifo.local/api/public/biblioteca/secciones/?nocache='+Math.random(), true);
-	 xhr.send();
-
-	
-	
-	
-	 //Mostra el segon selector quan seleccionem el primer 
-	 document.getElementById("secciones").onchange = function() {
-	 document.getElementById("temas").innerHTML = '<option value="0">-- Escoja un tema --</option>';
-	
-	
-	 //	document.getElementById("tblMunicipios").innerHTML = '<option value="">-- Escull un municipi --</option>'
-	
-	 var seccioseleccionada = document.getElementById("secciones").selectedIndex;
-	 var codiseccio = document.getElementById("secciones").options[seccioseleccionada].id;
-	 console.log(codiseccio);
-	
-	 if (window.XMLHttpRequest) {
-	 xhr = new XMLHttpRequest();
-	 } else {
-	 xhr = new ActiveXObject("Microsoft.XMLHTTP");
-	 }
-	
-	 xhr.onreadystatechange = function() {
-	 if (xhr.readyState == 4 && xhr.status == 200) {
-	 var arrTemas = JSON.parse(xhr.responseText);
-	 console.log(arrTemas);
-	 for (var i = 0; i < arrTemas.records.length; i++) {
-	 console.log(arrTemas.records[i].nombre);
-	 document.getElementById("temas").innerHTML += '<option id="'+ arrTemas.records[i].id +'" value="' + arrTemas.records[i].nombre + '">'+ arrTemas.records[i].nombre +'</option>';
-	 }
-	 }
-	 }
-	 xhr.open('GET', 'http://app.cifo.local/api/public/biblioteca/temas/seccion/'+ codiseccio +'/&nocache=' +Math.random(), true);
-	 xhr.send();
-	
-	 }
-	
-	
-	 //Mostra el selector editorials
-	 window.onpageshow=function() {
-	 document.getElementById("editoriales").innerHTML = '<option value="0">-- Escoja un tema --</option>';
-	 var xhr;
-	 if (window.XMLHttpRequest) {
-	 xhr = new XMLHttpRequest();
-	 } else {
-	 xhr = new ActiveXObject("Microsoft.XMLHTTP");
-	 }
-
-	 xhr.onreadystatechange = function() {
-	 if (xhr.readyState == 4 && xhr.status == 200) {
-	 var arrEditoriales = JSON.parse(xhr.responseText);
-	 console.log(arrEditoriales.records);
-	 for (var i = 0; i < arrEditoriales.records.length; i++) {
-	 console.log(arrEditoriales.records[i].nombre);
-	 document.getElementById("editoriales").innerHTML += '<option id="'+ arrEditoriales.records[i].id +'" value="' + arrEditoriales.records[i].nombre + '">'+ arrEditoriales.records[i].nombre +'</option>';
-	
-	 }
-	 }
-	 }
-	 xhr.open('GET', 'http://app.cifo.local/api/public/biblioteca/editoriales/?nocache='+Math.random(), true);
-	 xhr.send();
-	
-	 }
-	
-	
-	 var temasactivado = false;
-	 var editorialesactivado = false;
-	
-	 document.getElementById("temas").onfocus = function() {
-	 temasactivado = true;
-	 editorialesactivado = false;
-	 }
-	
-	 document.getElementById("editoriales").onfocus = function() {
-	 editorialesactivado = true;
-	 temasactivado = false;
-	
-	 }
-	
-	
-
-	 function filtrar() {
-	
-	
-	 if (temasactivado == true) {
-	
-	 document.getElementById("tbllibros").innerHTML = "";
-	 //var codiseccio = document.getElementById("secciones").selectedIndex;
-	 var posicioseleccionada = document.getElementById("temas").selectedIndex;
-	 console.log(posicioseleccionada);
-	 var coditema
-	 for (i=0; i<document.getElementById("temas").options.length; i++) {
-	 if (i==posicioseleccionada) {
-	 coditema = document.getElementById("temas").options[i].id;
-	 console.log(coditema);	
-	 }
-	 }
-	 if (window.XMLHttpRequest) {
-	 xhr = new XMLHttpRequest();
-	 } else {
-	 xhr = new ActiveXObject("Microsoft.XMLHTTP");
-	 }
-
-	 xhr.onreadystatechange = function() {
-	 if (xhr.readyState == 4 && xhr.status == 200) {
-	 var arrLibros = JSON.parse(xhr.responseText);
-	 console.log(arrLibros);
-	 window.sessionStorage.setItem("seleccionactual",JSON.stringify(arrLibros.records));
-	 for (var i = 0; i < arrLibros.records.length; i++) {
-	 console.log(arrLibros.records[i]);
-	 //console.log(arrLibros.records[i].id);
-	 //console.log(arrLibros.records[i].nombre);
-	 //console.log(arrLibros.records[i].duracion);
-	 //document.getElementById("tblAreas").innerHTML += '<option id="'+ arrAreas[i].id +'" value="' + arrAreas[i].nombre + '">'+ arrAreas[i].nombre +'</option>';
-	 //   <th>Isbn</th>
-	 //   <th>Cubierta</th>
-	 //  <th>Título</th> <!--  style="width: 30%" -->
-	 // <th>Editorial</th>
-	 //<th>Sección</th>
-	 // <th>Tema</th> 
-	 var cadena='<tr>'+
-	 '<td>'+arrLibros.records[i].isbn+'</td>'+
-	 '<td><img src="'+arrLibros.records[i].cubierta+'" height="100px"></td>'+
-	 //	'<td>Aquí va la cubierta</td>'+
-	 '<td>'+arrLibros.records[i].titulo+'</td>'+
-	 '<td>'+arrLibros.records[i].editorial+'</td>'+
-	 '<td>'+arrLibros.records[i].seccion+'</td>'+
-	 '<td>'+arrLibros.records[i].tema+'</td>'+
-	 //	'<td><a href="javascript:void(0)" onclick="getCurs('+arrLibros.records[i].id+')" data-toggle="modal" data-target=".bd-example-modal-sm">[+info...]</a></td>'+
-	 '</tr>';
-	 document.getElementById('tbllibros').innerHTML+=cadena;
-	
-	
-	 }
-	 }
-	
-	
-	 }
-	 xhr.open('GET', 'http://app.cifo.local/api/public/biblioteca/libros/tema/'+ coditema +'/&nocache=' +Math.random(), true);
-	 xhr.send();  
-	
-	
-	 }
-	
-	 else {
-	
-	
-	
-	 document.getElementById("tbllibros").innerHTML = "";
-	
-	 var posicioseleccionada = document.getElementById("editoriales").selectedIndex;
-	 console.log(posicioseleccionada);
-	 var codieditorial
-	 for (i=0; i<document.getElementById("editoriales").options.length; i++) {
-	 if (i==posicioseleccionada) {
-	 codieditorial = document.getElementById("editoriales").options[i].id;
-	 console.log(codieditorial);	
-	 }
-	 }
-	 if (window.XMLHttpRequest) {
-	 xhr = new XMLHttpRequest();
-	 } else {
-	 xhr = new ActiveXObject("Microsoft.XMLHTTP");
-	 }
-
-	 xhr.onreadystatechange = function() {
-	 if (xhr.readyState == 4 && xhr.status == 200) {
-	 var arrLibros = JSON.parse(xhr.responseText);
-	 console.log("hola");
-	 console.log(arrLibros);
-	 window.sessionStorage.setItem("seleccionactual",JSON.stringify(arrLibros.records));
-	 for (var i = 0; i < arrLibros.records.length; i++) {
-	 console.log(arrLibros.records[i]);
-	 var cadena='<tr>'+
-	 '<td>'+arrLibros.records[i].isbn+'</td>'+
-	 '<td><img src="'+arrLibros.records[i].cubierta+'" height="100px"></td>'+
-	 //	'<td>Aquí va la cubierta</td>'+
-	 '<td>'+arrLibros.records[i].titulo+'</td>'+
-	 '<td>'+arrLibros.records[i].editorial+'</td>'+
-	 '<td>'+arrLibros.records[i].seccion+'</td>'+
-	 '<td>'+arrLibros.records[i].tema+'</td>'+
-	 //	'<td><a href="javascript:void(0)" onclick="getCurs('+arrLibros.records[i].id+')" data-toggle="modal" data-target=".bd-example-modal-sm">[+info...]</a></td>'+
-	 '</tr>';
-	 document.getElementById('tbllibros').innerHTML+=cadena;
-	
-	
-	 }
-	 }
-	
-	
-	 }
-	 xhr.open('GET', 'http://app.cifo.local/api/public/biblioteca/libros/editorial/'+ codieditorial +'/&nocache=' +Math.random(), true);
-	 xhr.send();  
-	
-	
-	 }
-	
-	 } */
-
-	/* function borrar(){
-		document.getElementById('tbllibros').innerHTML="";
-	} */
 </script>
-	<!-- Optional JavaScript -->
-	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<!--	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-	<script
-		src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>-->
+
 </body>
 </html>
