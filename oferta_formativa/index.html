@@ -15,8 +15,9 @@
 	<link rel="stylesheet" href="/css/style.css">
     
     <!-- datatable bootstrap 4 -->
-	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
-	
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.css">
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap4.css"/>
+ 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/fixedheader/3.1.6/css/fixedHeader.bootstrap4.css"/>
 	<style>
 		#buscar {
 			background-color: #01A5D5 !important;	
@@ -135,33 +136,158 @@
  			</div>
  		</div>
  		<div class="col-lg-8 offset-lg-4 ml-0 style="margin-top:55px"">
- 		
- 		 			<!-- ---------------creación datatable----------------------------------- -->
- 		 			
+ 		 			<!-- ---------------creación datatable----------------------------------- -->	
 			<div class="card-body">
 				<div class="table-responsive">
 					<table id="tablaOfertas" class="table table-striped table-bordered" >
-			
-			    <thead>
-			        <tr>
-			            <th>Código</th>
-			            <th>Curso</th>
-			            <th>Area</th>
-			            <th>Centro</th>
-			            <th>Inicio</th>
-			            <th>Fin</th>
-			        </tr>
-			    </thead>
-			    <tbody></tbody>
-			</table>
- 		</div>
- 		</div>
+					    <thead>
+					        <tr>
+					            <th>Código</th>
+					            <th>Curso</th>
+					            <th>Area</th>
+					            <th>Centro</th>
+					            <th>Inicio</th>
+					            <th>Fin</th>
+					        </tr>
+					    </thead>
+			    		<tbody></tbody>
+					</table>
+ 				</div>
+ 			</div>
  		</div>
  	</div>	
+ 	 	 
+ 	 	 <!--------------------------------Creación Modal------------------------------------>
+ 	
+	 	<!-- Modal -->
+	 	<div class="modal fade bd-modal-lg" id="modalCentro" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true ">
+	 	  <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
+	 	    <div class="modal-content">
+	 	      <div class="modal-header">
+	 	        <h5 class="modal-title" id="exampleModalCenterTitle">Oferta formativa</h5>
+	 	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	 	          <span aria-hidden="true">&times;</span>
+	 	        </button>
+	 	      </div>
+	 	      <div class="modal-body">
+	 	      <div class="pb-0 pt-1 mx-3 px-0 row">
+	 	      	<div class="col-6 justify-content-end d-flex text-black-50">Código oferta</div>
+	 	      	<div id="modCodOferta" class="col-6 bg-light text-dark">xxxx</div>
+	 	      </div>
+	 	      <div class="pb-0 pt-1 mx-3 px-0 row">
+	 	      	<div class="col-6 justify-content-end d-flex text-black-50">Curso</div>
+	 	      	<div id="modCurso" class="col-6 bg-light text-dark">xxxx</div>
+	 	      </div>
+	 	      <div class="pb-0 pt-1 mx-3 px-0 row">
+	 	      	<div class="col-6 justify-content-end d-flex text-black-50">Fecha inicio</div>
+	 	      	<div id="modFInicio" class="col-6 bg-light text-dark">xxxx</div>
+	 	      </div>
+	 	      <div class="pb-0 pt-1 mx-3 px-0 row">
+	 	      	<div class="col-6 justify-content-end d-flex text-black-50">Fecha fin</div>
+	 	      	<div id="modFFin" class="col-6 bg-light text-dark">xxxx</div>
+	 	      </div>
+	 	      <div class="pb-0 pt-1 mx-3 px-0 row">
+	 	      	<div class="col-6 justify-content-end d-flex text-black-50">Plazas</div>
+	 	      	<div id="modPlazas" class="col-6 bg-light text-dark">xxxx</div>
+	 	      </div>
+	 	      <div class="pb-0 pt-1 mx-3 px-0 row">
+	 	      	<div class="col-6 justify-content-end d-flex text-black-50">Profesor</div>
+	 	      	<div id="modProfesor" class="col-6 bg-light text-dark">xxxx</div>
+	 	      </div>
+	 	      <div class="pb-2 pt-1 mx-3 px-0 row">
+	 	      	<div class="col-6 justify-content-end d-flex text-black-50">Duración</div>
+	 	      	<div id="modDuracion" class="col-6 bg-light text-dark">xxxx</div>
+	 	      </div>
+	 	  <!-- --------------------------------Acordeón------------------------------------------- -->    
+			<div class="accordion " id="accordionExample">
+			
+  			<div data-target="#list-example" data-offset="0" class="scrollspy-example">
+	 	   		<div class="mx-3">
+		 	   		<div id="btnObjetivo" class="modal-body mb-1 mx-0 p-0 row bg-secondary text-white border-secondary rounded-top">
+		 	      		<i class="fa fa-thumbs-up mr-2 mt-2 ml-3"></i>
+					    	<button class=" py-1 pl-0 text-white btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+					          Objetivos
+					        </button>
+					</div>
+					<div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+			      		<div class="px-5 mb-1 border border-light card-body"></div>
+			      		<div class="d-flex justify-content-end">
+		        			<button id ="cerrarObjetivos" type="button" class="mb-1 btn btn-light" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">Cerrar</button>
+		       			</div>	
+			        </div>
+			    </div>
+				<div class="mx-3">
+			        <div id="btnPrograma" class="modal-body mb-1 mx-0 p-0 row bg-secondary text-white border-secondary">
+		 	      		<i class="fa fa-bars mr-2 mt-2 ml-3"></i>
+					    	<button class=" py-1 pl-0 text-white btn btn-link" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+					          Programa
+					        </button>
+					</div>
+					<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+		      			<div class="px-5 mb-1 border border-light card-body"></div>
+		        		<div class="d-flex justify-content-end">
+		        			<button id ="cerrarPrograma" type="button" class="mb-1 btn btn-light" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Cerrar</button>
+		       			</div>
+		       		</div>
+			     </div>
+			     <div class="mx-3">
+			        <div id="btnCentro" class="modal-body mb-1 mx-0 p-0 row bg-secondary text-white border-secondary rounded-bottom">
+		 	      		<i class="fa fa-university mr-2 mt-2 ml-3"></i>
+					    	<button class=" py-1 pl-0 text-white btn btn-link" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+					          Centro
+					        </button>
+					</div>
+					<div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+		      			<div class=" row px-3 mb-1 border border-light card-body">
+		      				<div class="col-6" id="img">	
+		      				
+			    			</div>
+			    			<div class="card-body col-6 p-0 pl-1">
+			      				<h5 id ="center" class="card-title text-info"></h5>
+			      				<div class="border border-light border-right-0 border-left-0 pt-1">
+				      				<div>
+				      					<i class="fa fa-phone fa-fw text-muted"></i>
+				      					<p id ="tf" class="mb-1 d-inline-block"></p>
+				      				</div>
+				      				<p class="mb-1"><i class="fa fa-envelope fa-fw text-muted"></i> 
+				      					<a id ="mail" href="mailto:cifo_violeta.soc@gencat.cat"></a></p>
+				      				<div>
+				      					<i class="fa fa-calendar fa-fw text-muted"></i>
+				      					<p id ="calendar" class="mb-1 d-inline-block"></p>
+				      				</div>
+				      				<div>
+				      					<i class="fa fa-map-marker fa-fw text-muted"></i>
+				      					<p id ="address" class="mb-1 d-inline-block"></p>
+				      				</div>
+				      			</div>
+				      			<div class="pt-1">
+				      				<h5 class="text-secondary"><i class="fa fa-road fa-fw text-muted"></i> Acceso</h5>
+				      				<div class="mb-1" id ="acceso"></div>
+				      			</div>      	
+			 				</div>
+			 				<div class="col-12 card-footer bg-transparent border-0 p-0">
+								<p class="d-flex justify-content-center mb-0 mt-3 align-text-bottom"><a href="#" class="btn btn-primary">Más información...</a></p>
+			 				</div>
+			 				<div class="d-flex col-12 justify-content-end">
+		        				<button id ="cerrarCentros" type="button" class="mb-1 btn btn-light" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Cerrar</button>
+		       				</div>	
+			 
+		        		</div>
+		       		</div>
+			     </div>
+				  </div> 
+				 </div> 	
+	 	      </div>
+	 	
+	 	
+	 	      <div class="modal-footer">
+	 	        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+	 	      </div>
+	 	    </div>
+	 	  </div>
+	 	</div>
+ 
 
- 
- 
- 
  
  
  
@@ -229,8 +355,11 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 	<!-- datatable JS -->
-	<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
-	<script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+	<script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+	<script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.js"></script>
+	<script type="text/javascript" src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.js"></script>
+	<script type="text/javascript" src="https://cdn.datatables.net/fixedheader/3.1.6/js/dataTables.fixedHeader.js"></script>
+
 
 	<script>
 	
@@ -321,7 +450,9 @@
  			{"data": "datainicio", "targets": 4 },
  			{"data": "datafin", "targets": 5 },
  			
- 		]
+ 		],
+ 		responsive: true,
+ 		fixedHeader: true
  	});
  	//---------------Llamada AJAX para rellenar datatable de ofertas--------------------------
  	var xhr2;
@@ -339,14 +470,13 @@
 			//console.log(arrOfertas);
 			for(var i=0; i<arrOfertas.length; i++){
 				tabla.row.add({
-					"codigoferta":'<a href="javascript:void(0)" onclick="editOferta()">'+arrOfertas[i].codigoferta+'</a>',
+					"codigoferta":'<a href="javascript:void(0)" onclick="editOferta(' + arrOfertas[i].id + ')">'+arrOfertas[i].codigoferta+'</a>',
 					"curso": arrOfertas[i].curso,
 					"area": arrOfertas[i].area,
 					"centro": arrOfertas[i].centro,
 					"datainicio": arrOfertas[i].datainicio,
 					"datafin": arrOfertas[i].datafin
 				})
-				
 			}
 			tabla.draw();
  		}
@@ -354,31 +484,100 @@
 	xhr2.open('GET','http://app.cifo.local/api/public/formacion/ofertas/', true);
  	xhr2.send();		
  	
+ 	//---------------Llamada AJAX para rellenar datatable de ofertas por filtro . funcion onclick de filtrar--------------------------
  	
  	document.getElementById("btnFiltrar").onclick = function(){
  		tabla.clear().draw();
  		var areaId = document.getElementById("familiaProfesional").value;
  		var cursoId = document.getElementById("cursos").value;
+ 		var centroId = document.getElementById("centrosFormacion").value;
  		
  		xhr.onreadystatechange = function(){
 	 		if(xhr.readyState==4 && xhr.status==200){
-	 		/*	var objCursos = JSON.parse(xhr.responseText);	
-				//console.log(objCursos);
-				var arrCursos = objCursos.records;
-				//console.log(arrCursos);
-				for(var i=0; i<arrCursos.length; i++){
-					var cadena = '<option value="' + arrCursos[i].id + '">' + arrCursos[i].nombre + '</option>';
-					document.getElementById("cursos").innerHTML+=cadena;
-					
+	 			var objOfertas = JSON.parse(xhr.responseText);	
+				var arrOfertas = objOfertas.records;
+				for(var i=0; i<arrOfertas.length; i++){
+					tabla.row.add({
+						"codigoferta":'<a href="javascript:void(0)" onclick="editOferta(' + arrOfertas[i].id + ')">'+arrOfertas[i].codigoferta+'</a>',
+						"curso": arrOfertas[i].curso,
+						"area": arrOfertas[i].area,
+						"centro": arrOfertas[i].centro,
+						"datainicio": arrOfertas[i].datainicio,
+						"datafin": arrOfertas[i].datafin
+					})
 				}
-	 		}
-	 	}	*/
+				tabla.draw();	
+			}
+	 	}
+ 		if(areaId =="" && cursoId ==""){
+ 			xhr.open('GET','http://app.cifo.local/api/public/formacion/ofertas/', true);
+ 		}
+ 		if(!areaId =="" && cursoId ==""){
+ 			xhr.open('GET','http://app.cifo.local/api/public/formacion/ofertas/area/'+areaId+'/', true);
+ 		}
+ 		if(!areaId =="" && !cursoId ==""){
+ 			xhr.open('GET','http://app.cifo.local/api/public/formacion/ofertas/area/'+areaId+'/curso/'+cursoId+'/', true);
+ 		}
+ 		if(areaId =="" && !centroId ==""){
+ 			xhr.open('GET','http://app.cifo.local/api/public/formacion/ofertas/centro/'+centroId+'/', true);
+ 		}
+ 		if(!areaId =="" && !centroId ==""){
+ 			xhr.open('GET','http://app.cifo.local/api/public/formacion/ofertas/area/'+areaId+'/centro/'+centroId+'/', true);
+ 		}
+ 		if(!areaId =="" && !centroId =="" && !cursoId ==""){
+ 			xhr.open('GET','http://app.cifo.local/api/public/formacion/ofertas/area/'+areaId+'/curso/'+cursoId+'/centro/'+centroId+'/', true);
+ 		}
+ 		xhr.send();	
+	 }	
+ 		
+ 	 //---------------funcion onclick del botón borrar--------------------------
 	
- 		
- 		
- 		
- 		
- 	}
+ 	 document.getElementById("btnBorrar").onclick = function(){
+ 		document.getElementById("familiaProfesional").value = "";
+ 		document.getElementById("cursos").value = "";
+ 		document.getElementById("centrosFormacion").value = "";
+
+ 	 }
+ 	 
+ 	 //------------------------------Creación Modal----------------------------------
+
+ 	function editOferta(id){
+ 		//console.log(id);
+	 	//------------------------------LLamada Ajax para centros modal----------------------------------
+	 	xhr.onreadystatechange = function(){
+	 		if(xhr.readyState==4 && xhr.status==200){
+	 			var objOfertaCentros = JSON.parse(xhr.responseText);	
+				//console.log(objCentrosModal);
+				var OfertaCentros = objOfertaCentros.record;
+				//console.log(OfertaCentros);
+				var values =Object.values(OfertaCentros);
+				console.log(values);
+				document.getElementById("modCodOferta").innerHTML = values[1];
+				document.getElementById("modCurso").innerHTML = values[10].nombre;
+				document.getElementById("modFInicio").innerHTML = values[2];
+				document.getElementById("modFFin").innerHTML = values[3];
+				document.getElementById("modPlazas").innerHTML = values[5];
+				document.getElementById("modProfesor").innerHTML = values[13].nombre +" "+ values[13].apellidos;
+				document.getElementById("modDuracion").innerHTML = values[10].duracion;
+				document.querySelector("#collapseOne div").innerHTML = values[10].objetivos;
+				document.querySelector("#collapseTwo div").innerHTML = values[10].programa;
+				document.getElementById("center").innerHTML = values[12].nombre;
+				document.getElementById("tf").innerHTML = values[12].telefono;
+				document.getElementById("mail").innerHTML = values[12].buzon;
+				document.getElementById("calendar").innerHTML = values[12].horario;
+				document.getElementById("address").innerHTML = values[12].direccion;
+				document.getElementById("acceso").innerHTML = values[12].acceso;
+				document.getElementById("acceso").innerHTML = values[12].acceso;
+				var imgCentro='<img src="' + values[12].media+'" class="w-100" style="object-fit:cover">' ;
+				document.getElementById("img").innerHTML=imgCentro;
+	 		}
+	 	}	
+	 	
+		xhr.open('GET','http://app.cifo.local/api/public/formacion/ofertas/' + id +'/', true);
+	 	xhr.send();		
+ 	
+	 	$('#modalCentro').modal('show')
+	 }
  	
 	</script>
 	
