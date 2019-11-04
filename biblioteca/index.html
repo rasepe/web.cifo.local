@@ -213,7 +213,7 @@
 
 	<div class="modal fade bd-example-modal-lg" id="myModal" tabindex="-1"
 		role="dialog" aria-labelledby="myModalTitle" aria-hidden="true">
-		<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
 					<h5 class="modal-title" id="myModalTitle"></h5>
@@ -597,7 +597,7 @@ function getLibro(id){
 					}
 					
 					
-					var imatgemodal = '<img id="imagentabla" src="'+arrLibro.record.cubierta+'" class="align-self-stretch border rounded" >'; //class="align-self-stretch" //d-inline-block
+					var imatgemodal = '<img id="imagentabla" src="'+arrLibro.record.cubierta+'" class="align-self-stretch border rounded" style="object-fit:cover" >'; //class="align-self-stretch" //d-inline-block
 					
 					document.querySelector("#myModal #parrafo1-1").innerHTML = cadena1;
 					document.querySelector("#myModal #parrafo1-2").innerHTML = imatgemodal;
