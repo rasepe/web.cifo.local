@@ -149,9 +149,7 @@
 		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 	<script
 		src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-</body>
-</html>
-<script>
+		<script>
 //obte cada objecte de l'array de centres
 var xhr;
 if (window.XMLHttpRequest) {
@@ -163,9 +161,7 @@ xhr.onreadystatechange = function() {
 	if (xhr.readyState == 4 && xhr.status == 200) {
 		var arrCentros = JSON.parse(xhr.responseText);
 		for (var i = 0; i < arrCentros.records.length; i++) {
-			//window.sessionStorage.setItem("id_centro",arrCentros.records[i].id);
 			imprimecentro(arrCentros.records[i]);
-			//centro(arrCentros.records[i].id);
 		}	
 		
 		
@@ -176,24 +172,7 @@ xhr.send();
 
 //imprimeix cada centre
 function imprimecentro(objcentro){
-//var xhr2;
-//if (window.XMLHttpRequest) {
-//	xhr2 = new XMLHttpRequest();
-//} else {
-//	xhr2 = new ActiveXObject("Microsoft.XMLHTTP");
-//}
-//xhr2.onreadystatechange = function() {
-	//if (xhr2.readyState == 4 && xhr2.status == 200) {
-	//	var arrCentro = JSON.parse(xhr2.responseText);
-		//for (var i = 0; i < arrCentro.record.length; i++) {
-			//arrCentro.records[i].media,
-		//	console.log(arrCentro.record.nombre);
-			//		console.log(arrCentro.record.telefono);
-					//		console.log(arrCentro.record.buzon);
-							//		console.log(arrCentro.record.horario);
-								//			console.log(arrCentro.record.acceso);
-			
-			
+	
 			var cadena= '<div class="col-12 col-md-6 col-lg-4 p-3  d-flex">'
 			+'<div class="card h-100">'
 		    	+'<img src="'+objcentro.media+'" class="card-img-top w-100" style="object-fit:cover; max-height:150px" alt="'+objcentro.nombre+'">'
@@ -202,7 +181,7 @@ function imprimecentro(objcentro){
 		      		+'<div class="border border-light border-right-0 border-left-0 pt-3">'
 			      		+'<p><i class="fa fa-phone fa-fw text-muted"></i> '+objcentro.telefono+'</p>'
 			      		+'<p><i class="fa fa-envelope fa-fw text-muted"></i>'
-			      		+'<a href="mailto:'+objcentro.buzon+'">'+objcentro.buzon+'</a></p>'
+			      		+'<a href="mailto:'+objcentro.buzon+'"> '+objcentro.buzon+'</a></p>'
 			      		+'<p><i class="fa fa-calendar fa-fw text-muted"></i> '+objcentro.horario+'</p>'
 			      		+'<p><i class="fa fa-map-marker fa-fw text-muted"></i> '+objcentro.direccion+'</p>'
 			      	+'</div>'
@@ -216,17 +195,11 @@ function imprimecentro(objcentro){
 		 		+'</div>'
 		 	+'</div>'
 		 +'</div>';
-	    // debugger;
+
 			document.getElementById("centros").innerHTML += cadena;
-			
-		//}
+
 	}
-	
 
-	
-//}
-
-//xhr2.open('GET', 'http://app.cifo.local/api/public/formacion/centros/'+codigocentro+'/?nocache='+Math.random(), true);
-//xhr2.send();
-//}
 </script>
+</body>
+</html>
