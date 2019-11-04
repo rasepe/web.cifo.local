@@ -20,6 +20,7 @@
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
+
 <title>web.cifo.local.biblioteca</title>
 <link rel="stylesheet" href="/css/style.css">
 <style>
@@ -36,12 +37,43 @@
 
 
 #headingTwo, #headingThree {
-	background-color: grey !important;
+	background-color: #6c757d!important;
+	padding: 0;
+	
+}
+
+#headingTwo {
+border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0!important;
 }
 
 .btn-link, .btn-link:hover {
 	color: white;
 }
+
+
+.fa-file-text-o, .fa-user-circle {
+padding: 10px;
+}
+
+#descripcion, #autores {
+display: inline;
+font-size: 1rem;
+padding: -10px;
+}
+
+
+.card-header button {
+padding: 0;
+}
+
+#buscar {
+border-radius: calc(.25rem - 1px);
+}
+
+h2 {
+    
+}
+
 </style>
 </head>
 <body>
@@ -137,7 +169,7 @@
 			<div class="col-md-4 col-lg-3">
 
 				<div class="card bg-light mb-3">
-					<div class="card-header w-100">
+					<div class="card-header w-100" id="buscar">
 						<i class="fa fa-search"></i>&nbsp;&nbsp;Buscar
 					</div>
 				</div>
@@ -224,6 +256,10 @@
 				</div>
 				<div class="modal-body">
 					<div class="container-fluid">
+					
+	
+					
+					
 						<div class="accordion" id="accordionExample">
 
 							<div class="d-flex justify-content-between">
@@ -239,8 +275,9 @@
 							</div>
 
 							<div class="card">
+							
 								<div class="card-header" id="headingTwo">
-									<h2 class="mb-0">
+									<i class="fa fa-file-text-o"></i><h2 class="mb-0" id="descripcion">
 										<button class="btn btn-link collapsed" type="button"
 											data-toggle="collapse" data-target="#collapseTwo"
 											aria-expanded="false" aria-controls="collapseTwo">
@@ -252,9 +289,11 @@
 									<div class="card-body"></div>
 								</div>
 							</div>
+							
+							
 							<div class="card">
 								<div class="card-header" id="headingThree">
-									<h2 class="mb-0">
+									<i class="fa fa-user-circle" aria-hidden="true"></i><h2 class="mb-0" id="autores">
 										<button class="btn btn-link collapsed" type="button"
 											data-toggle="collapse" data-target="#collapseThree"
 											aria-expanded="false" aria-controls="collapseThree">
