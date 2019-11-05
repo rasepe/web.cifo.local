@@ -649,6 +649,10 @@ function getLibro(id){
 					var cadena3='';
 					for (var j=0; j<arrLibro.record.autores.length; j++) {
 						
+						if (j>0) {
+							cadena3 += '<hr>';
+						};
+						
 						cadena3 += '<img src="'+arrLibro.record.autores[j].foto+'" height="100px"></img>'+
 						'<h5>'+arrLibro.record.autores[j].nombre+'&nbsp;'+arrLibro.record.autores[j].apellidos+'</h5>'+
 						'<p>'+arrLibro.record.autores[j].biografia+'</p>';
