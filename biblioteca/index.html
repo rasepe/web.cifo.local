@@ -489,11 +489,11 @@ taulamodal th, taulamodal td, taulamodal tr {
 		//Al cargar la página, ejecuta la función getLibros:
 		getLibros();
 
-		//Añade al datatable una lista de libros.
-		//Opcionalmente se le pueden pasar hasta tres parámetros (codigoseccion, codigotema, codigoeditorial).
-		//Sin parámetros, la llamada AJAX devuelve todos los libros.
-		//Con parámetros, la llamada AJAX devuelve los libros que cumplan la propiedad especificada en cada parámetro.
-		//Finalmente, se imprimen en la tabla todos los libros que devuelve la llamada AJAX.
+		/* Añade al datatable una lista de libros.
+		Opcionalmente se le pueden pasar hasta tres parámetros (codigoseccion, codigotema, codigoeditorial).
+		Sin parámetros, la llamada AJAX devuelve todos los libros.
+		Con parámetros, la llamada AJAX devuelve los libros que cumplan la propiedad especificada en cada parámetro.
+		Finalmente, se imprimen en la tabla todos los libros que devuelve la llamada AJAX. */
 		function getLibros(codigoseccion, codigotema, codigoeditorial) {
 			var xhr;
 			if (window.XMLHttpRequest) {
@@ -539,8 +539,8 @@ taulamodal th, taulamodal td, taulamodal tr {
 			xhr.send();
 		}
 
-		//Al cargar la página, carga las opciones de los selectores de secciones y editoriales. 
-		//Las editoriales se cargan a través de la llamada a la función getEditoriales()
+		/*Al cargar la página, carga las opciones de los selectores de secciones y editoriales. 
+		Las editoriales se cargan a través de la llamada a la función getEditoriales() */
 		window.onpageshow = function() {
 			var xhr;
 			if (window.XMLHttpRequest) {
@@ -623,8 +623,8 @@ taulamodal th, taulamodal td, taulamodal tr {
 			xhr.send();
 		}
 
-		//Función filtrar(). Se ejecuta cuando apretamos el botón "Filtrar". Llama a la función getlibros con los
-		//parámetros que recibe de las opciones seleccionadas.
+		/*Función filtrar(). Se ejecuta cuando apretamos el botón "Filtrar". Llama a la función getlibros con los
+		parámetros que recibe de las opciones seleccionadas.*/
 		function filtrar() {
 			//borramos la tabla
 			tabla.clear().draw();
