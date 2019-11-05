@@ -46,6 +46,10 @@
 border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0!important;
 }
 
+#headingThree {
+margin-top: 3px;
+}
+
 .btn-link, .btn-link:hover {
 	color: white;
 }
@@ -70,10 +74,33 @@ padding: 0;
 border-radius: calc(.25rem - 1px);
 }
 
-h2 {
-    
+.collapse .card-body {
+border: 1px solid rgba(0,0,0,.125);    
 }
 
+#carddescripcion, #cardautores {
+border: 0;
+}
+
+#taulamodal td {
+background-color: #dee2e6;
+}
+
+
+#taulamodal th {
+min-width: 50%;
+}
+
+#taulamodal td {
+max-width: 50%;
+}
+
+
+taulamodal th, taulamodal td, taulamodal tr {
+  display: block;
+  overflow-y: hidden;
+  max-height: 20px;
+}
 </style>
 </head>
 <body>
@@ -274,7 +301,7 @@ h2 {
 								</div>
 							</div>
 
-							<div class="card">
+							<div class="card" id="carddescripcion">
 							
 								<div class="card-header" id="headingTwo">
 									<i class="fa fa-file-text-o"></i><h2 class="mb-0" id="descripcion">
@@ -291,7 +318,7 @@ h2 {
 							</div>
 							
 							
-							<div class="card">
+							<div class="card" id="cardautores">
 								<div class="card-header" id="headingThree">
 									<i class="fa fa-user-circle" aria-hidden="true"></i><h2 class="mb-0" id="autores">
 										<button class="btn btn-link collapsed" type="button"
@@ -599,17 +626,17 @@ function getLibro(id){
 					
 					var titolmodal = "Libro";
 					document.getElementById("myModalTitle").innerHTML = titolmodal;
-					var cadena1='<table class="table table-striped table-bordered" id="taulamodal"><tbody>' //d-inline-block
-					+'<tr><th>Isbn:</th><td>'+arrLibro.record.isbn+'</td>' // <td rowspan="9" colspan="1"><img id="imagencelda" src="'+arrLibro.record.cubierta+'" class="align-self-stretch"></td></tr>'    // <td rowspan="9"><img id="imagencelda" src="'+arrLibro.record.cubierta+'"></td></tr>' // <td ... style="background-image: url("'+arrLibro.record.cubierta+'");">    class="d-flex align-items-stretch"
-					+'<tr><th>Título:</th><td>'+arrLibro.record.titulo+'</td></tr>'
-					+'<tr><th>Subítulo:</th><td>'+arrLibro.record.subtitulo+'</td></tr>'
-					+'<tr><th>Número de páginas:</th><td>'+arrLibro.record.numero_paginas+'</td></tr>'
-					+'<tr><th>Editorial:</th><td>'+arrLibro.record.editorial.nombre+'</td></tr>'
-					+'<tr><th>Año de publicación:</th><td>'+arrLibro.record.anio_publicacion+'</td></tr>'
-					+'<tr><th>Tema:</th><td>'+arrLibro.record.tema.nombre+'</td></tr>'
-					+'<tr><th>Sección:</th><td>'+arrLibro.record.seccion.nombre+'</td></tr>'
-					+'<tr><th>Nivel:</th><td>'+arrLibro.record.nivel+'</td></tr>'
-					+'</tbody></table>';
+					var cadena1=  '<table class="table-sm" id="taulamodal" style="width:100%"><tbody>' 
+					+'<tr style="border-bottom: 3px solid white;"><th scope="row" style="text-align: right; width:30%">Isbn:</th><td>'+arrLibro.record.isbn+'</td></tr>' 
+					+'<tr style="border-bottom: 3px solid white;"><th scope="row" style="text-align: right; width:30%">Título:</th><td>'+arrLibro.record.titulo+'</td></tr>'
+					+'<tr style="border-bottom: 3px solid white;"><th scope="row" style="text-align: right; width:30%">Subítulo:</th><td>'+arrLibro.record.subtitulo+'</td></tr>'
+					+'<tr style="border-bottom: 3px solid white;"><th scope="row" style="text-align: right; width:30%">Número de páginas:</th><td>'+arrLibro.record.numero_paginas+'</td></tr>'
+					+'<tr style="border-bottom: 3px solid white;"><th scope="row" style="text-align: right; width:30%">Editorial:</th><td>'+arrLibro.record.editorial.nombre+'</td></tr>'
+					+'<tr style="border-bottom: 3px solid white;"><th scope="row" style="text-align: right; width:30%">Año de publicación:</th><td>'+arrLibro.record.anio_publicacion+'</td></tr>'
+					+'<tr style="border-bottom: 3px solid white;"><th scope="row" style="text-align: right; width:30%">Tema:</th><td>'+arrLibro.record.tema.nombre+'</td></tr>'
+					+'<tr style="border-bottom: 3px solid white;"><th scope="row" style="text-align: right; width:30%">Sección:</th><td>'+arrLibro.record.seccion.nombre+'</td></tr>'
+					+'<tr style="border-bottom: 3px solid white;"><th scope="row" style="text-align: right; width:30%">Nivel:</th><td>'+arrLibro.record.nivel+'</td></tr>'
+					+'</tbody></table>'; 
 					
 					
 					var cadena2='<p>'+arrLibro.record.descripcion+'</p>';
@@ -625,7 +652,7 @@ function getLibro(id){
 					}
 					
 					
-					var imatgemodal = '<img id="imagentabla" src="'+arrLibro.record.cubierta+'" class="align-self-stretch border rounded" style="object-fit:cover" >'; //class="align-self-stretch" //d-inline-block
+					var imatgemodal = '<img id="imagentabla" src="'+arrLibro.record.cubierta+'" style="max-height:300px;" >'; //class="align-self-stretch border rounded" style="object-fit:cover" //class="align-self-stretch" //d-inline-block
 					
 					document.querySelector("#myModal #parrafo1-1").innerHTML = cadena1;
 					document.querySelector("#myModal #parrafo1-2").innerHTML = imatgemodal;
