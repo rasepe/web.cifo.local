@@ -166,7 +166,9 @@
 	<script
 		src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 		<script>
-//obte cada objecte de l'array de centres
+//A través de una llamada AJAX, obtiene cada uno de los centros recorriendo el array de centros 
+//y luego llama a la función imprimecentro(arrCentros.records[i]) para imprimir en pantalla el centro que está
+//en la posición actual
 var xhr;
 if (window.XMLHttpRequest) {
 	xhr = new XMLHttpRequest();
@@ -186,7 +188,7 @@ xhr.onreadystatechange = function() {
 xhr.open('GET','http://app.cifo.local/api/public/formacion/centros/?nocache='+Math.random(), true);
 xhr.send();
 
-//imprimeix cada centre
+//imprime cada centro, se le pasa como parámetro el objeto centro a imprimir.
 function imprimecentro(objcentro){
 	
 			var cadena= '<div class="col-12 col-md-6 col-lg-4 p-3  d-flex">'
