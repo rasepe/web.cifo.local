@@ -35,95 +35,90 @@
 	color: white;
 }
 
-
 #headingTwo, #headingThree {
-	background-color: #6c757d!important;
+	background-color: #6c757d !important;
 	padding: 0;
-	
 }
 
 #headingTwo {
-border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0!important;
+	border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0 !important;
 }
 
 #headingThree {
-margin-top: 3px;
+	margin-top: 3px;
 }
 
 .btn-link, .btn-link:hover {
 	color: white;
 }
 
-
 .fa-file-text-o, .fa-user-circle {
-padding: 10px;
+	padding: 10px;
 }
 
 #descripcion, #autores {
-display: inline;
-font-size: 1rem;
-padding: -10px;
+	display: inline;
+	font-size: 1rem;
+	padding: -10px;
 }
 
-
 .card-header button {
-padding: 0;
+	padding: 0;
 }
 
 #buscar {
-border-radius: calc(.25rem - 1px);
+	border-radius: calc(.25rem - 1px);
 }
 
 .collapse .card-body {
-border: 1px solid rgba(0,0,0,.125);    
+	border: 1px solid rgba(0, 0, 0, .125);
 }
 
 #carddescripcion, #cardautores {
-border: 0;
+	border: 0;
 }
 
 #taulamodal td {
-background-color: #dee2e6;
+	background-color: #dee2e6;
 }
-
 
 #taulamodal th {
-/*min-width: 40%;*/
-font-weight: normal;
+	/*min-width: 40%;*/
+	font-weight: normal;
 }
 
 #taulamodal td {
-/*max-width: 60%;*/
+	/*max-width: 60%;*/
+	
 }
 
-
 taulamodal th, taulamodal td, taulamodal tr {
-  display: block;
-  overflow-y: hidden;
-  max-height: 20px;
+	display: block;
+	overflow-y: hidden;
+	max-height: 20px;
 }
 
 .justify-content-between {
-padding-bottom: 20px;
+	padding-bottom: 20px;
 }
 
 #parrafo1-1 {
-line-height: 1;
+	line-height: 1;
 }
 
 #parrafo1-2 {
-padding-right: 3%;
+	padding-right: 3%;
 }
 
 #imagentabla {
-border: 1px solid #dee2e6;
-padding: 2px;
-border-radius: 8px;
+	border: 1px solid #dee2e6;
+	padding: 2px;
+	border-radius: 8px;
 }
 
 #selectores {
-padding-left:5px;
-padding-right:5px;
+	padding-left: 5px;
+	padding-right: 5px;
 }
 </style>
 </head>
@@ -148,11 +143,14 @@ padding-right:5px;
 		<div class="collapse navbar-collapse justify-content-end"
 			id="navbarNavDropdown">
 			<ul class="navbar-nav ">
-				<li class="nav-item"><a class="nav-link" href="/centros/index.html">Centros</a></li>
-				<li class="nav-item"><a class="nav-link" href="/oferta_formativa/index.html">Oferta
-						formativa</a></li>
-				<li class="nav-item active"><a class="nav-link" href="/biblioteca/index.html">Biblioteca</a></li>
-				<li class="nav-item"><a class="nav-link" href="/contacto/index.html">Contacto</a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="/centros/index.html">Centros</a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="/oferta_formativa/index.html">Oferta formativa</a></li>
+				<li class="nav-item active"><a class="nav-link"
+					href="/biblioteca/index.html">Biblioteca</a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="/contacto/index.html">Contacto</a></li>
 				<li class="nav-item"><a
 					class="nav-link d-block d-md-none d-lg-block"
 					href="/campus/index.html">Campus virtual</a></li>
@@ -213,11 +211,14 @@ padding-right:5px;
 		</div>
 	</div>
 
-	<div class="container-fluid"> <!-- container-fluid -->
-		<div class="row pb-3 "> <!-- m-0 -->
+	<div class="container-fluid">
+		<!-- container-fluid -->
+		<div class="row pb-3 ">
+			<!-- m-0 -->
 			<!--  d-flex -->
 
-			<div class="col-12 col-md-3" id="selectores"> <!--  col md-4 col-lg-3 -->
+			<div class="col-12 col-md-3" id="selectores">
+				<!--  col md-4 col-lg-3 -->
 
 				<div class="card bg-light mb-3">
 					<div class="card-header w-100" id="buscar">
@@ -231,7 +232,7 @@ padding-right:5px;
 						<i class="fa fa-filter"></i>&nbsp;&nbsp;Filtrar
 					</div>
 					<div class="card-body">
-			
+
 						<!-- formulario -->
 
 						<div class="form-group" id="selectores">
@@ -268,7 +269,11 @@ padding-right:5px;
 				</div>
 			</div>
 
-			<div class="col-11 col-md-8 col-lg-9"> <!-- col-md-7 col-lg-9 --> <!--  col-8 col-sm-11 -->
+			<!-- tabla con libros -->
+
+			<div class="col-11 col-md-8 col-lg-9">
+				<!-- col-md-7 col-lg-9 -->
+				<!--  col-8 col-sm-11 -->
 
 				<table id="libros" class="table table-striped table-bordered">
 
@@ -296,7 +301,9 @@ padding-right:5px;
 
 	<div class="modal fade bd-example-modal-lg" id="myModal" tabindex="-1"
 		role="dialog" aria-labelledby="myModalTitle" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-scrollable modal-xl" role="document">  <!-- modal-lg -->
+		<div class="modal-dialog modal-dialog-scrollable modal-xl"
+			role="document">
+			<!-- modal-lg -->
 			<div class="modal-content">
 				<div class="modal-header">
 					<h5 class="modal-title" id="myModalTitle"></h5>
@@ -307,28 +314,31 @@ padding-right:5px;
 				</div>
 				<div class="modal-body">
 					<div class="container-fluid">
-					
-	
-					
-					
+
+						<!-- acordeón -->
+
+
 						<div class="accordion" id="accordionExample">
 
 							<div class="d-flex justify-content-between">
-								<!--  -between  -->
-								<div id="parrafo1-1" class="flex-grow-1 w-70">  <!-- p-2   -->
+								<!--  tabla con información del libro  -->
+								<div id="parrafo1-1" class="flex-grow-1 w-70">
+									<!-- p-2   -->
 									<!-- flex-fill -->
 									<!-- flex-grow-1 -->
 								</div>
-								<div id="parrafo1-2"
-									class="flex-shrink-1 mw-25"> <!-- d-flex align-items-stretch -->
-									
+								<!--  imagen del libro  -->
+								<div id="parrafo1-2" class="flex-shrink-1 mw-25">
+									<!-- d-flex align-items-stretch -->
+
 								</div>
 							</div>
-
+							<!--  descripción (desplegable)  -->
 							<div class="card" id="carddescripcion">
-							
+
 								<div class="card-header" id="headingTwo">
-									<i class="fa fa-file-text-o"></i><h2 class="mb-0" id="descripcion">
+									<i class="fa fa-file-text-o"></i>
+									<h2 class="mb-0" id="descripcion">
 										<button class="btn btn-link collapsed" type="button"
 											data-toggle="collapse" data-target="#collapseTwo"
 											aria-expanded="false" aria-controls="collapseTwo">
@@ -340,11 +350,12 @@ padding-right:5px;
 									<div class="card-body"></div>
 								</div>
 							</div>
-							
-							
+							<!--  autores (desplegable)  -->
+
 							<div class="card" id="cardautores">
 								<div class="card-header" id="headingThree">
-									<i class="fa fa-user-circle" aria-hidden="true"></i><h2 class="mb-0" id="autores">
+									<i class="fa fa-user-circle" aria-hidden="true"></i>
+									<h2 class="mb-0" id="autores">
 										<button class="btn btn-link collapsed" type="button"
 											data-toggle="collapse" data-target="#collapseThree"
 											aria-expanded="false" aria-controls="collapseThree">
@@ -368,32 +379,41 @@ padding-right:5px;
 		</div>
 	</div>
 
-	<!-- Creación del footer ---------------------------------------------------------------------->	
-			<!-- ---------------redes sociales----------------------------------- -->
+	<!-- Creación del footer ---------------------------------------------------------------------->
+	<!-- ---------------redes sociales----------------------------------- -->
 	<footer id="footer" class="container-fluid text-light">
 		<div class="row d-flex justify-content-center align-items-center">
-	      <a class="mr-1 p-1 py-2 d-inline-block  bg-transparent text-light" href="#"><i class="fa fa-twitter fa-2x fa-fw "></i></a>
-	      <a class="mr-1 p-1 py-2 d-inline-block bg-transparent text-light" href="#"><i class="fa fa-facebook fa-2x fa-fw"></i></a>
-	      <a class="mr-1 p-1 py-2 d-inline-block bg-transparent text-light" href="#"><i class="fa fa-google-plus fa-2x fa-fw"></i></a>
-	      <a class="mr-1 p-1 py-2 d-inline-block bg-transparent text-light" href="#"><i class="fa fa-instagram fa-2x fa-fw"></i></a>
-	      <a class="mr-1 p-1 py-2 d-inline-block bg-transparent text-light" href="#"><i class="fa fa-pinterest fa-2x fa-fw"></i></a>
+			<a class="mr-1 p-1 py-2 d-inline-block  bg-transparent text-light"
+				href="#"><i class="fa fa-twitter fa-2x fa-fw "></i></a> <a
+				class="mr-1 p-1 py-2 d-inline-block bg-transparent text-light"
+				href="#"><i class="fa fa-facebook fa-2x fa-fw"></i></a> <a
+				class="mr-1 p-1 py-2 d-inline-block bg-transparent text-light"
+				href="#"><i class="fa fa-google-plus fa-2x fa-fw"></i></a> <a
+				class="mr-1 p-1 py-2 d-inline-block bg-transparent text-light"
+				href="#"><i class="fa fa-instagram fa-2x fa-fw"></i></a> <a
+				class="mr-1 p-1 py-2 d-inline-block bg-transparent text-light"
+				href="#"><i class="fa fa-pinterest fa-2x fa-fw"></i></a>
 		</div>
-		   <!-- ---------------directo a----------------------------------- -->
+		<!-- ---------------directo a----------------------------------- -->
 		<div class="row mt-4">
-			<div class="col-12 col-md-3 d-flex justify-content-center text-center">
+			<div
+				class="col-12 col-md-3 d-flex justify-content-center text-center">
 				<ul type="none" class="p-0 mb-5 mb-md-2">
 					<li class="text-white"><h6>DIRECTO A</h6></li>
 					<li><a class="text-light" href="/centros/index.html">Centros</a></li>
-					<li><a class="text-light" href="/oferta_formativa/index.html">Oferta formativa</a></li>
+					<li><a class="text-light" href="/oferta_formativa/index.html">Oferta
+							formativa</a></li>
 					<li><a class="text-light" href="/biblioteca/index.html">Biblioteca</a></li>
 					<li><a class="text-light" href="/contacto/index.html">Contacto</a></li>
-					<li><a class="text-light" href="/campus/index.html">Campus virtual</a></li>
+					<li><a class="text-light" href="/campus/index.html">Campus
+							virtual</a></li>
 					<li><a class="text-light" href="#">Entrar</a></li>
 					<li><a class="text-light" href="#">Registrarse</a></li>
 				</ul>
 			</div>
-			 <!-- ---------------ayuda----------------------------------- -->
-			<div class="col-12 col-md-3 d-flex justify-content-center text-center">
+			<!-- ---------------ayuda----------------------------------- -->
+			<div
+				class="col-12 col-md-3 d-flex justify-content-center text-center">
 				<ul type="none" class="p-0 mb-5 mb-md-2">
 					<li class="text-white"><h6>AYUDA</h6></li>
 					<li><a class="text-light" href="#">Sobre gencat</a></li>
@@ -402,33 +422,54 @@ padding-right:5px;
 					<li><a class="text-light" href="#legal">Aviso Legal</a></li>
 				</ul>
 			</div>
-			 <!-- ---------------aviso legal--------------------------------- -->
+			<!-- ---------------aviso legal--------------------------------- -->
 			<div class="col-12 col-md-6">
 				<div class="text-center d-flex justify-content-center">
-					<h6 class="text-white" id="legal">SERVEI D'OCUPACIÓ DE CATALUNYA</h6>
+					<h6 class="text-white" id="legal">SERVEI D'OCUPACIÓ DE
+						CATALUNYA</h6>
 				</div>
-				<p class="col-12 d-flex justify-content-center class text-center mb-5 mb-md-2">
-				 Aviso legal : De acuerdo con el artículo 17.1 de la Ley 19/2014, la © Generalidad de Cataluña permite la reutilización de los contenidos y de los datos siempre que
-	se cite la fuente y la fecha de actualización y que no se desnaturalice la información (artículo 8 de la Ley 37/2007) y también que no se contradiga con una licencia específica.
-				</p>
-				
+				<p
+					class="col-12 d-flex justify-content-center class text-center mb-5 mb-md-2">
+					Aviso legal : De acuerdo con el artículo 17.1 de la Ley 19/2014, la
+					© Generalidad de Cataluña permite la reutilización de los
+					contenidos y de los datos siempre que se cite la fuente y la fecha
+					de actualización y que no se desnaturalice la información (artículo
+					8 de la Ley 37/2007) y también que no se contradiga con una
+					licencia específica.</p>
+
 				<div class="row">
 					<div class="col-6">
-						<img src="/img/sepelogotip.jpg" title="logotipo sepe" alt="logotipo sepe" class="img-fluid">
+						<img src="/img/sepelogotip.jpg" title="logotipo sepe"
+							alt="logotipo sepe" class="img-fluid">
 					</div>
 					<div class="col-6">
-						<img src="/img/logotip_Iniciativaocupaciojuvenil_bn.jpg" title="logotipo sepe" alt="logotipo sepe" class="img-fluid">
+						<img src="/img/logotip_Iniciativaocupaciojuvenil_bn.jpg"
+							title="logotipo sepe" alt="logotipo sepe" class="img-fluid">
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="d-flex justify-content-center class text-center py-3 ">Copyright © Cifo 2018 </div>
-     </footer>
+		<div class="d-flex justify-content-center class text-center py-3 ">Copyright
+			© Cifo 2018</div>
+	</footer>
 	<!-- COOKIES--------------------->
-     <div class="cookiealert-container text-center fixed-bottom" id="boxCookies" style="margin-bottom: 0em; background-color: #4a4c4a; color: white; padding: 2vh;"><p>Aviso informativo: este sitio web puede utilizar cookies para mejorar su navegación. Si quieres ver el contenido de este sitio web tendrás que aceptar las cookies según la legislación vigente en nuestro país. Si no aceptas, no podrás continuar navegando por este sitio web. Clique
-     <button type="submit" class="btn btn-warning" id="btnCookies" class="btn btn-primary btn-sm acceptcookies" style="border-color: #78992f; background-color: #78992f; color: white;"> aquí </button> para aceptar las cookies.</p>
-    </div>
-	
+	<div class="cookiealert-container text-center fixed-bottom"
+		id="boxCookies"
+		style="margin-bottom: 0em; background-color: #4a4c4a; color: white; padding: 2vh;">
+		<p>
+			Aviso informativo: este sitio web puede utilizar cookies para mejorar
+			su navegación. Si quieres ver el contenido de este sitio web tendrás
+			que aceptar las cookies según la legislación vigente en nuestro país.
+			Si no aceptas, no podrás continuar navegando por este sitio web.
+			Clique
+			<button type="submit" class="btn btn-warning" id="btnCookies"
+				class="btn btn-primary btn-sm acceptcookies"
+				style="border-color: #78992f; background-color: #78992f; color: white;">
+				aquí</button>
+			para aceptar las cookies.
+		</p>
+	</div>
+
 	<!-- JQuery -->
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 	<!-- Popper -->
@@ -445,7 +486,7 @@ padding-right:5px;
 	<script type="text/javascript"
 		src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.js"></script>
 	<script>
-
+//Creación datatable
 var tabla=$('#libros').DataTable({
 
 	 "lengthMenu": [ 5, 10, 25, 50, 75, 100 ],
@@ -466,10 +507,15 @@ var tabla=$('#libros').DataTable({
 });
 
 
-
+//Al cargar la página, ejecuta la función getLibros:
 
 	getLibros();
-	
+
+//Añade al datatable una lista de libros.
+//Opcionalmente se le pueden pasar hasta tres parámetros (codigoseccion, codigotema, codigoeditorial).
+//Sin parámetros, la llamada AJAX devuelve todos los libros.
+//Con parámetros, la llamada AJAX devuelve los libros que cumplan la propiedad especificada en cada parámetro.
+//Finalmente, se imprimen en la tabla todos los libros que devuelve la llamada AJAX.
 function getLibros(codigoseccion, codigotema, codigoeditorial) {
 	var xhr;
 	if (window.XMLHttpRequest) {
@@ -516,6 +562,8 @@ function getLibros(codigoseccion, codigotema, codigoeditorial) {
 
 }
 
+//Al cargar la página, carga las opciones de los selectores de secciones y editoriales. 
+//Las editoriales se cargan a través de la llamada a la función getEditoriales()
 window.onpageshow=function()  {
 	
 	var xhr;
@@ -543,7 +591,7 @@ window.onpageshow=function()  {
 		xhr.send(); 
 }
 
-
+//Carga las opciones del selector de editoriales. 
 function getEditoriales(codigoeditorial) {
 	 if (codigoeditorial == undefined) {
 		codigoeditorial = "";
@@ -575,7 +623,7 @@ if (window.XMLHttpRequest) {
 }
 }
 
-//Mostra el segon selector quan seleccionem el primer 
+//Muestra las opciones del selector de temas cuando se selecciona una sección (evento onchange):
 document.getElementById("secciones").onchange = function() {
 	document.getElementById("temas").innerHTML = '<option value="0">-- Escoja un tema --</option>';
 		
@@ -602,7 +650,8 @@ document.getElementById("secciones").onchange = function() {
 	
 }
 
-
+//Función filtrar(). Se ejecuta cuando apretamos el botón "Filtrar". Llama a la función getlibros con los
+//parámetros que recibe de las opciones seleccionadas.
 function filtrar() {
 	 <!--  codigoseccion, codigotema, codigoeditorial -->
 	 //esborrem taula
@@ -635,6 +684,8 @@ function filtrar() {
 	 
 }
 
+//A partir de una id que se pasa por parámetro, obtiene la información del libro que se ha seleccionado 
+//pinchando el enlace de la tabla y la imprime en una ventana modal.
 function getLibro(id){
 	var xhr;
 	window.sessionStorage.setItem("id_libro",id);
@@ -686,7 +737,7 @@ function getLibro(id){
 					document.querySelector("#myModal #parrafo1-2").innerHTML = imatgemodal;
 					document.querySelector("#collapseTwo .card-body").innerHTML = cadena2;
 					document.querySelector("#collapseThree .card-body").innerHTML = cadena3;
-
+					//Creación de la ventana modal:
 					$('#myModal').modal('show');				
 			
 		}
@@ -702,8 +753,8 @@ function getLibro(id){
 
 
 </script>
-<script src="/cookies.js"></script>
-<script type="text/javascript">
+	<script src="/cookies.js"></script>
+	<script type="text/javascript">
   //Si detecta que la cookie esta ok, detecta que esta ok porque ya esta aceptada, elimina el hijo del elemento boxCookies, (por lo tanto no se muestra la maquetación html)
   if (detectCookie("okCookie")) {
 	  if(getCookie("okCookie")=="ok") {
