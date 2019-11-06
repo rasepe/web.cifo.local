@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+
+#buscar {
+	background-color: #01A5D5 !important;	
+}
+
+#filtrar{
+	background-color: #01A5D5 !important;	
+}
+
+.form-group{
+	padding-left:10px !important;
+	padding-right:10px !important;
+}
