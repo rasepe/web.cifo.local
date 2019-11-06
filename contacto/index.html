@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+<!-- favicon -->
+<link rel="icon" type="image/gif" href="/img/favicon.ico">
 <!-- Bootstrap CSS -->
  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css">
@@ -356,22 +357,8 @@
 </script>
 
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMAUUG6X2nJy8DHsJlmyMv0aS-JDCIDZE&callback=initMap"   type="text/javascript"></script>
-<script src="/cookies.js"></script>
-<script type="text/javascript">
-  //Si detecta que la cookie esta ok, detecta que esta ok porque ya esta aceptada, elimina el hijo del elemento boxCookies, (por lo tanto no se muestra la maquetación html)
-  if (detectCookie("okCookie")) {
-	  if(getCookie("okCookie")=="ok") {
-		  var objBoxRGPD=document.getElementById("boxCookies");
-		  objBoxRGPD.parentNode.removeChild(objBoxRGPD);
-	  }
-  } else {
-	  //elimina el hijo del elemento boxCookies cuando ha sido aceptada por el boton con el id"btnRGPD" (por lo tanto no se muestra la maquetación html)
-	  document.getElementById("btnCookies").onclick=function(){
-		  setCookie("okCookie","ok",365);
-		  var objBoxCookies=document.getElementById("boxCookies");
-		  objBoxCookies.parentNode.removeChild(objBoxCookies);
-	  }
-  }
-</script>
+	<!-- Cookies  -->
+	<script src="/cookies/cookies.js"></script>
+	<script src="/cookies/avisocookies.js"></script>
 </body>
 </html>
