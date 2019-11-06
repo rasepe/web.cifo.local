@@ -5,9 +5,6 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<!-- Favicon -->
-<link rel="icon" href="/img/favicon.ico" type="image/gif" sizes="16x16">
-
 <!-- Bootstrap CSS -->
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -279,12 +276,12 @@ taulamodal th, taulamodal td, taulamodal tr {
 
 	<!-- modal -->
 	<div class="modal fade bd-example-modal-lg" id="myModal" tabindex="-1"
-		role="dialog" aria-labelledby="myModalTitle" aria-hidden="true">
+		role="dialog" aria-labelledby="modalLibros" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-scrollable modal-xl"
 			role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="myModalTitle"></h5>
+					<h5 class="modal-title" id="modalLibros"></h5>
 					<button type="button" class="close" data-dismiss="modal"
 						aria-label="Close">
 						<span aria-hidden="true">&times;</span>
@@ -670,7 +667,7 @@ taulamodal th, taulamodal td, taulamodal tr {
 				if (xhr.readyState == 4 && xhr.status == 200) {
 					var arrLibro = JSON.parse(xhr.responseText);
 					var titolmodal = "Libro";
-					document.getElementById("myModalTitle").innerHTML = titolmodal;
+					document.getElementById("modalLibros").innerHTML = titolmodal;
 					var cadena1 = '<table class="table-sm" id="taulamodal" style="width:95%"><tbody>'
 							+ '<tr style="border-bottom: 3px solid white;"><th scope="row" style="text-align: right; width:25%; padding-right:1%">Isbn:</th><td style="padding-left:1%">'
 							+ arrLibro.record.isbn
