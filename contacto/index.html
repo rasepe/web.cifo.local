@@ -81,37 +81,38 @@
 	<div class="container-fluid">
 		<div class="row  m-2 d-flex">			
 <!-- CREACIÓN DEL FORMULARIO ---------------------------------------------------------------------->
-  				<div class="col-md-8 border mt-1 mb-1">
+  				<div class="col-lg-8 col-md-12 border mb-2 p-3">
   					<form action="servidor.php" method="post" id="contacto" onsubmit="return submitUserForm();">
-				      <fieldset class="border p-2 rounded position-relative">
 				        <div class="form-row">
-				          <div class="col-lg-12 col-md-6 mb-4 position-relative">
+<!-- NOMBRE COMPLETO -->
+				          <div class="col-12 mb-4 position-relative">
 				            <label for="contacto_nombre">NOMBRE COMPLETO <i class="fas fa-asterisk fa-xs" style="color:red"></i></label>
 				            <input type="text" name="nombre" id="contacto_nombre" class="form-control  ">
-				            <span class="invalid-feedback position-absolute ml-auto">
+				            <div class="invalid-feedback" style="text-align: end;">
 				              Campo obligatorio
-				            </span>            
+				            </div>            
 				          </div>
-				          <div class="col-lg-12 col-md-6 mb-4 position-relative">
+<!-- NUMERO DE TELEFONO -->
+				          <div class="col-12 mb-4 position-relative">
 				            <label for="contacto_numero">NÚMERO DE TELEFONO <i class="fas fa-asterisk fa-xs" style="color:red"></i></label>
 				            <input type="text" name="numero" id="contacto_numero" class="form-control">
-				            <div class="invalid-feedback position-absolute">
+				            <div class="invalid-feedback" style="text-align: end;">
 				              Campo obligatorio
 				            </div>
 				          </div>
 <!-- DIRECCION DE CORREO -->
-				          <div class="col-lg-12 col-md-6 mb-4 position-relative">
+				          <div class="col-12 mb-4 position-relative">
 				            <label for="contacto_email">DIRECCIÓN DE CORREO <i class="fas fa-asterisk fa-xs" style="color:red"></i></label>
 				            <input type="text" name="email" id="contacto_email" class="form-control">
-				            <div class="invalid-feedback position-absolute">
+				            <div class="invalid-feedback" style="text-align: end;">
 				              Campo obligatorio
 				            </div>
 				          </div>
 <!-- MENSAJE -->
-				          <div class="col-lg-12 col-md-12 mb-4 position-relative">
+				          <div class="col-12 mb-4 position-relative">
 				            <label for="contacto_mensaje">MENSAJE <i class="fas fa-asterisk fa-xs" style="color:red"></i></label>
 				            <textarea name="mensaje" id="contacto_mensaje" rows="10" class="form-control"></textarea>
-				            <div class="invalid-feedback position-absolute">
+				            <div class="invalid-feedback" style="text-align: end;">
 				              Campo obligatorio
 				            </div>
 				          </div>
@@ -126,19 +127,18 @@
 					            <button type="submit" class="btn btn-primary" style="background-color: #01A5D5;" id="btnSubmit">Enviar mensaje</button>	            
 					         </div>
 				          </div>
-				      </fieldset>
 				    </form>
 				 </div> 
 <!-- Creación del mapa Centros con API de Google Maps ---------------------------->
-  				<div class="col-md-4 mt-1 mb-1 border p-2">
-					<div class="row h-100">
-						<div class="col-12 w-100 h-100">
-							<div class="pt-2 pb-2" style="background-color: rgb(211, 211, 211);padding-left: 15px;">
+  				<div class="col-lg-4 col-md-12 mb-2 h-100">
+					<div class="row h-100 pr-lg-3 pl-lg-3">
+						<div class="col-12 w-100 h-100" style="padding-right: 0px;padding-left:0px; border: solid 1px;border-color: rgb(222, 226, 230); ">
+							<div class="pt-2 pb-2" style="border-bottom: solid 1px; border-color: rgb(222, 226, 230);background-color: rgb(211, 211, 211);padding-left: 15px;">
 							  <i class="fas fa-map fa-xs" style="color:black"></i> 
 								Mapa de <a href="/centros/index.html">centros</a>
 							</div>
 <!-- DIV que contiene el mapa ---------------------------------------------->
-							<div id="mapa" style="width: 100%; min-height: 720px;"></div>								
+							<div id="mapa" style="width: 100%; min-height: 600px;"></div>								
 						</div> 
 					</div> 											 	
   				</div>
@@ -314,39 +314,44 @@
 	          
 	                var coordenada = {
 	                  lat: parseFloat(arrCentros.records[i].lat),
-	                  lng: parseFloat(arrCentros.records[i].lng)
+	                  lng: parseFloat(arrCentros.records[i].lng),
 	                };
 	                
 	        		
-	                var infoCentros = new google.maps.InfoWindow({
-	            		content: 'contentString'
-	                });
-	        		//var infoCentrosActivo;
+	             //   var infoCentros = new google.maps.InfoWindow({
+	            	//	content: 'contentString'
+	                // });
+	        		
 	                var marker = new google.maps.Marker({
 		                position: coordenada,
 		                map: map,
 		                title: arrCentros.records[i].nombre,
-		               // label: String.fromCharCode(65 + i)
-	                });     
+		                label: String.fromCharCode(65 + i)
+	                });
+	                
+	                //var contentString = 'PRUEBA DE FORMATO';
+	                
+	               // var infowindow = new google.maps.InfoWindow({
+	               // content: 'contentString',
+	               // position: coordenada,
+	               // });
+	                
+	                // var positioncentro1 = {lat: 41.41677869999999, lng: 2.1329792000000225};
+	                // (arrCentro.records.lat)
+					// (arrCentro.records.lng)
+	                
+	                
+	                
 	                
 	                marker.addListener('click', function() {
-	                	infoCentros.open(map,marker,position);	    			
-	                	});  
-	    	    	  
-			     
-	    		
-	                   
-	                
+	                    infowindow.open(map, marker, coordenada);
+	                  });                    
 	              }
 	            }
 	        	}
 				
 	        	xhr.open('GET', 'http://app.cifo.local/api/public/formacion/centros/'+'?nocache='+Math.random(), true);
 	    		xhr.send(null);
-	    	
-	    	  
-	    		
-	    	
 			
 </script>
 
