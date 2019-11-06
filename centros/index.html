@@ -117,6 +117,7 @@
 		</div>
 	</div>
 	<div class="container">
+	<div class="row  m-0 pb-3 d-flex" id="avisocarga"></div>
 		<div class="row  m-0 pb-3 d-flex" id="centros"></div>
 	</div>
 
@@ -230,9 +231,12 @@
 			xhr = new ActiveXObject("Microsoft.XMLHTTP");
 		}
 		xhr.onreadystatechange = function() {
+			document.getElementById("avisocarga").innerHTML = "Un momento, cargando centros...";
 			if (xhr.readyState == 4 && xhr.status == 200) {
 				var arrCentros = JSON.parse(xhr.responseText);
+				
 				for (var i = 0; i < arrCentros.records.length; i++) {
+					
 					imprimecentro(arrCentros.records[i]);
 				}
 			}
@@ -244,6 +248,7 @@
 
 		//imprime cada centro, se le pasa como parámetro el objeto centro a imprimir.
 		function imprimecentro(objcentro) {
+			document.getElementById("avisocarga").innerHTML = "";
 			var cadena = '<div class="col-12 col-md-6 col-lg-4 p-3  d-flex">'
 					+ '<div class="card h-100">'
 					+ '<img src="'+objcentro.media+'" class="card-img-top w-100" style="object-fit:cover; max-height:150px" alt="'+objcentro.nombre+'">'
