@@ -58,13 +58,7 @@
 }
 
 #taulamodal th {
-	/*min-width: 40%;*/
 	font-weight: normal;
-}
-
-#taulamodal td {
-	/*max-width: 60%;*/
-	
 }
 
 taulamodal th, taulamodal td, taulamodal tr {
