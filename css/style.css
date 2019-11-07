@@ -26,3 +26,96 @@
 	padding-left:10px !important;
 	padding-right:10px !important;
 }
+
+/* Página biblioteca */
+
+#contenido_biblioteca .col-3 {
+	padding-right: 0;
+	padding-left: 0;
+	height: fit-content;
+}
+
+#contenido_biblioteca .card-header {
+	background-color: #01A5D5 !important;
+	color: white;
+}
+
+#contenido_biblioteca #headingTwo, #contenido_biblioteca #headingThree {
+	background-color: #6c757d !important;
+	padding: 0;
+}
+
+#contenido_biblioteca #headingTwo {
+	border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0 !important;
+}
+
+#contenido_biblioteca #headingThree {
+	margin-top: 3px;
+}
+
+#contenido_biblioteca .btn-link, #contenido_biblioteca .btn-link:hover {
+	color: white;
+}
+
+#contenido_biblioteca .fa-file-text-o, #contenido_biblioteca .fa-user-circle {
+	padding: 10px;
+}
+
+#contenido_biblioteca #descripcion, #contenido_biblioteca #autores {
+	display: inline;
+	font-size: 1rem;
+	padding: -10px;
+}
+
+#contenido_biblioteca .card-header button {
+	padding: 0;
+}
+
+#contenido_biblioteca #buscar {
+	border-radius: calc(.25rem - 1px);
+}
+
+#contenido_biblioteca .collapse .card-body {
+	border: 1px solid rgba(0, 0, 0, .125);
+}
+
+#contenido_biblioteca #carddescripcion, #contenido_biblioteca #cardautores {
+	border: 0;
+}
+
+#contenido_biblioteca #taulamodal td {
+	background-color: #f8f9fa;
+}
+
+#contenido_biblioteca #taulamodal th {
+	font-weight: normal;
+}
+
+#contenido_biblioteca taulamodal th, #contenido_biblioteca taulamodal td, #contenido_biblioteca taulamodal tr {
+	display: block;
+	overflow-y: hidden;
+	max-height: 20px;
+}
+
+#contenido_biblioteca .justify-content-between {
+	padding-bottom: 20px;
+}
+
+#contenido_biblioteca #parrafo1-1 {
+	line-height: 1;
+}
+
+#contenido_biblioteca #parrafo1-2 {
+	padding-right: 3%;
+}
+
+#contenido_biblioteca #imagentabla {
+	border: 1px solid #dee2e6;
+	padding: 2px;
+	border-radius: 8px;
+}
+
+#contenido_biblioteca #selectores {
+	padding-left: 5px;
+	padding-right: 5px;
+}
