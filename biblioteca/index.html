@@ -24,7 +24,9 @@
 
 <!-- Estilos propios añadidos -->
 <link rel="stylesheet" href="/css/style.css">
+
 <link rel="stylesheet" href="/biblioteca/biblioteca.css">
+
 
 <title>web.cifo.local.biblioteca</title>
 </head>
@@ -219,7 +221,13 @@
 								</div>
 								<div id="collapseTwo" class="collapse"
 									aria-labelledby="headingTwo" data-parent="#accordionExample">
-									<div class="card-body"></div>
+									<div class="card-body mb-1"></div>
+									<div class="d-flex justify-content-end">
+										<button id="cerrarDescripcion" type="button"
+											class="mb-1 btn btn-light" data-toggle="collapse"
+											data-target="#collapseTwo" aria-expanded="false"
+											aria-controls="collapseTwo">Cerrar</button>
+									</div>
 								</div>
 							</div>
 
@@ -236,7 +244,13 @@
 								</div>
 								<div id="collapseThree" class="collapse"
 									aria-labelledby="headingThree" data-parent="#accordionExample">
-									<div class="card-body"></div>
+									<div class="card-body mb-1"></div>
+									<div class="d-flex justify-content-end">
+										<button id="cerrarAutores" type="button"
+											class="mb-1 btn btn-light" data-toggle="collapse"
+											data-target="#collapseThree" aria-expanded="false"
+											aria-controls="collapseThree">Cerrar</button>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -361,11 +375,13 @@
 		src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.js"></script>
 
 	<!-- Scripts propios -->
+
 <script type="text/javascript"
 		src="/biblioteca/biblioteca.js"></script>
 
 	<!-- Cookies  -->
 	<script src="/cookies/cookies.js"></script>
 	<script src="/cookies/avisocookies.js"></script>
+
 </body>
 </html>
