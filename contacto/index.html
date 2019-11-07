@@ -3,8 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<!-- favicon -->
-<link rel="icon" type="image/gif" href="/img/favicon.ico">
+
 <!-- Bootstrap CSS -->
  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css">
@@ -319,9 +318,6 @@
 	                };
 	                
 	        		
-	             //   var infoCentros = new google.maps.InfoWindow({
-	            	//	content: 'contentString'
-	                // });
 	        		
 	                var marker = new google.maps.Marker({
 		                position: coordenada,
@@ -330,23 +326,50 @@
 		                label: String.fromCharCode(65 + i)
 	                });
 	                
-	                //var contentString = 'PRUEBA DE FORMATO';
-	                
-	               // var infowindow = new google.maps.InfoWindow({
-	               // content: 'contentString',
-	               // position: coordenada,
-	               // });
-	                
+	               var infowindow = new google.maps.InfoWindow({
+	            	   
+	                content: '<div >'
+	    				+'<div >'
+	    			    //	+'<img src="'+arrCentros.records[i].media+'" class="card-img-top w-100" style="object-fit:cover; max-height:150px" alt="'+arrCentros.records[i].nombre+'">'
+	    			    	+'<div >'
+	    			      		+'<h5 class="card-title text-info">'+arrCentros.records[i].nombre+'</h5>'
+	    			      		+'<div class="border border-light border-right-0 border-left-0 pt-3">'
+	    				      		+'<p><i class="fa fa-phone fa-fw text-muted"></i> '+arrCentros.records[i].telefono+'</p>'
+	    				      		+'<p><i class="fa fa-envelope fa-fw text-muted"></i>'
+	    				      		+'<a href="mailto:'+arrCentros.records[i].buzon+'"> '+arrCentros.records[i].buzon+'</a></p>'
+	    				      		+'<p><i class="fa fa-calendar fa-fw text-muted"></i> '+arrCentros.records[i].horario+'</p>'
+	    				      		+'<p><i class="fa fa-map-marker fa-fw text-muted"></i> '+arrCentros.records[i].direccion+'</p>'
+	    				      	+'</div>'
+	    				      	+'<div class="pt-3">'
+	    				      		+'<h5 class="text-secondary"><i class="fa fa-road fa-fw text-muted"></i> Acceso</h5>'
+	    				      		+arrCentros.records[i].acceso
+	    				      	+'</div>'      	
+	    			 		+'</div>'
+	    			 		+'<div >'
+	    						+'<p class="d-flex justify-content-center mt-3 align-text-bottom"><a href="#" class="btn btn-primary">Más información...</a></p>'
+	    			 		+'</div>'
+	    			 	+'</div>'
+	    			 +'</div>'
+	                //position: coordenada,
+	                });
+	                console.log
 	                // var positioncentro1 = {lat: 41.41677869999999, lng: 2.1329792000000225};
 	                // (arrCentro.records.lat)
 					// (arrCentro.records.lng)
+	             /*   google.maps.event.addListener(marker,'click',function() {
+	                	if (!infowindow) { 
+	                		infowindow = new google.maps.InfoWindow();
+	                		}
+	                		infowindow.setContent(marcadores[i][3]);
+	                		infowindow.open(map, marker); });
+*/
 	                
 	                
 	                
-	                
-	                marker.addListener('click', function() {
-	                    infowindow.open(map, marker, coordenada);
-	                  });                    
+	                google.maps.event.addListener(marker, 'click', function() {	
+	                	
+	                    	infowindow.open(map, this);
+	                  });
 	              }
 	            }
 	        	}
@@ -357,8 +380,22 @@
 </script>
 
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMAUUG6X2nJy8DHsJlmyMv0aS-JDCIDZE&callback=initMap"   type="text/javascript"></script>
-	<!-- Cookies  -->
-	<script src="/cookies/cookies.js"></script>
-	<script src="/cookies/avisocookies.js"></script>
+<script src="/cookies.js"></script>
+<script type="text/javascript">
+  //Si detecta que la cookie esta ok, detecta que esta ok porque ya esta aceptada, elimina el hijo del elemento boxCookies, (por lo tanto no se muestra la maquetación html)
+  if (detectCookie("okCookie")) {
+	  if(getCookie("okCookie")=="ok") {
+		  var objBoxRGPD=document.getElementById("boxCookies");
+		  objBoxRGPD.parentNode.removeChild(objBoxRGPD);
+	  }
+  } else {
+	  //elimina el hijo del elemento boxCookies cuando ha sido aceptada por el boton con el id"btnRGPD" (por lo tanto no se muestra la maquetación html)
+	  document.getElementById("btnCookies").onclick=function(){
+		  setCookie("okCookie","ok",365);
+		  var objBoxCookies=document.getElementById("boxCookies");
+		  objBoxCookies.parentNode.removeChild(objBoxCookies);
+	  }
+  }
+</script>
 </body>
 </html>
