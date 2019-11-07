@@ -11,3 +11,18 @@
 .navbar-brand{
 	font-size: 0.9rem !important;
 }
+
+/* Página oferta formativa*/
+
+#contenido_oferta_formativa #buscar {
+	background-color: #01A5D5 !important;	
+}
+
+#contenido_oferta_formativa #filtrar{
+	background-color: #01A5D5 !important;	
+}
+
+#contenido_oferta_formativa .form-group{
+	padding-left:10px !important;
+	padding-right:10px !important;
+}
