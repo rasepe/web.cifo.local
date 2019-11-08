@@ -76,7 +76,7 @@ xhr1.send();
 var tabla;
 tabla=$('#tablaOfertas').DataTable({//defino algunas propiedades de datatable
 	language:{
-		url: "spanishdatatable.json"//llamo el .json qu traduce el datatable al castellano
+		url: "/spanishdatatable.json"//llamo el .json qu traduce el datatable al castellano
 	},
 	"columnDefs":[
 		{"data": "codigoferta", "targets": 0 },
