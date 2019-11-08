@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -6,13 +5,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 <!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
 <!--	<link href="/your-path-to-fontawesome/css/fontawesome.css" rel="stylesheet">-->
  <!--	<link href="/your-path-to-fontawesome/css/brands.css" rel="stylesheet">-->
  <!--	<link href="/your-path-to-fontawesome/css/solid.css" rel="stylesheet">-->
- 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
- 	
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<!-- favicon -->
+<link rel="icon" type="image/gif" href="/img/favicon.ico">	
 	<title>web.cifo.local.centros</title>
 	<link rel="stylesheet" href="/css/style.css">
 </head>
@@ -142,58 +142,20 @@
 		</div>
 		<div class="d-flex justify-content-center class text-center py-3 ">Copyright © Cifo 2018 </div>
      </footer>
-
-	<!-- Optional JavaScript -->
-	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-	<script
-		src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
-<script>
-				var xhr;
-				if (window.XMLHttpRequest) {
-					xhr = new XMLHttpRequest();
-				}else {
-					xhr = new ActiveXObject("Microsoft.XMLHTTP");
-				}
-				xhr.onreadystatechange = function() {
-					if (xhr.readyState == 4 && xhr.status == 200) {
-						var arrayCentros = JSON.parse(xhr.responseText);
-						for (var i = 0; i < arrayCentros.records.length; i++) {
-							
-							// montamos la maqueta html con classes de bootstrap y vamos concatenando maquetas, una por cada posición de la array
-							var maquetaHTML = 
-							'<div class="col-12 col-md-6 col-lg-4 p-3  d-flex">'
-							+'<div class="card h-100">'
-						    +'<img src="'+arrayCentros.records[i].media+'" class="card-img-top w-100" style="object-fit:cover; max-height:150px" alt="'+arrayCentros.records[i].nombre+'">'
-						    +'<div class="card-body pb-0">'
-						    +'<h5 class="card-title text-info">'+arrayCentros.records[i].nombre+'</h5>'
-						    +'<div class="border border-light border-right-0 border-left-0 pt-3">'
-							+'<p><i class="fa fa-phone fa-fw text-muted"></i> '+arrayCentros.records[i].telefono+'</p>'
-							+'<p><i class="fa fa-envelope fa-fw text-muted"></i>'
-				      		+'<a href="mailto:'+arrayCentros.records[i].buzon+'"> '+arrayCentros.records[i].buzon+'</a></p>'
-				      		+'<p><i class="fa fa-calendar fa-fw text-muted"></i> '+arrayCentros.records[i].horario+'</p>'
-				      		+'<p><i class="fa fa-map-marker fa-fw text-muted"></i> '+arrayCentros.records[i].direccion+'</p>'
-					      	+'</div>'
-					      	+'<div class="pt-3">'
-				      		+'<h5 class="text-secondary"><i class="fa fa-road fa-fw text-muted"></i> Acceso</h5>'
-				      		+arrayCentros.records[i].acceso
-					      	+'</div>'      	
-					 		+'</div>'
-					 		+'<div class="card-footer bg-transparent border-0">'
-							+'<p class="d-flex justify-content-center mt-3 align-text-bottom"><a href="#" class="btn btn-primary">Más información...</a></p>'
-					 		+'</div>'
-						 	+'</div>'
-							 +'</div>';
-							document.getElementById("centros").innerHTML += maquetaHTML;
-						}					
-					}
-				}
-				xhr.open('GET','http://app.cifo.local/api/public/formacion/centros/?nocache='+Math.random(), true);
-				xhr.send();											
-</script>
+<!-- COOKIES--------------------->
+     <div class="cookiealert-container text-center fixed-bottom" id="boxCookies" style="margin-bottom: 0em; background-color: #4a4c4a; color: white; padding: 2vh;"><p>Aviso informativo: este sitio web puede utilizar cookies para mejorar su navegación. Si quieres ver el contenido de este sitio web tendrás que aceptar las cookies según la legislación vigente en nuestro país. Si no aceptas, no podrás continuar navegando por este sitio web. Clique
+     <button type="submit" class="btn btn-warning" id="btnCookies" class="btn btn-primary btn-sm acceptcookies" style="border-color: #78992f; background-color: #78992f; color: white;"> aquí </button> para aceptar las cookies.</p>
+    </div>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+ <!-- JavaScript  de cookies-->
+<script src="/cookies/cookies.js"></script>
+<script src="/cookies/avisocookies.js"></script>
+<!-- Script para la llamada Ajax que recoge un archivo JSON con la información de Centros de la bbdd y su posterior construcción en HTML con Bootstrap-->
+<script src="/centros/centros.js"></script>>
 
 </body>
 </html>

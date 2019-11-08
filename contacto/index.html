@@ -9,7 +9,8 @@
  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css">
  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/v4-shims.css">
  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
+<!-- favicon -->
+<link rel="icon" type="image/gif" href="/img/favicon.ico">
  	
 <title>web.cifo.local.contacto</title>
 <link rel="stylesheet" href="/css/style.css">
@@ -209,193 +210,19 @@
     </div>
 
 <!-------------------------------------------------------------- SCRIPTS ------------------------------------------------------------->
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" ></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" ></script>
-
-
-<!-- Script de validaciones del formulario -->
-<script type="text/javascript">
-	//------------------------ VALIDACIONES FORMULARIO -------------------------------------
-	  // Llamamos al boton del elemento del DOM cuando hacemos click sobre el 	  
- 	  document.getElementById("btnSubmit").onclick = function(evt) {
-      // Capturamos el evento de hacer submit sobre el formulario y lo paramos
-      evt.preventDefault();
-      // Creamos la variable allOk que es la que nos hará de control de envio, si se cumple se envia, si en algún campo no se cumple, no se envia
-      var allOk = true;
-      // ---- Limpiamos las classes 'is-invalid' y 'is-valid' ----
-      this.form.querySelectorAll("*").forEach(function(item) {  //aplicamos la funcion para cada elemento, seleccionados todos los elementos del formulario
-        item.className = item.className.replace(/(is-valid|is-invalid)/g, '');  //indicamos que reemplace la classe is-valid por is-invalid, y la is-invalid por is-invalid
-      });
-      // ------------------------ NOMBRE COMPLETO --------------------
-      this.form.nombre.value = this.form.nombre.value.trim();  
-      var nombreString = this.form.nombre.value;
-      var nombrePattern = /\D/g; 
-      if (!nombrePattern.test(nombreString) || nombreString == "") {
-        this.form.nombre.className += ' is-invalid';        
-        allOk = false;
-      } else {
-        this.form.nombre.className += ' is-valid';
-      }
-      // ------------------------ NUMERO DE TELEFONO --------------------
-      this.form.numero.value = this.form.numero.value.trim();
-      var numeroString = this.form.numero.value;
-      var numeroPattern = /^(\+34|0034|34)?[\s|\-|\.]?[6|7|8|9][\s|\-|\.]?([0-9][\s|\-|\.]?){8}$/; //admite numeros españoles, prefijo +34, 0034 o 34, admite separadores de espacio, guion, o punto. Maximo 9 numeros aparte del prefijo (solo pueden empezar por 6,7,8 o 9)
-      if (!numeroPattern.test(numeroString) || numeroString == "") {
-        this.form.numero.className += ' is-invalid';
-        allOk = false;
-      } else {
-        this.form.numero.className += ' is-valid';
-      }
-      // ------------------------- DIRECCION DE CORREO -----------------------------------
-      this.form.email.value = this.form.email.value.trim();
-      var emailString = this.form.email.value;
-      var emailPattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/; // Formato mail, con un simbolo de arroba obligatorio, el punto obligatorio, y despues 2 o 3 caracteres despues del punto
-      if (!emailPattern.test(emailString) || emailString == "") {
-        this.form.email.className += " is-invalid ";
-        allOk = false;
-      } else {
-        this.form.email.className += " is-valid ";
-      }
-      // ------------------------ MENSAJE ---------------------------------
-      if (this.form.mensaje.value == "" || this.form.mensaje.value.length > 300) {
-        this.form.mensaje.className += " is-invalid ";
-        allOk = false;
-      } else {
-        this.form.mensaje.className += " is-valid ";
-      }
-      // ------------------------- RECAPTCHA V2 --------------------------------	
-      var response = grecaptcha.getResponse();
-      //Creamos la condición para que muestre un aviso (en un div oculto) de que el captcha no esta verificado 
-      if (response.length == 0) {
-        document.getElementById("g-recaptcha-error").style.display = "block";
-        allOk = false;
-     	}
-      //Creamos la condición final de si se cumple todo, se envia el formulario al hacer click en el button
-      if (allOk == true) {
-         this.form.submit(); //Disparamos el evento de enviar el formulario validado
-      }
-   }	
-</script>
-		
-<!-- Script para integración de google maps mediante su api -->	
-<script>	
-	// Creamos un objeto llamado map	
-	var map;
-	// Creamos la función para insertar el mapa	
-	      function initMap(){
-		// Asignamos en un div llamado "mapa" el mapa de google maps con los parametros deseados
-	          map = new google.maps.Map(document.getElementById('mapa'), {
-	            center: {lat: 41.402675, lng: 2.181181}, 
-	            scrollwheel: false,
-				zoom: 7,
-				zoomControl: true,
-				rotateControl : true,
-				mapTypeControl: true,
-				streetViewControl: false,
-				navigationControl: true,
-				draggable: true,
-	          });       
-	   		}
-	      
-	     
-	   	
-	   	var xhr;
-	   	if (window.XMLHttpRequest) {
-	   	xhr = new XMLHttpRequest();
-	   	}else {
-	   	xhr = new ActiveXObject("Microsoft.XMLHTTP");
-	   	}
-	  		
-	        xhr.onreadystatechange = function() {
-	            if (xhr.readyState == 4 && xhr.status == 200) {
-	              var arrCentros = JSON.parse(xhr.responseText);
-	              for (var i = 0; i < arrCentros.records.length; i++) {
-	          
-	                var coordenada = {
-	                  lat: parseFloat(arrCentros.records[i].lat),
-	                  lng: parseFloat(arrCentros.records[i].lng),
-	                };
-	                
-	        		
-	        		
-	                var marker = new google.maps.Marker({
-		                position: coordenada,
-		                map: map,
-		                title: arrCentros.records[i].nombre,
-		                label: String.fromCharCode(65 + i)
-	                });
-	                
-	               var infowindow = new google.maps.InfoWindow({
-	            	   
-	                content: '<div >'
-	    				+'<div >'
-	    			    //	+'<img src="'+arrCentros.records[i].media+'" class="card-img-top w-100" style="object-fit:cover; max-height:150px" alt="'+arrCentros.records[i].nombre+'">'
-	    			    	+'<div >'
-	    			      		+'<h5 class="card-title text-info">'+arrCentros.records[i].nombre+'</h5>'
-	    			      		+'<div class="border border-light border-right-0 border-left-0 pt-3">'
-	    				      		+'<p><i class="fa fa-phone fa-fw text-muted"></i> '+arrCentros.records[i].telefono+'</p>'
-	    				      		+'<p><i class="fa fa-envelope fa-fw text-muted"></i>'
-	    				      		+'<a href="mailto:'+arrCentros.records[i].buzon+'"> '+arrCentros.records[i].buzon+'</a></p>'
-	    				      		+'<p><i class="fa fa-calendar fa-fw text-muted"></i> '+arrCentros.records[i].horario+'</p>'
-	    				      		+'<p><i class="fa fa-map-marker fa-fw text-muted"></i> '+arrCentros.records[i].direccion+'</p>'
-	    				      	+'</div>'
-	    				      	+'<div class="pt-3">'
-	    				      		+'<h5 class="text-secondary"><i class="fa fa-road fa-fw text-muted"></i> Acceso</h5>'
-	    				      		+arrCentros.records[i].acceso
-	    				      	+'</div>'      	
-	    			 		+'</div>'
-	    			 		+'<div >'
-	    						+'<p class="d-flex justify-content-center mt-3 align-text-bottom"><a href="#" class="btn btn-primary">Más información...</a></p>'
-	    			 		+'</div>'
-	    			 	+'</div>'
-	    			 +'</div>'
-	                //position: coordenada,
-	                });
-	                console.log
-	                // var positioncentro1 = {lat: 41.41677869999999, lng: 2.1329792000000225};
-	                // (arrCentro.records.lat)
-					// (arrCentro.records.lng)
-	             /*   google.maps.event.addListener(marker,'click',function() {
-	                	if (!infowindow) { 
-	                		infowindow = new google.maps.InfoWindow();
-	                		}
-	                		infowindow.setContent(marcadores[i][3]);
-	                		infowindow.open(map, marker); });
-*/
-	                
-	                
-	                
-	                google.maps.event.addListener(marker, 'click', function() {	
-	                	
-	                    	infowindow.open(map, this);
-	                  });
-	              }
-	            }
-	        	}
-				
-	        	xhr.open('GET', 'http://app.cifo.local/api/public/formacion/centros/'+'?nocache='+Math.random(), true);
-	    		xhr.send(null);
-			
-</script>
-
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMAUUG6X2nJy8DHsJlmyMv0aS-JDCIDZE&callback=initMap"   type="text/javascript"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" ></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" ></script>
+ <!-- JavaScript  de cookies-->
 <script src="/cookies/cookies.js"></script>
-<script type="text/javascript">
-  //Si detecta que la cookie esta ok, detecta que esta ok porque ya esta aceptada, elimina el hijo del elemento boxCookies, (por lo tanto no se muestra la maquetación html)
-  if (detectCookie("okCookie")) {
-	  if(getCookie("okCookie")=="ok") {
-		  var objBoxRGPD=document.getElementById("boxCookies");
-		  objBoxRGPD.parentNode.removeChild(objBoxRGPD);
-	  }
-  } else {
-	  //elimina el hijo del elemento boxCookies cuando ha sido aceptada por el boton con el id"btnRGPD" (por lo tanto no se muestra la maquetación html)
-	  document.getElementById("btnCookies").onclick=function(){
-		  setCookie("okCookie","ok",365);
-		  var objBoxCookies=document.getElementById("boxCookies");
-		  objBoxCookies.parentNode.removeChild(objBoxCookies);
-	  }
-  }
-</script>
+<script src="/cookies/avisocookies.js"></script>
+<!-- Script de validaciones del formulario -->
+<script src="/contacto/contacto_formulario.js"></script>		
+<!-- Script para integración de google maps -->	
+<script src="/contacto/contacto_maps.js"></script>	
+<!-- Javascript llamada a la api propia de Google Maps -->
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMAUUG6X2nJy8DHsJlmyMv0aS-JDCIDZE&callback=initMap"   type="text/javascript"></script>
+
+
 </body>
 </html>
