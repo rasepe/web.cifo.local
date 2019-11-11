@@ -35,7 +35,7 @@ xhr.onreadystatechange = function() {
 				+'</div>'
 				+'</div>'
 				+'</div>';
-			
+
 			document.getElementById("aviso_carga").style.display = "none";
 			// Indicamos en que elemento del DOM, vamos a concatenar cada variable "maquetaHTML"
 			document.getElementById("centros").innerHTML += maquetaHTML;

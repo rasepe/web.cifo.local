@@ -3,9 +3,9 @@
 var xhr;//creo una variable de tipo XMLHttpRequest que será el objeto con el que realizamos la llamada Ajax
 if(window.XMLHttpRequest) {
 	xhr = new XMLHttpRequest();
-	}else if(window.ActiveXObject) {
-		peticion_http = new ActiveXObject("Microsoft.XMLHTTP");
-	}
+}else if(window.ActiveXObject) {
+	peticion_http = new ActiveXObject("Microsoft.XMLHTTP");
+}
 
 //-----------------------Llamada AJAX para rellenar la Família Profesional--------------------------
 
@@ -29,22 +29,22 @@ xhr.send();
 //creo función para cuando el usuario haya seleccionado un área con el evento onchange
 document.getElementById("familiaProfesional").onchange = function(){
 	document.getElementById("cursos").innerHTML = '<option value="">--Elija una opción--</option>';
-	
+
 	xhr.onreadystatechange = function(){
- 		if(xhr.readyState==4 && xhr.status==200){
- 			var objCursos = JSON.parse(xhr.responseText);	
+		if(xhr.readyState==4 && xhr.status==200){
+			var objCursos = JSON.parse(xhr.responseText);	
 			//console.log(objCursos);
 			var arrCursos = objCursos.records;
 			//console.log(arrCursos);
 			for(var i=0; i<arrCursos.length; i++){
 				var cadena = '<option value="' + arrCursos[i].id + '">' + arrCursos[i].nombre + '</option>';
 				document.getElementById("cursos").innerHTML+=cadena;
-				
+
 			}
- 		}
- 	}	
+		}
+	}	
 	xhr.open('GET','http://app.cifo.local/api/public/formacion/cursos/area/' + this.value +'/', true);
- 	xhr.send();		
+	xhr.send();		
 }
 
 //----------------------------------------Llamada AJAX para rellenar los centros--------------------------
@@ -52,9 +52,9 @@ document.getElementById("familiaProfesional").onchange = function(){
 var xhr1; //creo una segunda variable para llamar a los centros en cuanto se abra la página
 if(window.XMLHttpRequest) {
 	xhr1 = new XMLHttpRequest();
-	}else if(window.ActiveXObject) {
-		peticion_http = new ActiveXObject("Microsoft.XMLHTTP");
-	}
+}else if(window.ActiveXObject) {
+	peticion_http = new ActiveXObject("Microsoft.XMLHTTP");
+}
 
 xhr1.onreadystatechange = function(){
 	if(xhr1.readyState==4 && xhr1.status==200){
@@ -85,11 +85,11 @@ tabla=$('#tablaOfertas').DataTable({//defino algunas propiedades de datatable
 		{"data": "centro", "targets": 3 },
 		{"data": "datainicio", "targets": 4 },
 		{"data": "datafin", "targets": 5 },
-		
-	],
-	responsive: true,
-	fixedHeader: true,
-	 "lengthMenu": [[5,10, 25, 50, -1], [5,10, 25, 50, "All"]]
+
+		],
+		responsive: true,
+		fixedHeader: true,
+		"lengthMenu": [[5,10, 25, 50, -1], [5,10, 25, 50, "All"]]
 });
 
 //---------------Llamada AJAX para rellenar datatable de ofertas--------------------------
@@ -97,9 +97,9 @@ tabla=$('#tablaOfertas').DataTable({//defino algunas propiedades de datatable
 var xhr2;//creo una tercera variable para hacer otra llamada a ofertas y rellenar el datatable al cargar la página
 if(window.XMLHttpRequest) {
 	xhr2 = new XMLHttpRequest();
-	}else if(window.ActiveXObject) {
-		peticion_http = new ActiveXObject("Microsoft.XMLHTTP");
-	}
+}else if(window.ActiveXObject) {
+	peticion_http = new ActiveXObject("Microsoft.XMLHTTP");
+}
 
 xhr2.onreadystatechange = function(){
 	if(xhr2.readyState==4 && xhr2.status==200){
@@ -130,10 +130,10 @@ document.getElementById("btnFiltrar").onclick = function(){
 	var areaId = document.getElementById("familiaProfesional").value;
 	var cursoId = document.getElementById("cursos").value;
 	var centroId = document.getElementById("centrosFormacion").value;
-	
+
 	xhr.onreadystatechange = function(){
- 		if(xhr.readyState==4 && xhr.status==200){
- 			var objOfertas = JSON.parse(xhr.responseText);	
+		if(xhr.readyState==4 && xhr.status==200){
+			var objOfertas = JSON.parse(xhr.responseText);	
 			var arrOfertas = objOfertas.records;
 			for(var i=0; i<arrOfertas.length; i++){
 				tabla.row.add({
@@ -147,7 +147,7 @@ document.getElementById("btnFiltrar").onclick = function(){
 			}
 			tabla.draw();	
 		}
- 	}//creo condicionales para que la tabla se rellene según los filtros escogidos por el usuario
+	}//creo condicionales para que la tabla se rellene según los filtros escogidos por el usuario
 	if(areaId =="" && cursoId ==""){
 		xhr.open('GET','http://app.cifo.local/api/public/formacion/ofertas/', true);
 	}
@@ -168,8 +168,8 @@ document.getElementById("btnFiltrar").onclick = function(){
 	}
 	xhr.send();	
 }	
-	
- //------------------------funcion onclick del botón borrar-------------------------------
+
+//------------------------funcion onclick del botón borrar-------------------------------
 
 document.getElementById("btnBorrar").onclick = function(){//con esta función limpiaré los campos de selección
 	document.getElementById("familiaProfesional").value = "";
@@ -177,15 +177,15 @@ document.getElementById("btnBorrar").onclick = function(){//con esta función li
 	document.getElementById("centrosFormacion").value = "";
 
 }
- 
- //------------------------------Creación Modal----------------------------------
+
+//------------------------------Creación Modal----------------------------------
 
 function editOferta(id){
 	//console.log(id);compruebo que recibo el id de la ogferta correctamente
- 	//------------------------------LLamada Ajax para centros modal----------------------------------
- 	xhr.onreadystatechange = function(){
- 		if(xhr.readyState==4 && xhr.status==200){
- 			var objOfertaCentros = JSON.parse(xhr.responseText);	
+	//------------------------------LLamada Ajax para centros modal----------------------------------
+	xhr.onreadystatechange = function(){
+		if(xhr.readyState==4 && xhr.status==200){
+			var objOfertaCentros = JSON.parse(xhr.responseText);	
 			//console.log(objCentrosModal);
 			var OfertaCentros = objOfertaCentros.record;
 			//console.log(OfertaCentros);
@@ -209,11 +209,11 @@ function editOferta(id){
 			document.getElementById("acceso").innerHTML = values[12].acceso;
 			var imgCentro='<img src="' + values[12].media+'" class="w-100" style="object-fit:cover">' ;
 			document.getElementById("img").innerHTML=imgCentro;
- 		}
- 	}	
- 	//con esta llamada ajax relleno los campos del modal
+		}
+	}	
+	//con esta llamada ajax relleno los campos del modal
 	xhr.open('GET','http://app.cifo.local/api/public/formacion/ofertas/' + id +'/', true);
- 	xhr.send();		
+	xhr.send();		
 
- 	$('#modalCentro').modal('show')
+	$('#modalCentro').modal('show')
 }

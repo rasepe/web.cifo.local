@@ -1,34 +1,32 @@
 @charset "UTF-8";
 
-.navbar{
-			background-color: #01A5D5 !important;
+.navbar {
+	background-color: #01A5D5 !important;
 }
 
-#footer{
-	background-color: #01A5D5 !important;	
+#footer {
+	background-color: #01A5D5 !important;
 }
 
-.navbar-brand{
+.navbar-brand {
 	font-size: 0.9rem !important;
 }
 
 /* Página oferta formativa*/
-
 #contenido_oferta_formativa #buscar {
-	background-color: #01A5D5 !important;	
+	background-color: #01A5D5 !important;
 }
 
-#contenido_oferta_formativa #filtrar{
-	background-color: #01A5D5 !important;	
+#contenido_oferta_formativa #filtrar {
+	background-color: #01A5D5 !important;
 }
 
-#contenido_oferta_formativa .form-group{
-	padding-left:10px !important;
-	padding-right:10px !important;
+#contenido_oferta_formativa .form-group {
+	padding-left: 10px !important;
+	padding-right: 10px !important;
 }
 
 /* Página biblioteca */
-
 #contenido_biblioteca .col-3 {
 	padding-right: 0;
 	padding-left: 0;
@@ -57,7 +55,8 @@
 	color: white;
 }
 
-#contenido_biblioteca .fa-file-text-o, #contenido_biblioteca .fa-user-circle {
+#contenido_biblioteca .fa-file-text-o, #contenido_biblioteca .fa-user-circle
+	{
 	padding: 10px;
 }
 
@@ -79,7 +78,8 @@
 	border: 1px solid rgba(0, 0, 0, .125);
 }
 
-#contenido_biblioteca #carddescripcion, #contenido_biblioteca #cardautores {
+#contenido_biblioteca #carddescripcion, #contenido_biblioteca #cardautores
+	{
 	border: 0;
 }
 
@@ -91,7 +91,8 @@
 	font-weight: normal;
 }
 
-#contenido_biblioteca taulamodal th, #contenido_biblioteca taulamodal td, #contenido_biblioteca taulamodal tr {
+#contenido_biblioteca taulamodal th, #contenido_biblioteca taulamodal td,
+	#contenido_biblioteca taulamodal tr {
 	display: block;
 	overflow-y: hidden;
 	max-height: 20px;
