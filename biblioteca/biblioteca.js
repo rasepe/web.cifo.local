@@ -63,15 +63,27 @@ function getLibros(codigoseccion, codigotema, codigoeditorial) {
 			tabla.draw();
 		}
 	}
+	//transforma los strings codigoseccion, codigotema y codigoeditorial
+	if (codigoseccion == undefined) {
+		codigoseccion = "";
+	}
 	if (codigoseccion != "") {
-		codigoseccion = codigoseccion + '/'
+		codigoseccion = codigoseccion + '/';
+	}
+	if (codigotema == undefined) {
+		codigotema = "";
 	}
 	if (codigotema != "") {
 		codigotema = codigotema + '/'
 	}
+	if (codigoeditorial == undefined) {
+		codigoeditorial = "";
+	}
+	console.log(codigoeditorial);
 	if (codigoeditorial != "") {
 		codigoeditorial = codigoeditorial + '/'
 	}
+	//llamada AJAX
 	xhr.open('GET',
 			'http://app.cifo.local/api/public/biblioteca/libros/seccion/'
 			+ codigoseccion + 'tema/' + codigotema
@@ -191,6 +203,13 @@ function filtrar() {
 		}
 	}
 	getLibros(codigoseccion, codigotema, codigoeditorial);
+}
+
+//Resetea las opciones seleccionadas en el selector
+function borrar() {
+	document.getElementById("secciones").selectedIndex = 0;
+	document.getElementById("temas").selectedIndex = 0;
+	document.getElementById("editoriales").selectedIndex = 0;
 }
 
 /* A partir de una id que se pasa por parámetro, obtiene la información del libro que se ha seleccionado 
