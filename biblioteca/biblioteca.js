@@ -142,8 +142,8 @@ function getEditoriales(codigoeditorial) {
 //Muestra las opciones del selector de temas cuando se selecciona una sección (evento onchange):
 document.getElementById("secciones").onchange = function() {
 	document.getElementById("temas").innerHTML = '<option value="0">-- Escoja un tema --</option>';
-	var seccioseleccionada = document.getElementById("secciones").selectedIndex;
-	var codiseccio = document.getElementById("secciones").options[seccioseleccionada].id;
+	var seccionSeleccionada = document.getElementById("secciones").selectedIndex;
+	var codigoSeccion = document.getElementById("secciones").options[seccionSeleccionada].id;
 	if (window.XMLHttpRequest) {
 		xhr = new XMLHttpRequest();
 	} else {
@@ -160,7 +160,7 @@ document.getElementById("secciones").onchange = function() {
 	}
 	xhr.open('GET',
 			'http://app.cifo.local/api/public/biblioteca/temas/seccion/'
-			+ codiseccio + '/&nocache=' + Math.random(), true);
+			+ codigoSeccion + '/&nocache=' + Math.random(), true);
 	xhr.send();
 }
 
