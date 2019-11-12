@@ -28,9 +28,61 @@ var tabla = $('#libros').DataTable({
 });
 
 
-//Al cargar la página, ejecuta la función getLibros:
-getLibros();
+var xhr;
 
+/*Al cargar la página, carga las opciones de los selectores de secciones y editoriales y la tabla con 
+los libros. Las editoriales se cargan a través de una llamada a la función getEditoriales() 
+desde la función getSecciones() y los libros, a su vez, se cargan a través de una llamada a la función 
+getLibros() desde la función getEditoriales()  */
+getSecciones();
+
+function getSecciones() {
+//var xhr;
+if (window.XMLHttpRequest) {
+xhr = new XMLHttpRequest();
+} else {
+xhr = new ActiveXObject("Microsoft.XMLHTTP");
+}
+xhr.onreadystatechange = function() {
+if (xhr.readyState == 4 && xhr.status == 200) {
+	var arrSecciones = JSON.parse(xhr.responseText);
+	for (var i = 0; i < arrSecciones.records.length; i++) {
+		document.getElementById("secciones").innerHTML += '<option  value="' + arrSecciones.records[i].id + '">'
+		+ arrSecciones.records[i].nombre + '</option>';
+	}
+	//cuando ha terminado de pasar al DOM las opciones de las secciones, llama a la función getEditoriales:
+	getEditoriales();
+}
+}
+xhr.open('GET','http://app.cifo.local/api/public/biblioteca/secciones/', true);
+xhr.send();
+}
+
+//Carga las opciones del selector de editoriales
+function getEditoriales() {
+		//var xhr;
+		if (window.XMLHttpRequest) {
+			xhr = new XMLHttpRequest();
+		} else {
+			xhr = new ActiveXObject("Microsoft.XMLHTTP");
+		}
+		xhr.onreadystatechange = function() {
+			if (xhr.readyState == 4 && xhr.status == 200) {
+				var arrEditoriales = JSON.parse(xhr.responseText);
+				for (var i = 0; i < arrEditoriales.records.length; i++) {
+					document.getElementById("editoriales").innerHTML += '<option  value="' + arrEditoriales.records[i].id + '">'
+					+ arrEditoriales.records[i].nombre
+					+ '</option>';
+
+				}
+				//cuando ha terminado de pasar al DOM las opciones de las editoriales, llama a la función getLibros():
+				getLibros();
+			}
+		}
+		xhr
+		.open('GET','http://app.cifo.local/api/public/biblioteca/editoriales/', true);
+		xhr.send();
+	}
 
 /* Añade al datatable una lista de libros.
 		Opcionalmente se le pueden pasar hasta tres parámetros (codigoseccion, codigotema, codigoeditorial).
@@ -38,7 +90,7 @@ getLibros();
 		Con parámetros, la llamada AJAX devuelve los libros que cumplan la propiedad especificada en cada parámetro.
 		Finalmente, se imprimen en la tabla todos los libros que devuelve la llamada AJAX. */
 function getLibros(codigoseccion=0, codigotema=0, codigoeditorial=0) {
-	var xhr;
+	//var xhr;
 	var filtroCodigoseccion 	= '' ;
 	var filtroCodigotema		= '' ;
 	var filtroCodigoeditorial 	= '' ;
@@ -65,6 +117,7 @@ function getLibros(codigoseccion=0, codigotema=0, codigoeditorial=0) {
 						"Tema" : arrLibros.records[i].tema
 				});
 			}
+			//Dibuja la tabla:
 			tabla.draw();
 		}
 	}
@@ -86,55 +139,6 @@ function getLibros(codigoseccion=0, codigotema=0, codigoeditorial=0) {
 			+ filtroCodigoseccion + filtroCodigotema + filtroCodigoeditorial , true);
 	xhr.send();
 }
-
-
-/*Al cargar la página, carga las opciones de los selectores de secciones y editoriales. 
-		Las editoriales se cargan a través de la llamada a la función getEditoriales() */
-window.onpageshow = function() {
-	var xhr;
-	if (window.XMLHttpRequest) {
-		xhr = new XMLHttpRequest();
-	} else {
-		xhr = new ActiveXObject("Microsoft.XMLHTTP");
-	}
-	xhr.onreadystatechange = function() {
-		if (xhr.readyState == 4 && xhr.status == 200) {
-			var arrSecciones = JSON.parse(xhr.responseText);
-			for (var i = 0; i < arrSecciones.records.length; i++) {
-				document.getElementById("secciones").innerHTML += '<option  value="' + arrSecciones.records[i].id + '">'
-				+ arrSecciones.records[i].nombre + '</option>';
-			}
-			getEditoriales();
-		}
-	}
-	xhr.open('GET','http://app.cifo.local/api/public/biblioteca/secciones/', true);
-	xhr.send();
-}
-
-
-//Carga las opciones del selector de editoriales
-function getEditoriales() {
-		var xhr;
-		if (window.XMLHttpRequest) {
-			xhr = new XMLHttpRequest();
-		} else {
-			xhr = new ActiveXObject("Microsoft.XMLHTTP");
-		}
-		xhr.onreadystatechange = function() {
-			if (xhr.readyState == 4 && xhr.status == 200) {
-				var arrEditoriales = JSON.parse(xhr.responseText);
-				for (var i = 0; i < arrEditoriales.records.length; i++) {
-					document.getElementById("editoriales").innerHTML += '<option  value="' + arrEditoriales.records[i].id + '">'
-					+ arrEditoriales.records[i].nombre
-					+ '</option>';
-
-				}
-			}
-		}
-		xhr
-		.open('GET','http://app.cifo.local/api/public/biblioteca/editoriales/', true);
-		xhr.send();
-	}
 
 
 //Muestra las opciones del selector de temas cuando se selecciona una sección (evento onchange):
