@@ -1,3 +1,32 @@
+//Creación datatable
+var tabla = $('#libros').DataTable({
+	"lengthMenu" : [ 5, 10, 25, 50, 75, 100 ],
+	responsive : true,
+	language : {
+		url : '/spanish.datatable.json'
+	},
+	"columnDefs" : [ {
+		"data" : "Isbn",
+		"targets" : 0
+	}, {
+		"data" : "Cubierta",
+		"targets" : 1
+	}, {
+		"data" : "Título",
+		"targets" : 2
+	}, {
+		"data" : "Editorial",
+		"targets" : 3
+	}, {
+		"data" : "Sección",
+		"targets" : 4
+	}, {
+		"data" : "Tema",
+		"targets" : 5
+	}
+	]
+});
+
 //Variable donde guardamos las XMLHttpRequest()
 var xhr;
 
@@ -55,34 +84,6 @@ function getEditoriales() {
 	xhr.send();
 }
 
-//Creación datatable
-var tabla = $('#libros').DataTable({
-	"lengthMenu" : [ 5, 10, 25, 50, 75, 100 ],
-	responsive : true,
-	language : {
-		url : '/spanish.datatable.json'
-	},
-	"columnDefs" : [ {
-		"data" : "Isbn",
-		"targets" : 0
-	}, {
-		"data" : "Cubierta",
-		"targets" : 1
-	}, {
-		"data" : "Título",
-		"targets" : 2
-	}, {
-		"data" : "Editorial",
-		"targets" : 3
-	}, {
-		"data" : "Sección",
-		"targets" : 4
-	}, {
-		"data" : "Tema",
-		"targets" : 5
-	}
-	]
-});
 
 /* Añade al datatable una lista de libros.
 		Opcionalmente se le pueden pasar hasta tres parámetros (codigoseccion, codigotema, codigoeditorial).
