@@ -37,7 +37,6 @@ getLibros() desde la función getEditoriales()  */
 getSecciones();
 
 function getSecciones() {
-//	var xhr;
 	if (window.XMLHttpRequest) {
 		xhr = new XMLHttpRequest();
 	} else {
@@ -60,7 +59,6 @@ function getSecciones() {
 
 //Carga las opciones del selector de editoriales
 function getEditoriales() {
-	//var xhr;
 	if (window.XMLHttpRequest) {
 		xhr = new XMLHttpRequest();
 	} else {
@@ -91,7 +89,6 @@ function getEditoriales() {
 		Con parámetros, la llamada AJAX devuelve los libros que cumplan la propiedad especificada en cada parámetro.
 		Finalmente, se imprimen en la tabla todos los libros que devuelve la llamada AJAX. */
 function getLibros(codigoseccion=0, codigotema=0, codigoeditorial=0) {
-	//var xhr;
 	var filtroCodigoseccion 	= '' ;
 	var filtroCodigotema		= '' ;
 	var filtroCodigoeditorial 	= '' ;
@@ -146,7 +143,6 @@ function getLibros(codigoseccion=0, codigotema=0, codigoeditorial=0) {
 document.getElementById("secciones").onchange = function() {
 	document.getElementById("temas").innerHTML = '<option value="0">-- Escoja un tema --</option>';
 	var codigoSeccion = document.getElementById("secciones").value;
-	//var codigoSeccion = document.getElementById("secciones").options[seccionSeleccionada].id;
 	if (window.XMLHttpRequest) {
 		xhr = new XMLHttpRequest();
 	} else {
