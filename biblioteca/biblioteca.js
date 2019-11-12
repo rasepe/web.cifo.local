@@ -163,7 +163,7 @@ document.getElementById("secciones").onchange = function() {
 	}
 	xhr.open('GET',
 			'http://app.cifo.local/api/public/biblioteca/temas/seccion/'
-			+ codigoSeccion, true);
+			+ codigoSeccion +'/', true);
 	xhr.send();
 }
 
@@ -262,6 +262,6 @@ function getLibro(id) {
 	var id_libro = window.sessionStorage.getItem("id_libro");
 	xhr.open('GET',
 			'http://app.cifo.local/api/public/biblioteca/libros/'
-			+ id_libro, true);
+			+ id_libro +'/', true);
 	xhr.send();
 }
