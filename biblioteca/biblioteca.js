@@ -27,6 +27,7 @@ var tabla = $('#libros').DataTable({
 	]
 });
 
+
 //Al cargar la página, ejecuta la función getLibros:
 getLibros();
 
@@ -68,7 +69,6 @@ function getLibros(codigoseccion=0, codigotema=0, codigoeditorial=0) {
 		}
 	}
 	//transforma los strings codigoseccion, codigotema y codigoeditorial
-	
 	if (codigoseccion != 0) {
 		filtroCodigoseccion = 'seccion/' + codigoseccion + '/';
 	} 
@@ -85,8 +85,8 @@ function getLibros(codigoseccion=0, codigotema=0, codigoeditorial=0) {
 			'http://app.cifo.local/api/public/biblioteca/libros/'
 			+ filtroCodigoseccion + filtroCodigotema + filtroCodigoeditorial , true);
 	xhr.send();
-	
 }
+
 
 /*Al cargar la página, carga las opciones de los selectores de secciones y editoriales. 
 		Las editoriales se cargan a través de la llamada a la función getEditoriales() */
@@ -111,6 +111,7 @@ window.onpageshow = function() {
 	xhr.send();
 }
 
+
 //Carga las opciones del selector de editoriales
 function getEditoriales() {
 		var xhr;
@@ -133,7 +134,6 @@ function getEditoriales() {
 		xhr
 		.open('GET','http://app.cifo.local/api/public/biblioteca/editoriales/', true);
 		xhr.send();
-
 	}
 
 
@@ -175,12 +175,14 @@ function filtrar() {
 	getLibros(codigoseccion, codigotema, codigoeditorial);
 }
 
+
 //Resetea las opciones seleccionadas en el selector
 function borrar() {
 	document.getElementById("secciones").selectedIndex = 0;
 	document.getElementById("temas").selectedIndex = 0;
 	document.getElementById("editoriales").selectedIndex = 0;
 }
+
 
 /* A partir de una id que se pasa por parámetro, obtiene la información del libro que se ha seleccionado 
 		 pinchando el enlace de la tabla y la imprime en una ventana modal. */
