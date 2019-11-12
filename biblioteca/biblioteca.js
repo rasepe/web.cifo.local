@@ -30,13 +30,17 @@ var tabla = $('#libros').DataTable({
 //Al cargar la página, ejecuta la función getLibros:
 getLibros();
 
+
 /* Añade al datatable una lista de libros.
 		Opcionalmente se le pueden pasar hasta tres parámetros (codigoseccion, codigotema, codigoeditorial).
 		Sin parámetros, la llamada AJAX devuelve todos los libros.
 		Con parámetros, la llamada AJAX devuelve los libros que cumplan la propiedad especificada en cada parámetro.
 		Finalmente, se imprimen en la tabla todos los libros que devuelve la llamada AJAX. */
-function getLibros(codigoseccion, codigotema, codigoeditorial) {
+function getLibros(codigoseccion=0, codigotema=0, codigoeditorial=0) {
 	var xhr;
+	var filtroCodigoseccion 	= '' ;
+	var filtroCodigotema		= '' ;
+	var filtroCodigoeditorial 	= '' ;
 	if (window.XMLHttpRequest) {
 		xhr = new XMLHttpRequest();
 	} else {
@@ -64,32 +68,24 @@ function getLibros(codigoseccion, codigotema, codigoeditorial) {
 		}
 	}
 	//transforma los strings codigoseccion, codigotema y codigoeditorial
-	if (codigoseccion == undefined) {
-		codigoseccion = "";
-	}
-	if (codigoseccion != "") {
-		codigoseccion = codigoseccion + '/';
-	}
-	if (codigotema == undefined) {
-		codigotema = "";
-	}
-	if (codigotema != "") {
-		codigotema = codigotema + '/'
-	}
-	if (codigoeditorial == undefined) {
-		codigoeditorial = "";
-	}
-	console.log(codigoeditorial);
-	if (codigoeditorial != "") {
-		codigoeditorial = codigoeditorial + '/'
-	}
+	
+	if (codigoseccion != 0) {
+		filtroCodigoseccion = 'seccion/' + codigoseccion + '/';
+	} 
+	
+	if (codigotema != 0) {
+		filtroCodigotema = 'tema/' + codigotema + '/'
+	} 
+	
+	if (codigoeditorial != 0) {
+		filtroCodigoeditorial = 'editorial/' + codigoeditorial + '/'
+	} 
 	//llamada AJAX
 	xhr.open('GET',
-			'http://app.cifo.local/api/public/biblioteca/libros/seccion/'
-			+ codigoseccion + 'tema/' + codigotema
-			+ 'editorial/' + codigoeditorial + '?nocache='
-			+ Math.random(), true);
+			'http://app.cifo.local/api/public/biblioteca/libros/'
+			+ filtroCodigoseccion + filtroCodigotema + filtroCodigoeditorial , true);
 	xhr.send();
+	
 }
 
 /*Al cargar la página, carga las opciones de los selectores de secciones y editoriales. 
@@ -105,25 +101,18 @@ window.onpageshow = function() {
 		if (xhr.readyState == 4 && xhr.status == 200) {
 			var arrSecciones = JSON.parse(xhr.responseText);
 			for (var i = 0; i < arrSecciones.records.length; i++) {
-				document.getElementById("secciones").innerHTML += '<option id="'+ arrSecciones.records[i].id +'" value="' + arrSecciones.records[i].nombre + '">'
+				document.getElementById("secciones").innerHTML += '<option  value="' + arrSecciones.records[i].id + '">'
 				+ arrSecciones.records[i].nombre + '</option>';
 			}
 			getEditoriales();
 		}
 	}
-	xhr.open('GET',
-			'http://app.cifo.local/api/public/biblioteca/secciones/?nocache='
-			+ Math.random(), true);
+	xhr.open('GET','http://app.cifo.local/api/public/biblioteca/secciones/', true);
 	xhr.send();
 }
 
-//Carga las opciones del selector de editoriales. 
-function getEditoriales(codigoeditorial) {
-	if (codigoeditorial == undefined) {
-		codigoeditorial = "";
-		if (codigoeditorial != "") {
-			codigoeditorial += '/';
-		}
+//Carga las opciones del selector de editoriales
+function getEditoriales() {
 		var xhr;
 		if (window.XMLHttpRequest) {
 			xhr = new XMLHttpRequest();
@@ -134,7 +123,7 @@ function getEditoriales(codigoeditorial) {
 			if (xhr.readyState == 4 && xhr.status == 200) {
 				var arrEditoriales = JSON.parse(xhr.responseText);
 				for (var i = 0; i < arrEditoriales.records.length; i++) {
-					document.getElementById("editoriales").innerHTML += '<option id="'+ arrEditoriales.records[i].id +'" value="' + arrEditoriales.records[i].nombre + '">'
+					document.getElementById("editoriales").innerHTML += '<option  value="' + arrEditoriales.records[i].id + '">'
 					+ arrEditoriales.records[i].nombre
 					+ '</option>';
 
@@ -142,20 +131,17 @@ function getEditoriales(codigoeditorial) {
 			}
 		}
 		xhr
-		.open('GET',
-				'http://app.cifo.local/api/public/biblioteca/editoriales/'
-				+ codigoeditorial + '?nocache='
-				+ Math.random(), true);
+		.open('GET','http://app.cifo.local/api/public/biblioteca/editoriales/', true);
 		xhr.send();
 
 	}
-}
+
 
 //Muestra las opciones del selector de temas cuando se selecciona una sección (evento onchange):
 document.getElementById("secciones").onchange = function() {
 	document.getElementById("temas").innerHTML = '<option value="0">-- Escoja un tema --</option>';
-	var seccionSeleccionada = document.getElementById("secciones").selectedIndex;
-	var codigoSeccion = document.getElementById("secciones").options[seccionSeleccionada].id;
+	var codigoSeccion = document.getElementById("secciones").value;
+	//var codigoSeccion = document.getElementById("secciones").options[seccionSeleccionada].id;
 	if (window.XMLHttpRequest) {
 		xhr = new XMLHttpRequest();
 	} else {
@@ -165,43 +151,27 @@ document.getElementById("secciones").onchange = function() {
 		if (xhr.readyState == 4 && xhr.status == 200) {
 			var arrTemas = JSON.parse(xhr.responseText);
 			for (var i = 0; i < arrTemas.records.length; i++) {
-				document.getElementById("temas").innerHTML += '<option id="'+ arrTemas.records[i].id +'" value="' + arrTemas.records[i].nombre + '">'
+				document.getElementById("temas").innerHTML += '<option  value="' + arrTemas.records[i].id + '">'
 				+ arrTemas.records[i].nombre + '</option>';
 			}
 		}
 	}
 	xhr.open('GET',
 			'http://app.cifo.local/api/public/biblioteca/temas/seccion/'
-			+ codigoSeccion + '/&nocache=' + Math.random(), true);
+			+ codigoSeccion, true);
 	xhr.send();
 }
+
 
 /*Función filtrar(). Se ejecuta cuando apretamos el botón "Filtrar". Llama a la función getlibros con los
 		parámetros que recibe de las opciones seleccionadas.*/
 function filtrar() {
 	//borramos la tabla
 	tabla.clear().draw();
-	var posicionseccion = document.getElementById("secciones").selectedIndex;
-	var posiciontema = document.getElementById("temas").selectedIndex;
-	var posicioneditorial = document.getElementById("editoriales").selectedIndex;
-	var codigoseccion;
-	var codigotema;
-	var codigoeditorial;
-	for (i = 0; i < document.getElementById("secciones").options.length; i++) {
-		if (i == posicionseccion) {
-			codigoseccion = document.getElementById("secciones").options[i].id;
-		}
-	}
-	for (i = 0; i < document.getElementById("temas").options.length; i++) {
-		if (i == posiciontema) {
-			codigotema = document.getElementById("temas").options[i].id;
-		}
-	}
-	for (i = 0; i < document.getElementById("editoriales").options.length; i++) {
-		if (i == posicioneditorial) {
-			codigoeditorial = document.getElementById("editoriales").options[i].id;
-		}
-	}
+    //guardamos los valores enteros de los códigos de sección, tema y editorial seleccionados en el selector
+	var codigoseccion 	= parseInt(document.getElementById("secciones").value);
+	var codigotema 		= parseInt(document.getElementById("temas").value);
+	var codigoeditorial = parseInt(document.getElementById("editoriales").value);
 	getLibros(codigoseccion, codigotema, codigoeditorial);
 }
 
@@ -285,6 +255,6 @@ function getLibro(id) {
 	var id_libro = window.sessionStorage.getItem("id_libro");
 	xhr.open('GET',
 			'http://app.cifo.local/api/public/biblioteca/libros/'
-			+ id_libro + '?nocache=' + Math.random(), true);
+			+ id_libro, true);
 	xhr.send();
 }
