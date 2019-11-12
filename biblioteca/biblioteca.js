@@ -199,8 +199,7 @@ function getLibro(id) {
 		var id_libro = window.sessionStorage.getItem("id_libro");
 		if (xhr.readyState == 4 && xhr.status == 200) {
 			var arrLibro = JSON.parse(xhr.responseText);
-			var titolmodal = "Libro";
-			document.getElementById("modalLibros").innerHTML = titolmodal;
+			document.getElementById("modalLibros").innerHTML = "Libro";
 			var cadena1 = '<table class="table-sm" id="tablaModal" style="width:95%"><tbody>'
 				+ '<tr style="border-bottom: 3px solid white;"><th scope="row" style="text-align: right; width:25%; padding-right:1%">Isbn:</th><td style="padding-left:1%">'
 				+ arrLibro.record.isbn
@@ -246,7 +245,7 @@ function getLibro(id) {
 				+ '<p>'
 				+ arrLibro.record.autores[j].biografia + '</p>';
 			}
-			var imagenModal = '<img id="imagentabla" src="'+arrLibro.record.cubierta+'" style="max-height:200px;" >'; //class="align-self-stretch border rounded" style="object-fit:cover" //class="align-self-stretch" //d-inline-block				
+			var imagenModal = '<img id="imagentabla" src="'+arrLibro.record.cubierta+'" style="max-height:200px;" >';
 			document.querySelector("#myModal #parrafo1-1").innerHTML = cadena1;
 			document.querySelector("#myModal #parrafo1-2").innerHTML = imagenModal;
 			document.querySelector("#collapseTwo .card-body").innerHTML = cadena2;
